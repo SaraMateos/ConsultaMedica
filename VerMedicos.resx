@@ -120,6 +120,12 @@
   <metadata name="MEDICOSBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>199, 17</value>
   </metadata>
+  <metadata name="MEDICOSBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>199, 17</value>
+  </metadata>
+  <metadata name="ConsultaMedicaDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="ConsultaMedicaDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -556,6 +562,30 @@
         0r+AGKxDtduRymVPX+oVrIOsLJ2tXuMhyygrmZrT4VgDLvZcfLFNUCTfOvVcrGQsJrzPm2SS8ZzHUQuM
         qeqVdJ+czPOaTiamUv+OeYPGX7NIrylG+wnoFEt6bgE5y5EmHOuRXHDUusisZQ1n/raSMV/4huJ3+87C
         ThhnuLwGg38lYC2Hehq/KwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAHYAAAB2AAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAWtDfGtrR4Kba0eCm2tHgptrR4Kba0eCm2tHgptrR4Kba0eCm2tHgptrR4Kba0eCm2tH
+        gJtuQXtPAAAAAGtCfXBmfs/5Zo7k/2aO5P9mjeP/Z3zK/2h8yv9ofMr/aHzK/2h8yv9nfMv/Zo3j/2aO
+        5P9mjuT/aWy07nA1ajBrSoWYZo7k/2aO5P9mjuT/Zo3i/2h2wv+BX4Do2LNr/86na/9zYJbxaHbD/2aN
+        4/9mjuT/Zo7k/2eC0/9tQHhga0qFmGaO5P9mjuT/Zo7k/2aO5P9mjuT/iXGM4P/jb//x027/dnKp7WaO
+        5P9mjuT/Zo7k/2aO5P9ngtP/bUB4YGtKhZhmjuT/aXzE8HOGquN2mLbmdpi25oJogeb84G//6spt/nh1
+        lel2mLbmdpi25nSFqeNpe8PxZ4LT/21AeGBrSoWYZo7k/3B3pt197Pj/fez4/33s+P993uz9g5Gg6oOa
+        qet95/T/fez4/33s+P997Pj/cHem3WeC0/9tQHhga0qFmGaO5P9weafcfez4/33s+P997Pj/fez4/42L
+        lOKHoqzmfez4/33s+P997Pj/fez4/3B5p9xngtP/bUB4YGtKhZhmjuT/cHmn3H3s+P997Pj/fez4/4iL
+        l+arg2/jlHBz5Yagreh97Pj/fez4/33s+P9weafcZ4LT/21AeGBrSoWYZo7k/3B5p9x97Pj/fez4/33s
+        +P+SeH7ixqFt57SPb+OPiZDhfez4/33s+P997Pj/cHmn3GeC0/9tQHhga0qFmGaO5P9weafcfez4/33s
+        +P997Pj/fez4/45xe+SJh5Plfez4/33s+P997Pj/fez4/3B5p9xngtP/bUB4YG1JhI9mit//cHmn3H3s
+        +P997Pj/fez4/33s+P997Pj/fez4/33s+P997Pj/fez4/33s+P9weafcaHzM/Wo+c1JmM2YPbER+e29Q
+        goNxXIaFcVyGhW5CcrpxXIaFcVyGhXFchoVwUXyYb0l3p3FchoVxXIaFb1CCg2xDfG+AQIAEAAAAAAAA
+        AAAAAAAAAAAAAAAAAABuMmRrgCtVBgAAAAAAAAAAbS9jMWwwZEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAcStjEm0yYnBtMWN3bTFjd20yY2eAQIAEAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAA//8AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPmf
+        AAD4HwAA//8AAA==
 </value>
   </data>
 </root>

@@ -54,8 +54,7 @@ Public Class VerPacientes
     End Sub
 
 
-
-    'Botón para abrir venta y agregar nuevo paciente
+    'Botón para abrir ventana y agregar nuevo paciente
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Me.Hide()
         NuevoPaciente.Show()

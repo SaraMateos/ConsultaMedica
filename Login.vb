@@ -32,7 +32,7 @@ Public Class Login
             Dim count = Convert.ToInt32(Command.ExecuteScalar())
 
             If count > 0 Then
-                MessageBox.Show("Sesión iniciada.")
+                MsgBox("Sesión iniciada.", vbInformation, "Información")
                 Me.Hide()
                 Principal.Show()
             Else
@@ -46,5 +46,9 @@ Public Class Login
         MsgBox("Cerrando aplicación.", MsgBoxStyle.Information, "Información")
 
         Me.Close()
+    End Sub
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
