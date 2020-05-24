@@ -28,6 +28,7 @@ Partial Class NuevoMedico
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.GBDatosPersonales = New System.Windows.Forms.GroupBox()
         Me.cbEspecialidad = New System.Windows.Forms.ComboBox()
+        Me.MEDICOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ConsultaMedicaDataSet = New WindowsApp1.ConsultaMedicaDataSet()
         Me.txtSexo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -43,12 +44,11 @@ Partial Class NuevoMedico
         Me.lblNumColegiado = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txtColegiado = New System.Windows.Forms.TextBox()
-        Me.MEDICOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MEDICOSTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.MEDICOSTableAdapter()
         Me.GBDatosPersonales.SuspendLayout()
+        CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnVolver
@@ -102,6 +102,11 @@ Partial Class NuevoMedico
         Me.cbEspecialidad.Size = New System.Drawing.Size(196, 21)
         Me.cbEspecialidad.TabIndex = 17
         Me.cbEspecialidad.ValueMember = "idEspecialidad"
+        '
+        'MEDICOSBindingSource
+        '
+        Me.MEDICOSBindingSource.DataMember = "MEDICOS"
+        Me.MEDICOSBindingSource.DataSource = Me.ConsultaMedicaDataSet
         '
         'ConsultaMedicaDataSet
         '
@@ -236,11 +241,6 @@ Partial Class NuevoMedico
         Me.txtColegiado.Size = New System.Drawing.Size(119, 20)
         Me.txtColegiado.TabIndex = 70
         '
-        'MEDICOSBindingSource
-        '
-        Me.MEDICOSBindingSource.DataMember = "MEDICOS"
-        Me.MEDICOSBindingSource.DataSource = Me.ConsultaMedicaDataSet
-        '
         'MEDICOSTableAdapter
         '
         Me.MEDICOSTableAdapter.ClearBeforeFill = True
@@ -262,9 +262,9 @@ Partial Class NuevoMedico
         Me.Text = "NuevoMedico"
         Me.GBDatosPersonales.ResumeLayout(False)
         Me.GBDatosPersonales.PerformLayout()
+        CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

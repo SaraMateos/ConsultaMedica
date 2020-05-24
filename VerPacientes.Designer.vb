@@ -444,7 +444,6 @@ Partial Class VerPacientes
         '
         'DataPacientes
         '
-        Me.DataPacientes.AllowUserToDeleteRows = False
         Me.DataPacientes.AllowUserToOrderColumns = True
         Me.DataPacientes.AutoGenerateColumns = False
         Me.DataPacientes.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption
@@ -454,7 +453,6 @@ Partial Class VerPacientes
         Me.DataPacientes.GridColor = System.Drawing.SystemColors.ControlText
         Me.DataPacientes.Location = New System.Drawing.Point(35, 497)
         Me.DataPacientes.Name = "DataPacientes"
-        Me.DataPacientes.ReadOnly = True
         Me.DataPacientes.Size = New System.Drawing.Size(978, 215)
         Me.DataPacientes.TabIndex = 59
         '
@@ -463,91 +461,78 @@ Partial Class VerPacientes
         Me.IdPacienteDataGridViewTextBoxColumn.DataPropertyName = "idPaciente"
         Me.IdPacienteDataGridViewTextBoxColumn.HeaderText = "idPaciente"
         Me.IdPacienteDataGridViewTextBoxColumn.Name = "IdPacienteDataGridViewTextBoxColumn"
-        Me.IdPacienteDataGridViewTextBoxColumn.ReadOnly = True
         '
         'NIFDataGridViewTextBoxColumn
         '
         Me.NIFDataGridViewTextBoxColumn.DataPropertyName = "NIF"
         Me.NIFDataGridViewTextBoxColumn.HeaderText = "NIF"
         Me.NIFDataGridViewTextBoxColumn.Name = "NIFDataGridViewTextBoxColumn"
-        Me.NIFDataGridViewTextBoxColumn.ReadOnly = True
         '
         'NombreDataGridViewTextBoxColumn
         '
         Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
         Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
         Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
         '
         'FechaNacimientoDataGridViewTextBoxColumn
         '
         Me.FechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "fechaNacimiento"
         Me.FechaNacimientoDataGridViewTextBoxColumn.HeaderText = "fechaNacimiento"
         Me.FechaNacimientoDataGridViewTextBoxColumn.Name = "FechaNacimientoDataGridViewTextBoxColumn"
-        Me.FechaNacimientoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'SexoDataGridViewTextBoxColumn
         '
         Me.SexoDataGridViewTextBoxColumn.DataPropertyName = "sexo"
         Me.SexoDataGridViewTextBoxColumn.HeaderText = "sexo"
         Me.SexoDataGridViewTextBoxColumn.Name = "SexoDataGridViewTextBoxColumn"
-        Me.SexoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'PoblacionDataGridViewTextBoxColumn
         '
         Me.PoblacionDataGridViewTextBoxColumn.DataPropertyName = "Poblacion"
         Me.PoblacionDataGridViewTextBoxColumn.HeaderText = "Poblacion"
         Me.PoblacionDataGridViewTextBoxColumn.Name = "PoblacionDataGridViewTextBoxColumn"
-        Me.PoblacionDataGridViewTextBoxColumn.ReadOnly = True
         '
         'DirecciónDataGridViewTextBoxColumn
         '
         Me.DirecciónDataGridViewTextBoxColumn.DataPropertyName = "dirección"
         Me.DirecciónDataGridViewTextBoxColumn.HeaderText = "dirección"
         Me.DirecciónDataGridViewTextBoxColumn.Name = "DirecciónDataGridViewTextBoxColumn"
-        Me.DirecciónDataGridViewTextBoxColumn.ReadOnly = True
         '
         'TeléfonoDataGridViewTextBoxColumn
         '
         Me.TeléfonoDataGridViewTextBoxColumn.DataPropertyName = "teléfono"
         Me.TeléfonoDataGridViewTextBoxColumn.HeaderText = "teléfono"
         Me.TeléfonoDataGridViewTextBoxColumn.Name = "TeléfonoDataGridViewTextBoxColumn"
-        Me.TeléfonoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'TipoGrupoSanguineoDataGridViewTextBoxColumn
         '
         Me.TipoGrupoSanguineoDataGridViewTextBoxColumn.DataPropertyName = "TipoGrupoSanguineo"
         Me.TipoGrupoSanguineoDataGridViewTextBoxColumn.HeaderText = "TipoGrupoSanguineo"
         Me.TipoGrupoSanguineoDataGridViewTextBoxColumn.Name = "TipoGrupoSanguineoDataGridViewTextBoxColumn"
-        Me.TipoGrupoSanguineoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'AlturaDataGridViewTextBoxColumn
         '
         Me.AlturaDataGridViewTextBoxColumn.DataPropertyName = "altura"
         Me.AlturaDataGridViewTextBoxColumn.HeaderText = "altura"
         Me.AlturaDataGridViewTextBoxColumn.Name = "AlturaDataGridViewTextBoxColumn"
-        Me.AlturaDataGridViewTextBoxColumn.ReadOnly = True
         '
         'PesoDataGridViewTextBoxColumn
         '
         Me.PesoDataGridViewTextBoxColumn.DataPropertyName = "peso"
         Me.PesoDataGridViewTextBoxColumn.HeaderText = "peso"
         Me.PesoDataGridViewTextBoxColumn.Name = "PesoDataGridViewTextBoxColumn"
-        Me.PesoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'AlergiasDataGridViewTextBoxColumn
         '
         Me.AlergiasDataGridViewTextBoxColumn.DataPropertyName = "alergias"
         Me.AlergiasDataGridViewTextBoxColumn.HeaderText = "alergias"
         Me.AlergiasDataGridViewTextBoxColumn.Name = "AlergiasDataGridViewTextBoxColumn"
-        Me.AlergiasDataGridViewTextBoxColumn.ReadOnly = True
         '
         'ObservacionesDataGridViewTextBoxColumn
         '
         Me.ObservacionesDataGridViewTextBoxColumn.DataPropertyName = "observaciones"
         Me.ObservacionesDataGridViewTextBoxColumn.HeaderText = "observaciones"
         Me.ObservacionesDataGridViewTextBoxColumn.Name = "ObservacionesDataGridViewTextBoxColumn"
-        Me.ObservacionesDataGridViewTextBoxColumn.ReadOnly = True
         '
         'txtHistorial
         '

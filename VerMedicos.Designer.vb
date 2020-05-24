@@ -269,7 +269,6 @@ Partial Class VerMedicos
         '
         'DataMedicos
         '
-        Me.DataMedicos.AllowUserToDeleteRows = False
         Me.DataMedicos.AllowUserToOrderColumns = True
         Me.DataMedicos.AutoGenerateColumns = False
         Me.DataMedicos.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption
@@ -279,7 +278,6 @@ Partial Class VerMedicos
         Me.DataMedicos.GridColor = System.Drawing.SystemColors.ControlText
         Me.DataMedicos.Location = New System.Drawing.Point(170, 290)
         Me.DataMedicos.Name = "DataMedicos"
-        Me.DataMedicos.ReadOnly = True
         Me.DataMedicos.Size = New System.Drawing.Size(749, 215)
         Me.DataMedicos.TabIndex = 68
         '

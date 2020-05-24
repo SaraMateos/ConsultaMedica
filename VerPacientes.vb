@@ -80,7 +80,7 @@ Public Class VerPacientes
 
             End If
         Catch ex As Exception
-            MsgBox("No se pudo eliminar por el siguiente error: ", ex.Message)
+            MsgBox("No se pudo eliminar por el siguiente error: " + vbCrLf + ex.Message, vbCritical, "Atención")
         End Try
 
 
@@ -91,41 +91,44 @@ Public Class VerPacientes
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
 
         abrir()
-        Dim si As Byte
+        ' Me.PACIENTESTableAdapter.UpdateQuery(txtHistorial.Text, txtNIF.Text, txtNombre.Text, DTPFNacimiento.Value.Date, txtSexo.Text, txtPoblacion.Text,
+        'Dim si As Byte
 
-        Try
-            si = MsgBox("¿Estás seguro de modificar el paciente?", vbYesNo, "Atención")
+        'Try
+        'si = MsgBox("¿Estás seguro de modificar el paciente?", vbYesNo, "Atención")
+        '
+        'If si = vbYes Then
+        'PACIENTESBindingSource.EndEdit()
+        'PACIENTESTableAdapter.Update((ConsultaMedicaDataSet.PACIENTES))
 
-            If si = vbYes Then
-
-                comand = New OleDbCommand("UPDATE MEDICOS SET idPaciente = txtHistorial, NIF = txtNIF, Nombre = txtNombre, fechaNacimiento = DTPFNacimiento, sexo= txtSexo, Poblacion= txtpoblacion,
-                            dirección =  txtDireccion, teléfono = txtTelefono, TipoGrupoSanguineo = txtSangre, altura = txtAltura, peso = txtPeso, 
-                            alergias = txtxAlergias, observaciones = txtObservaciones WHERE idPaciente = @idPaciente", conexion1)
-                comand.Parameters.AddWithValue("@NIF", txtNIF.Text)
-                comand.Parameters.AddWithValue("@Nombre", txtNombre.Text)
-                comand.Parameters.AddWithValue("@fechaNaciemiento", DTPFNacimiento.Value.Date)
-                comand.Parameters.AddWithValue("@Sexo", txtSexo.Text)
-                comand.Parameters.AddWithValue("@Poblacion", txtPoblacion.Text)
-                comand.Parameters.AddWithValue("@dirección", txtDireccion.Text)
-                comand.Parameters.AddWithValue("@teléfono", txtTelefono.Text)
-                comand.Parameters.AddWithValue("@TipoGrupoSanguineo", txtSangre.Text)
-                comand.Parameters.AddWithValue("@altura", txtAltura.Text)
-                comand.Parameters.AddWithValue("@peso", txtPeso.Text)
-                comand.Parameters.AddWithValue("@alergias", txtAlergias.Text)
-                comand.Parameters.AddWithValue("@observaciones", txtObservaciones.Text)
-                comand.Parameters.AddWithValue("@idPaciente", txtHistorial.Text)
-
-                comand.ExecuteNonQuery()
+        'comand = New OleDbCommand("UPDATE PACIENTES SET idPaciente = txtHistorial, NIF = txtNIF, Nombre = txtNombre, fechaNacimiento = DTPFNacimiento, sexo= txtSexo, Poblacion= txtpoblacion,
+        '                   dirección =  txtDireccion, teléfono = txtTelefono, TipoGrupoSanguineo = txtSangre, altura = txtAltura, peso = txtPeso, 
+        '                  alergias = txtAlergias, observaciones = txtObservaciones WHERE idPaciente = @idPaciente", conexion1)
+        'comand.Parameters.AddWithValue("@NIF", txtNIF.Text)
+        'comand.Parameters.AddWithValue("@Nombre", txtNombre.Text)
+        'comand.Parameters.AddWithValue("@fechaNaciemiento", DTPFNacimiento.Value.Date)
+        'comand.Parameters.AddWithValue("@Sexo", txtSexo.Text)
+        'comand.Parameters.AddWithValue("@Poblacion", txtPoblacion.Text)
+        'comand.Parameters.AddWithValue("@dirección", txtDireccion.Text)
+        'comand.Parameters.AddWithValue("@teléfono", txtTelefono.Text)
+        'comand.Parameters.AddWithValue("@TipoGrupoSanguineo", txtSangre.Text)
+        'comand.Parameters.AddWithValue("@altura", txtAltura.Text)
+        'comand.Parameters.AddWithValue("@peso", txtPeso.Text)
+        'comand.Parameters.AddWithValue("@alergias", txtAlergias.Text)
+        'comand.Parameters.AddWithValue("@observaciones", txtObservaciones.Text)
+        'comand.Parameters.AddWithValue("@idPaciente", txtHistorial.Text)
+        '
+        'comand.ExecuteNonQuery()
 
 
-                MsgBox("Datos del paciente actualizados", MsgBoxStyle.Information, "Información")
-            Else
-                MsgBox("Se cancelo la actualización", MsgBoxStyle.Information, "Información")
+        'MsgBox("Datos del paciente actualizados", MsgBoxStyle.Information, "Información")
+        'Else
+        'MsgBox("Se cancelo la actualización", MsgBoxStyle.Information, "Información")
 
-            End If
-        Catch ex As Exception
-            MsgBox("No se pudo actualizar por el siguiente error: " + ex.Message, vbCritical, "Atención")
-        End Try
+        'End If
+        'Catch ex As Exception
+        'MsgBox("No se pudo actualizar por el siguiente error: " + vbCrLf + ex.Message, vbCritical, "Atención")
+        'End Try
 
     End Sub
 
@@ -151,9 +154,6 @@ Public Class VerPacientes
 
     'Pasar al siguiente paciente
     Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
-
-
-
         'PACIENTESBindingSource.MoveNext()
 
         ' Dim actual As Integer = DataPacientes.CurrentCell.RowIndex
@@ -179,4 +179,7 @@ Public Class VerPacientes
         Principal.Show()
     End Sub
 
+    Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
+        End
+    End Sub
 End Class

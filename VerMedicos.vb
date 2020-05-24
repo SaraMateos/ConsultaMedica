@@ -83,12 +83,36 @@ Public Class VerMedicos
 
     'Editar
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        On Error GoTo SaveErr
-        ' MEDICOSBindingSource.EndEdit()
-        ' MEDICOSTableAdapter.Update(ConsultaMedicaDataSet)
-        MessageBox.Show("Paciente guardado.")
-SaveErr:
-        Exit Sub
+        abrir()
+        Dim si As Byte
+
+        Try
+            si = MsgBox("¿Estás seguro de modificar el paciente?", vbYesNo, "Atención")
+
+            If si = vbYes Then
+
+                comand = New OleDbCommand("UPDATE INTO MEDICOS(idMedico = txtAbreviatura, Nombre = txtNombre, fechaNacimiento= DTPFNacimiento, numColegiado =txtColegiado, sexo=txtSexo, telefono=txtTelefono,
+                    idEspecialidad=cbEspecialidad)", conexion1)
+
+                comand.Parameters.AddWithValue("@idMedico", txtAbreviatura.Text)
+                comand.Parameters.AddWithValue("@Nombre", txtNombre.Text)
+                comand.Parameters.AddWithValue("@fechaNaciemiento", DTPFNacimiento.Value.Date)
+                comand.Parameters.AddWithValue("@numColegiado", txtColegiado.Text)
+                comand.Parameters.AddWithValue("@Sexo", txtSexo.Text)
+                comand.Parameters.AddWithValue("@telefono", txtTelefono.Text)
+                comand.Parameters.AddWithValue("@idEspecialidad", cbEspecialidad.Text)
+
+                comand.ExecuteNonQuery()
+
+                MsgBox("Nuevo médico agregado.", MsgBoxStyle.Information, "Información")
+            Else
+                MsgBox("Se cancelo la actualización", MsgBoxStyle.Information, "Información")
+
+            End If
+        Catch ex As Exception
+            MsgBox("No se pudo actualizar por el siguiente error: " + vbCrLf + ex.Message, vbCritical, "Atención")
+        End Try
+
     End Sub
 
     'Volver a la pestaña principal
@@ -97,7 +121,41 @@ SaveErr:
         Principal.Show()
     End Sub
 
+    'Ver datos del anterior médico
+    Private Sub btnAnterior_Click(sender As Object, e As EventArgs) Handles btnAnterior.Click
+        MEDICOSBindingSource.MovePrevious()
 
+        'Dim actual As Integer = DataMedicos.CurrentCell.RowIndex
+        'Dim atras As Integer = actual - 1
 
+        'Try
+        'If atras >= 0 Then
+        'DataMedicos.CurrentCell = DataMedicos.Rows(atras).Cells(0)
+        'DataMedicos.Rows(atras).Selected = True
+        'Else
+        'MsgBox("has llegado al primer paciente: ", MsgBoxStyle.Critical, "Advertencia")
+        'End If
+        'Catch ex As Exception
+        'MsgBox("Error: " & ex.Message)
+        'End Try
+    End Sub
 
+    'Ver datos del siguiente médico
+    Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
+        'MEDICOSBindingSource.MoveNext()
+
+        'Dim actual As Integer = DataMedicos.CurrentCell.RowIndex
+        'Dim siguiente As Integer = actual + 1
+
+        'Try
+        'If DataMedicos.Rows.Count > siguiente Then
+        'DataMedicos.CurrentCell = DataMedicos.Rows(siguiente).Cells(0)
+        'DataMedicos.Rows(siguiente).Selected = True
+        'Else
+        'MsgBox("has llegado al ultimo paciente: ", MsgBoxStyle.Critical, "Advertencia")
+        'End If
+        'Catch ex As Exception
+        'MsgBox("Error: " & ex.Message)
+        'End Try
+    End Sub
 End Class

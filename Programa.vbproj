@@ -96,6 +96,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ConsultaMedicaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ConsultaMedicaDataSet.vb">
+      <DependentUpon>ConsultaMedicaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>

@@ -34,4 +34,5 @@ Public Class NuevoMedico
 
     End Sub
 
+
 End Class
