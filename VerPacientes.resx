@@ -432,6 +432,20 @@
   <metadata name="PACIENTESTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>390, 17</value>
   </metadata>
+  <data name="btnCerrarSesion.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
+        TUUH5AUYExsifnqUYwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGTSURBVEhL
+        1dZNKwVhGMbxI3kNCUUhdj4Byk5ZKYRCsVOsyJKSsmJnoeQbUKKUouyIBRsrr1uW5C1C4n/VzHSfOfOc
+        F52Nq36b576f+zkzzUwnlkH6cOvp1UI2k4dn/HievLWspQ7+cJ/Wspb/dUAt9nGPVeTCdYBq6lGv9tQj
+        acpwBjtoAK4DBkNrN6iCM9uwG2QMrgPGQ2uyg8i0I9x8jVK4DtAVqydc60ZCDmCbdF+boLgOUNSjXls7
+        Qlwq8Q3bNAE/NbA1qYafKYTrDQjSD1t8QxFsLuDXz7Vgot532BlDCDIHWzxGOI1Y8cT9Oi/aY2fMIsgi
+        bHEXmWYPdsYCgkzDFk+RaU5gZ8wgSCds8QPlSDcV+ISd0YUgevvCDXH3MEXmYfd+QYfGZRO2SU9FM1Kl
+        Dbpiu3cDCWlF+F14QA9c0eP9CLtHM1oQmWXYZt8h9OJ1eCahtzWqdwnO5EOPaNTGdOiTXYCkKcEWogYk
+        o/tejLSSA32K7xA1zNK/jFH8KYUYwRou8YJXXGEdw1CPI7HYL0kh6Q/gHGWWAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAHYAAAB2AAAAAAAAAAAA

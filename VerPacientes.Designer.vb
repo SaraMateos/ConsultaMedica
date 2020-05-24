@@ -76,6 +76,7 @@ Partial Class VerPacientes
         Me.AlergiasDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ObservacionesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtHistorial = New System.Windows.Forms.TextBox()
+        Me.btnCerrarSesion = New System.Windows.Forms.Button()
         CType(Me.PACIENTESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBDatosMedicos.SuspendLayout()
@@ -99,7 +100,7 @@ Partial Class VerPacientes
         Me.btnSiguiente.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSiguiente.Image = CType(resources.GetObject("btnSiguiente.Image"), System.Drawing.Image)
-        Me.btnSiguiente.Location = New System.Drawing.Point(963, 11)
+        Me.btnSiguiente.Location = New System.Drawing.Point(932, 11)
         Me.btnSiguiente.Name = "btnSiguiente"
         Me.btnSiguiente.Size = New System.Drawing.Size(56, 48)
         Me.btnSiguiente.TabIndex = 58
@@ -110,7 +111,7 @@ Partial Class VerPacientes
         Me.btnAnterior.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAnterior.Image = CType(resources.GetObject("btnAnterior.Image"), System.Drawing.Image)
-        Me.btnAnterior.Location = New System.Drawing.Point(901, 11)
+        Me.btnAnterior.Location = New System.Drawing.Point(870, 11)
         Me.btnAnterior.Name = "btnAnterior"
         Me.btnAnterior.Size = New System.Drawing.Size(56, 48)
         Me.btnAnterior.TabIndex = 57
@@ -462,78 +463,91 @@ Partial Class VerPacientes
         Me.IdPacienteDataGridViewTextBoxColumn.DataPropertyName = "idPaciente"
         Me.IdPacienteDataGridViewTextBoxColumn.HeaderText = "idPaciente"
         Me.IdPacienteDataGridViewTextBoxColumn.Name = "IdPacienteDataGridViewTextBoxColumn"
+        Me.IdPacienteDataGridViewTextBoxColumn.ReadOnly = True
         '
         'NIFDataGridViewTextBoxColumn
         '
         Me.NIFDataGridViewTextBoxColumn.DataPropertyName = "NIF"
         Me.NIFDataGridViewTextBoxColumn.HeaderText = "NIF"
         Me.NIFDataGridViewTextBoxColumn.Name = "NIFDataGridViewTextBoxColumn"
+        Me.NIFDataGridViewTextBoxColumn.ReadOnly = True
         '
         'NombreDataGridViewTextBoxColumn
         '
         Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
         Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
         Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
         '
         'FechaNacimientoDataGridViewTextBoxColumn
         '
         Me.FechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "fechaNacimiento"
         Me.FechaNacimientoDataGridViewTextBoxColumn.HeaderText = "fechaNacimiento"
         Me.FechaNacimientoDataGridViewTextBoxColumn.Name = "FechaNacimientoDataGridViewTextBoxColumn"
+        Me.FechaNacimientoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'SexoDataGridViewTextBoxColumn
         '
         Me.SexoDataGridViewTextBoxColumn.DataPropertyName = "sexo"
         Me.SexoDataGridViewTextBoxColumn.HeaderText = "sexo"
         Me.SexoDataGridViewTextBoxColumn.Name = "SexoDataGridViewTextBoxColumn"
+        Me.SexoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'PoblacionDataGridViewTextBoxColumn
         '
         Me.PoblacionDataGridViewTextBoxColumn.DataPropertyName = "Poblacion"
         Me.PoblacionDataGridViewTextBoxColumn.HeaderText = "Poblacion"
         Me.PoblacionDataGridViewTextBoxColumn.Name = "PoblacionDataGridViewTextBoxColumn"
+        Me.PoblacionDataGridViewTextBoxColumn.ReadOnly = True
         '
         'DirecciónDataGridViewTextBoxColumn
         '
         Me.DirecciónDataGridViewTextBoxColumn.DataPropertyName = "dirección"
         Me.DirecciónDataGridViewTextBoxColumn.HeaderText = "dirección"
         Me.DirecciónDataGridViewTextBoxColumn.Name = "DirecciónDataGridViewTextBoxColumn"
+        Me.DirecciónDataGridViewTextBoxColumn.ReadOnly = True
         '
         'TeléfonoDataGridViewTextBoxColumn
         '
         Me.TeléfonoDataGridViewTextBoxColumn.DataPropertyName = "teléfono"
         Me.TeléfonoDataGridViewTextBoxColumn.HeaderText = "teléfono"
         Me.TeléfonoDataGridViewTextBoxColumn.Name = "TeléfonoDataGridViewTextBoxColumn"
+        Me.TeléfonoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'TipoGrupoSanguineoDataGridViewTextBoxColumn
         '
         Me.TipoGrupoSanguineoDataGridViewTextBoxColumn.DataPropertyName = "TipoGrupoSanguineo"
         Me.TipoGrupoSanguineoDataGridViewTextBoxColumn.HeaderText = "TipoGrupoSanguineo"
         Me.TipoGrupoSanguineoDataGridViewTextBoxColumn.Name = "TipoGrupoSanguineoDataGridViewTextBoxColumn"
+        Me.TipoGrupoSanguineoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'AlturaDataGridViewTextBoxColumn
         '
         Me.AlturaDataGridViewTextBoxColumn.DataPropertyName = "altura"
         Me.AlturaDataGridViewTextBoxColumn.HeaderText = "altura"
         Me.AlturaDataGridViewTextBoxColumn.Name = "AlturaDataGridViewTextBoxColumn"
+        Me.AlturaDataGridViewTextBoxColumn.ReadOnly = True
         '
         'PesoDataGridViewTextBoxColumn
         '
         Me.PesoDataGridViewTextBoxColumn.DataPropertyName = "peso"
         Me.PesoDataGridViewTextBoxColumn.HeaderText = "peso"
         Me.PesoDataGridViewTextBoxColumn.Name = "PesoDataGridViewTextBoxColumn"
+        Me.PesoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'AlergiasDataGridViewTextBoxColumn
         '
         Me.AlergiasDataGridViewTextBoxColumn.DataPropertyName = "alergias"
         Me.AlergiasDataGridViewTextBoxColumn.HeaderText = "alergias"
         Me.AlergiasDataGridViewTextBoxColumn.Name = "AlergiasDataGridViewTextBoxColumn"
+        Me.AlergiasDataGridViewTextBoxColumn.ReadOnly = True
         '
         'ObservacionesDataGridViewTextBoxColumn
         '
         Me.ObservacionesDataGridViewTextBoxColumn.DataPropertyName = "observaciones"
         Me.ObservacionesDataGridViewTextBoxColumn.HeaderText = "observaciones"
         Me.ObservacionesDataGridViewTextBoxColumn.Name = "ObservacionesDataGridViewTextBoxColumn"
+        Me.ObservacionesDataGridViewTextBoxColumn.ReadOnly = True
         '
         'txtHistorial
         '
@@ -544,12 +558,24 @@ Partial Class VerPacientes
         Me.txtHistorial.Size = New System.Drawing.Size(134, 20)
         Me.txtHistorial.TabIndex = 60
         '
+        'btnCerrarSesion
+        '
+        Me.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.btnCerrarSesion.Image = CType(resources.GetObject("btnCerrarSesion.Image"), System.Drawing.Image)
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(1005, 19)
+        Me.btnCerrarSesion.Name = "btnCerrarSesion"
+        Me.btnCerrarSesion.Size = New System.Drawing.Size(27, 30)
+        Me.btnCerrarSesion.TabIndex = 61
+        Me.btnCerrarSesion.UseVisualStyleBackColor = True
+        '
         'VerPacientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.ClientSize = New System.Drawing.Size(1044, 763)
+        Me.Controls.Add(Me.btnCerrarSesion)
         Me.Controls.Add(Me.txtHistorial)
         Me.Controls.Add(Me.DataPacientes)
         Me.Controls.Add(Me.btnSiguiente)
@@ -629,4 +655,5 @@ Partial Class VerPacientes
     Friend WithEvents PesoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents AlergiasDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ObservacionesDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btnCerrarSesion As Button
 End Class

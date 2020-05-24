@@ -31,6 +31,7 @@ Partial Class Principal
         Me.btnConsultas = New System.Windows.Forms.Button()
         Me.btnMedicos = New System.Windows.Forms.Button()
         Me.btnPacientes = New System.Windows.Forms.Button()
+        Me.btnCerrarSesion = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblConsultas
@@ -117,12 +118,24 @@ Partial Class Principal
         Me.btnPacientes.TabIndex = 20
         Me.btnPacientes.UseVisualStyleBackColor = True
         '
+        'btnCerrarSesion
+        '
+        Me.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.btnCerrarSesion.Image = CType(resources.GetObject("btnCerrarSesion.Image"), System.Drawing.Image)
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(508, 5)
+        Me.btnCerrarSesion.Name = "btnCerrarSesion"
+        Me.btnCerrarSesion.Size = New System.Drawing.Size(27, 30)
+        Me.btnCerrarSesion.TabIndex = 28
+        Me.btnCerrarSesion.UseVisualStyleBackColor = True
+        '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.ClientSize = New System.Drawing.Size(547, 423)
+        Me.Controls.Add(Me.btnCerrarSesion)
         Me.Controls.Add(Me.lblConsultas)
         Me.Controls.Add(Me.lblRecetas)
         Me.Controls.Add(Me.lblDoctor)
@@ -147,4 +160,5 @@ Partial Class Principal
     Friend WithEvents btnConsultas As Button
     Friend WithEvents btnMedicos As Button
     Friend WithEvents btnPacientes As Button
+    Friend WithEvents btnCerrarSesion As Button
 End Class

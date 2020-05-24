@@ -2,11 +2,13 @@
 
 Public Class NuevoMedico
 
+    'Vuelve a la pestaña de medicos
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         Me.Hide()
         VerMedicos.Show()
     End Sub
 
+    'Agrega un nuevo médico
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
 
         'Abrir conexión

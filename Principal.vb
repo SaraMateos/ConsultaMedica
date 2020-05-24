@@ -22,4 +22,7 @@
         Consulta.Show()
     End Sub
 
+    Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
+        End
+    End Sub
 End Class
