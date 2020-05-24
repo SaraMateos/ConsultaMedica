@@ -21,6 +21,7 @@ Public Class VerMedicos
     End Sub
 
     Private Sub verMedicos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         'abrir conexión
         abrir()
 

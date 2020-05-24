@@ -58,11 +58,14 @@ Partial Class VerMedicos
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.btnAnterior = New System.Windows.Forms.Button()
         Me.txtColegiado = New System.Windows.Forms.TextBox()
+        Me.ESPECIALIDADESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ESPECIALIDADESTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.ESPECIALIDADESTableAdapter()
         Me.GBDatosPersonales.SuspendLayout()
         CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataMedicos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ESPECIALIDADESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnNuevo
@@ -135,6 +138,7 @@ Partial Class VerMedicos
         Me.cbEspecialidad.Name = "cbEspecialidad"
         Me.cbEspecialidad.Size = New System.Drawing.Size(196, 21)
         Me.cbEspecialidad.TabIndex = 17
+        Me.cbEspecialidad.ValueMember = "idEspecialidad"
         '
         'MEDICOSBindingSource
         '
@@ -367,11 +371,21 @@ Partial Class VerMedicos
         '
         'txtColegiado
         '
+        Me.txtColegiado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MEDICOSBindingSource, "numColegiado", True))
         Me.txtColegiado.Location = New System.Drawing.Point(116, 21)
         Me.txtColegiado.Name = "txtColegiado"
         Me.txtColegiado.ReadOnly = True
         Me.txtColegiado.Size = New System.Drawing.Size(119, 20)
         Me.txtColegiado.TabIndex = 72
+        '
+        'ESPECIALIDADESBindingSource
+        '
+        Me.ESPECIALIDADESBindingSource.DataMember = "ESPECIALIDADES"
+        Me.ESPECIALIDADESBindingSource.DataSource = Me.ConsultaMedicaDataSet
+        '
+        'ESPECIALIDADESTableAdapter
+        '
+        Me.ESPECIALIDADESTableAdapter.ClearBeforeFill = True
         '
         'VerMedicos
         '
@@ -400,6 +414,7 @@ Partial Class VerMedicos
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataMedicos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ESPECIALIDADESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -438,4 +453,6 @@ Partial Class VerMedicos
     Friend WithEvents btnSiguiente As Button
     Friend WithEvents btnAnterior As Button
     Friend WithEvents txtColegiado As TextBox
+    Friend WithEvents ESPECIALIDADESBindingSource As BindingSource
+    Friend WithEvents ESPECIALIDADESTableAdapter As ConsultaMedicaDataSetTableAdapters.ESPECIALIDADESTableAdapter
 End Class

@@ -2,7 +2,7 @@
 
 Public Class NuevoMedico
 
-    'Vuelve a la pestaña de medicos
+    'Vuelve a la pestaña de médicos
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         Me.Hide()
         VerMedicos.Show()
@@ -33,4 +33,5 @@ Public Class NuevoMedico
         Me.Hide()
 
     End Sub
+
 End Class

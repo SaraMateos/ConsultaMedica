@@ -97,10 +97,8 @@ Public Class VerPacientes
             si = MsgBox("¿Estás seguro de modificar el paciente?", vbYesNo, "Atención")
 
             If si = vbYes Then
-                'PACIENTESBindingSource.EndEdit()
-                'PACIENTESTableAdapter.Update((ConsultaMedicaDataSet.PACIENTES))
 
-                comand = New OleDbCommand("UPDATE PACIENTES SET idPaciente = txtHistorial, NIF = txtNIF, Nombre = txtNombre, fechaNacimiento = DTPFNacimiento, sexo= txtSexo, Poblacion= txtpoblacion,
+                comand = New OleDbCommand("UPDATE MEDICOS SET idPaciente = txtHistorial, NIF = txtNIF, Nombre = txtNombre, fechaNacimiento = DTPFNacimiento, sexo= txtSexo, Poblacion= txtpoblacion,
                             dirección =  txtDireccion, teléfono = txtTelefono, TipoGrupoSanguineo = txtSangre, altura = txtAltura, peso = txtPeso, 
                             alergias = txtxAlergias, observaciones = txtObservaciones WHERE idPaciente = @idPaciente", conexion1)
                 comand.Parameters.AddWithValue("@NIF", txtNIF.Text)

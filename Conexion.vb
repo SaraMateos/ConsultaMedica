@@ -17,7 +17,7 @@ Module Conexion
 
             conexion1.ConnectionString = cadenaconexion
             conexion1.Open()
-            MsgBox("ok")
+            'MsgBox("ok")
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
