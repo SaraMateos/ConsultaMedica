@@ -26,6 +26,8 @@ Partial Class Consulta
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Consulta))
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.txtTratamiento = New System.Windows.Forms.TextBox()
+        Me.CONSULTABindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ConsultaMedicaDataSet = New WindowsApp1.ConsultaMedicaDataSet()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtDiagnostico = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -36,27 +38,15 @@ Partial Class Consulta
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtNombrePaciente = New System.Windows.Forms.TextBox()
+        Me.PACIENTESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtNumHistorial = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.txtPacientes = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataConsultas = New System.Windows.Forms.DataGridView()
-        Me.txtNombreMedico = New System.Windows.Forms.TextBox()
-        Me.DTPFechaRealizada = New System.Windows.Forms.DateTimePicker()
-        Me.txtEnfermedad = New System.Windows.Forms.TextBox()
-        Me.lblEnfermedad = New System.Windows.Forms.Label()
-        Me.CONSULTABindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ConsultaMedicaDataSet = New WindowsApp1.ConsultaMedicaDataSet()
-        Me.PACIENTESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CONSULTATableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.CONSULTATableAdapter()
-        Me.PACIENTESTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.PACIENTESTableAdapter()
-        Me.MEDICOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MEDICOSTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.MEDICOSTableAdapter()
-        Me.btnSiguiente = New System.Windows.Forms.Button()
-        Me.btnAnterior = New System.Windows.Forms.Button()
         Me.IdConsultaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdPacienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdMedicoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -65,11 +55,21 @@ Partial Class Consulta
         Me.DiagnosticoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TratamientoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idEnfermedad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GroupBox1.SuspendLayout()
-        CType(Me.DataConsultas, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.txtNombreMedico = New System.Windows.Forms.TextBox()
+        Me.DTPFechaRealizada = New System.Windows.Forms.DateTimePicker()
+        Me.txtEnfermedad = New System.Windows.Forms.TextBox()
+        Me.lblEnfermedad = New System.Windows.Forms.Label()
+        Me.CONSULTATableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.CONSULTATableAdapter()
+        Me.PACIENTESTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.PACIENTESTableAdapter()
+        Me.MEDICOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MEDICOSTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.MEDICOSTableAdapter()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
+        Me.btnAnterior = New System.Windows.Forms.Button()
         CType(Me.CONSULTABindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PACIENTESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.DataConsultas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -90,6 +90,16 @@ Partial Class Consulta
         Me.txtTratamiento.Name = "txtTratamiento"
         Me.txtTratamiento.Size = New System.Drawing.Size(639, 66)
         Me.txtTratamiento.TabIndex = 76
+        '
+        'CONSULTABindingSource
+        '
+        Me.CONSULTABindingSource.DataMember = "CONSULTA"
+        Me.CONSULTABindingSource.DataSource = Me.ConsultaMedicaDataSet
+        '
+        'ConsultaMedicaDataSet
+        '
+        Me.ConsultaMedicaDataSet.DataSetName = "ConsultaMedicaDataSet"
+        Me.ConsultaMedicaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label8
         '
@@ -181,6 +191,11 @@ Partial Class Consulta
         Me.txtNombrePaciente.Size = New System.Drawing.Size(335, 20)
         Me.txtNombrePaciente.TabIndex = 64
         '
+        'PACIENTESBindingSource
+        '
+        Me.PACIENTESBindingSource.DataMember = "PACIENTES"
+        Me.PACIENTESBindingSource.DataSource = Me.ConsultaMedicaDataSet
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -210,8 +225,8 @@ Partial Class Consulta
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.btnBuscar)
+        Me.GroupBox1.Controls.Add(Me.txtPacientes)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 11)
         Me.GroupBox1.Name = "GroupBox1"
@@ -220,22 +235,22 @@ Partial Class Consulta
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar"
         '
-        'Button1
+        'btnBuscar
         '
-        Me.Button1.Location = New System.Drawing.Point(573, 24)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnBuscar.Location = New System.Drawing.Point(573, 24)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuscar.TabIndex = 2
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txtPacientes
         '
-        Me.TextBox1.Location = New System.Drawing.Point(82, 24)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(485, 23)
-        Me.TextBox1.TabIndex = 1
+        Me.txtPacientes.Location = New System.Drawing.Point(82, 24)
+        Me.txtPacientes.Multiline = True
+        Me.txtPacientes.Name = "txtPacientes"
+        Me.txtPacientes.Size = New System.Drawing.Size(485, 23)
+        Me.txtPacientes.TabIndex = 1
         '
         'Label1
         '
@@ -259,97 +274,6 @@ Partial Class Consulta
         Me.DataConsultas.Name = "DataConsultas"
         Me.DataConsultas.Size = New System.Drawing.Size(646, 493)
         Me.DataConsultas.TabIndex = 80
-        '
-        'txtNombreMedico
-        '
-        Me.txtNombreMedico.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "idMedico", True))
-        Me.txtNombreMedico.Location = New System.Drawing.Point(133, 166)
-        Me.txtNombreMedico.Multiline = True
-        Me.txtNombreMedico.Name = "txtNombreMedico"
-        Me.txtNombreMedico.Size = New System.Drawing.Size(335, 20)
-        Me.txtNombreMedico.TabIndex = 81
-        '
-        'DTPFechaRealizada
-        '
-        Me.DTPFechaRealizada.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "fechaRealizada", True))
-        Me.DTPFechaRealizada.Location = New System.Drawing.Point(133, 202)
-        Me.DTPFechaRealizada.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
-        Me.DTPFechaRealizada.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
-        Me.DTPFechaRealizada.Name = "DTPFechaRealizada"
-        Me.DTPFechaRealizada.Size = New System.Drawing.Size(335, 20)
-        Me.DTPFechaRealizada.TabIndex = 20
-        '
-        'txtEnfermedad
-        '
-        Me.txtEnfermedad.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "idEnfermedad", True))
-        Me.txtEnfermedad.Location = New System.Drawing.Point(497, 205)
-        Me.txtEnfermedad.Multiline = True
-        Me.txtEnfermedad.Name = "txtEnfermedad"
-        Me.txtEnfermedad.Size = New System.Drawing.Size(163, 20)
-        Me.txtEnfermedad.TabIndex = 84
-        '
-        'lblEnfermedad
-        '
-        Me.lblEnfermedad.AutoSize = True
-        Me.lblEnfermedad.Location = New System.Drawing.Point(494, 189)
-        Me.lblEnfermedad.Name = "lblEnfermedad"
-        Me.lblEnfermedad.Size = New System.Drawing.Size(64, 13)
-        Me.lblEnfermedad.TabIndex = 83
-        Me.lblEnfermedad.Text = "Enfermedad"
-        '
-        'CONSULTABindingSource
-        '
-        Me.CONSULTABindingSource.DataMember = "CONSULTA"
-        Me.CONSULTABindingSource.DataSource = Me.ConsultaMedicaDataSet
-        '
-        'ConsultaMedicaDataSet
-        '
-        Me.ConsultaMedicaDataSet.DataSetName = "ConsultaMedicaDataSet"
-        Me.ConsultaMedicaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PACIENTESBindingSource
-        '
-        Me.PACIENTESBindingSource.DataMember = "PACIENTES"
-        Me.PACIENTESBindingSource.DataSource = Me.ConsultaMedicaDataSet
-        '
-        'CONSULTATableAdapter
-        '
-        Me.CONSULTATableAdapter.ClearBeforeFill = True
-        '
-        'PACIENTESTableAdapter
-        '
-        Me.PACIENTESTableAdapter.ClearBeforeFill = True
-        '
-        'MEDICOSBindingSource
-        '
-        Me.MEDICOSBindingSource.DataMember = "MEDICOS"
-        Me.MEDICOSBindingSource.DataSource = Me.ConsultaMedicaDataSet
-        '
-        'MEDICOSTableAdapter
-        '
-        Me.MEDICOSTableAdapter.ClearBeforeFill = True
-        '
-        'btnSiguiente
-        '
-        Me.btnSiguiente.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSiguiente.Image = CType(resources.GetObject("btnSiguiente.Image"), System.Drawing.Image)
-        Me.btnSiguiente.Location = New System.Drawing.Point(1301, 12)
-        Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(56, 48)
-        Me.btnSiguiente.TabIndex = 86
-        Me.btnSiguiente.UseVisualStyleBackColor = True
-        '
-        'btnAnterior
-        '
-        Me.btnAnterior.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAnterior.Image = CType(resources.GetObject("btnAnterior.Image"), System.Drawing.Image)
-        Me.btnAnterior.Location = New System.Drawing.Point(1239, 12)
-        Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(56, 48)
-        Me.btnAnterior.TabIndex = 85
-        Me.btnAnterior.UseVisualStyleBackColor = True
         '
         'IdConsultaDataGridViewTextBoxColumn
         '
@@ -404,6 +328,82 @@ Partial Class Consulta
         Me.idEnfermedad.Name = "idEnfermedad"
         Me.idEnfermedad.Width = 80
         '
+        'txtNombreMedico
+        '
+        Me.txtNombreMedico.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "idMedico", True))
+        Me.txtNombreMedico.Location = New System.Drawing.Point(133, 166)
+        Me.txtNombreMedico.Multiline = True
+        Me.txtNombreMedico.Name = "txtNombreMedico"
+        Me.txtNombreMedico.Size = New System.Drawing.Size(335, 20)
+        Me.txtNombreMedico.TabIndex = 81
+        '
+        'DTPFechaRealizada
+        '
+        Me.DTPFechaRealizada.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "fechaRealizada", True))
+        Me.DTPFechaRealizada.Location = New System.Drawing.Point(133, 202)
+        Me.DTPFechaRealizada.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
+        Me.DTPFechaRealizada.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
+        Me.DTPFechaRealizada.Name = "DTPFechaRealizada"
+        Me.DTPFechaRealizada.Size = New System.Drawing.Size(335, 20)
+        Me.DTPFechaRealizada.TabIndex = 20
+        '
+        'txtEnfermedad
+        '
+        Me.txtEnfermedad.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "idEnfermedad", True))
+        Me.txtEnfermedad.Location = New System.Drawing.Point(497, 205)
+        Me.txtEnfermedad.Multiline = True
+        Me.txtEnfermedad.Name = "txtEnfermedad"
+        Me.txtEnfermedad.Size = New System.Drawing.Size(163, 20)
+        Me.txtEnfermedad.TabIndex = 84
+        '
+        'lblEnfermedad
+        '
+        Me.lblEnfermedad.AutoSize = True
+        Me.lblEnfermedad.Location = New System.Drawing.Point(494, 189)
+        Me.lblEnfermedad.Name = "lblEnfermedad"
+        Me.lblEnfermedad.Size = New System.Drawing.Size(64, 13)
+        Me.lblEnfermedad.TabIndex = 83
+        Me.lblEnfermedad.Text = "Enfermedad"
+        '
+        'CONSULTATableAdapter
+        '
+        Me.CONSULTATableAdapter.ClearBeforeFill = True
+        '
+        'PACIENTESTableAdapter
+        '
+        Me.PACIENTESTableAdapter.ClearBeforeFill = True
+        '
+        'MEDICOSBindingSource
+        '
+        Me.MEDICOSBindingSource.DataMember = "MEDICOS"
+        Me.MEDICOSBindingSource.DataSource = Me.ConsultaMedicaDataSet
+        '
+        'MEDICOSTableAdapter
+        '
+        Me.MEDICOSTableAdapter.ClearBeforeFill = True
+        '
+        'btnSiguiente
+        '
+        Me.btnSiguiente.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSiguiente.Image = CType(resources.GetObject("btnSiguiente.Image"), System.Drawing.Image)
+        Me.btnSiguiente.Location = New System.Drawing.Point(1301, 12)
+        Me.btnSiguiente.Name = "btnSiguiente"
+        Me.btnSiguiente.Size = New System.Drawing.Size(56, 48)
+        Me.btnSiguiente.TabIndex = 86
+        Me.btnSiguiente.UseVisualStyleBackColor = True
+        '
+        'btnAnterior
+        '
+        Me.btnAnterior.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAnterior.Image = CType(resources.GetObject("btnAnterior.Image"), System.Drawing.Image)
+        Me.btnAnterior.Location = New System.Drawing.Point(1239, 12)
+        Me.btnAnterior.Name = "btnAnterior"
+        Me.btnAnterior.Size = New System.Drawing.Size(56, 48)
+        Me.btnAnterior.TabIndex = 85
+        Me.btnAnterior.UseVisualStyleBackColor = True
+        '
         'Consulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -436,12 +436,12 @@ Partial Class Consulta
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Consulta"
         Me.Text = "Consulta"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        CType(Me.DataConsultas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CONSULTABindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PACIENTESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.DataConsultas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -464,8 +464,8 @@ Partial Class Consulta
     Friend WithEvents txtNumHistorial As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents btnBuscar As Button
+    Friend WithEvents txtPacientes As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents DataConsultas As DataGridView
     Friend WithEvents ConsultaMedicaDataSet As ConsultaMedicaDataSet

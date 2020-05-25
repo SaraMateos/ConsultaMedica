@@ -64,24 +64,14 @@ Public Class VerPacientes
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
 
         abrir()
-        Dim si As Byte
+        Dim eliminarRegistro As String
 
-        Try
-            si = MsgBox("¿Estás seguro de eliminar el paciente?", vbYesNo, "Atención")
+        DataPacientes.Rows.Remove(DataPacientes.CurrentRow)
 
-            If si = vbYes Then
-                comand = New OleDbCommand("DELETE FROM PACIENTES WHERE NIF = @NIF", conexion1)
-                comand.Parameters.AddWithValue("@NIF", txtNIF.Text)
 
-                'comand = New OleDbCommand(eliminar, conexion1)
-                comand.ExecuteNonQuery()
-
-                MsgBox("Eliminado corectamente.", vbInformation, "Información")
-
-            End If
-        Catch ex As Exception
-            MsgBox("No se pudo eliminar por el siguiente error: " + vbCrLf + ex.Message, vbCritical, "Atención")
-        End Try
+        eliminarRegistro = "DELETE FROM PACIENTES WHERE idPaciente = " & Me.txtHistorial.Text & ""
+        comand = New OleDbCommand(eliminarRegistro, conexion1)
+        comand.ExecuteNonQuery()
 
 
     End Sub
@@ -180,6 +170,45 @@ Public Class VerPacientes
     End Sub
 
     Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
+        MsgBox("Cerrando aplicación.", MsgBoxStyle.Information, "Cerrando...")
         End
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Dim consulta As String
+        Dim oda As New OleDbDataAdapter
+        Dim ods As DataSet
+        Dim registro As Byte
+
+        If txtNomPaciente.Text <> "" Then
+            consulta = "SELECT * FROM PACIENTES WHERE Nombre = " & txtNomPaciente.Text & ""
+            oda = New OleDbDataAdapter(consulta, conexion1)
+            ods = New DataSet
+            oda.Fill(ods, "PACIENTES")
+            registro = ods.Tables("PACIENTES").Rows.Count
+
+            If registro <> 0 Then
+                DataPacientes.DataSource = ods
+                DataPacientes.DataMember = "PACIENTES"
+
+                txtHistorial.Text = ods.Tables("PACIENTES").Rows(0).Item("idPaciente")
+                txtNIF.Text = ods.Tables("PACIENTES").Rows(0).Item("NIF")
+                txtNombre.Text = ods.Tables("PACIENTES").Rows(0).Item("Nombre")
+                DTPFNacimiento.Value = ods.Tables("PACIENTES").Rows(0).Item("fechaNacimiento")
+                txtSexo.Text = ods.Tables("PACIENTES").Rows(0).Item("sexo")
+                txtPoblacion.Text = ods.Tables("PACIENTES").Rows(0).Item("Poblacion")
+                txtDireccion.Text = ods.Tables("PACIENTES").Rows(0).Item("dirección")
+                txtTelefono.Text = ods.Tables("PACIENTES").Rows(0).Item("teléfono")
+                txtSangre.Text = ods.Tables("PACIENTES").Rows(0).Item("TipoGrupoSanguineo")
+                txtAltura.Text = ods.Tables("PACIENTES").Rows(0).Item("altura")
+                txtPeso.Text = ods.Tables("PACIENTES").Rows(0).Item("peso")
+                txtAlergias.Text = ods.Tables("PACIENTES").Rows(0).Item("alergias")
+                txtObservaciones.Text = ods.Tables("PACIENTES").Rows(0).Item("observaciones")
+
+            Else
+                MsgBox("No exixte el código", vbCritical, "Atención")
+            End If
+
+        End If
     End Sub
 End Class

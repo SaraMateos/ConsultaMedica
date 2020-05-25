@@ -23,6 +23,7 @@
     End Sub
 
     Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
+        MsgBox("Cerrando aplicación.", MsgBoxStyle.Information, "Cerrando...")
         End
     End Sub
 End Class

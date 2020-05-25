@@ -52,7 +52,7 @@ Public Class Consulta
         'Abrir conexión
         'abrir()
 
-        comand = New OleDbCommand("INSERT INTO CONSULTAA(idPaciente, idMedico, fechaRealizada, motivoConsulta, diagnostico, 
+        comand = New OleDbCommand("INSERT INTO CONSULTA(idPaciente, idMedico, fechaRealizada, motivoConsulta, diagnostico, 
             tratamiento, idEnfermedad)" & " VALUES(txtNumHistorial, txtNombreMedico, DTPFechaRealizada, txtMotivo, txtDiagnostico, txtTratamiento, txtEnfermedad)", conexion1)
         comand.Parameters.AddWithValue("@idPaciente", txtNumHistorial.Text)
         comand.Parameters.AddWithValue("@idMedico", txtNombreMedico.Text)
@@ -69,8 +69,21 @@ Public Class Consulta
 
     End Sub
 
-    'Borrar
+    'Borrar consulta
     Private Sub btnBorrar_Click(sender As Object, e As EventArgs) Handles btnBorrar.Click
+
+        abrir()
+
+        Dim eliminarRegistro As String
+
+        DataConsultas.Rows.Remove(DataConsultas.CurrentRow)
+
+
+        eliminarRegistro = "DELETE FROM CONSULTA WHERE fechaRealizada = " & Me.DTPFechaRealizada.Value & ""
+        comand = New OleDbCommand(eliminarRegistro, conexion1)
+        comand.ExecuteNonQuery()
+
+        MsgBox("Eliminado corectamente.", vbInformation, "Información")
 
     End Sub
 
@@ -80,5 +93,36 @@ Public Class Consulta
         Principal.Show()
     End Sub
 
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Dim consulta As String
+        Dim oda As New OleDbDataAdapter
+        Dim ods As DataSet
+        Dim registro As Byte
 
+        If txtPacientes.Text <> "" Then
+            consulta = "Select * from CONSULTA where idPaciente = " & txtPacientes.Text & ""
+            oda = New OleDbDataAdapter(consulta, conexion1)
+            ods = New DataSet
+            oda.Fill(ods, "CONSULTA")
+            registro = ods.Tables("CONSULTA").Rows.Count
+
+            If registro <> 0 Then
+                DataConsultas.DataSource = ods
+                DataConsultas.DataMember = "CONSULTA"
+
+                txtNumHistorial.Text = ods.Tables("CONSULTA").Rows(0).Item("idPaciente")
+                txtNombreMedico.Text = ods.Tables("CONSULTA").Rows(0).Item("idMedico")
+                DTPFechaRealizada.Value = ods.Tables("CONSULTA").Rows(0).Item("fechaRealizada")
+                txtMotivo.Text = ods.Tables("CONSULTA").Rows(0).Item("motivoConsulta")
+                txtDiagnostico.Text = ods.Tables("CONSULTA").Rows(0).Item("diagnostico")
+                txtTratamiento.Text = ods.Tables("CONSULTA").Rows(0).Item("tratamiento")
+                txtEnfermedad.Text = ods.Tables("CONSULTA").Rows(0).Item("idEnfermedad")
+
+            Else
+                MsgBox("No exixte el código", vbCritical, "Atención")
+
+            End If
+
+        End If
+    End Sub
 End Class

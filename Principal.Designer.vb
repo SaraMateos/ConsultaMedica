@@ -38,7 +38,7 @@ Partial Class Principal
         '
         Me.lblConsultas.AutoSize = True
         Me.lblConsultas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblConsultas.Location = New System.Drawing.Point(344, 232)
+        Me.lblConsultas.Location = New System.Drawing.Point(348, 31)
         Me.lblConsultas.Name = "lblConsultas"
         Me.lblConsultas.Size = New System.Drawing.Size(63, 15)
         Me.lblConsultas.TabIndex = 27
@@ -48,7 +48,7 @@ Partial Class Principal
         '
         Me.lblRecetas.AutoSize = True
         Me.lblRecetas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRecetas.Location = New System.Drawing.Point(341, 31)
+        Me.lblRecetas.Location = New System.Drawing.Point(345, 232)
         Me.lblRecetas.Name = "lblRecetas"
         Me.lblRecetas.Size = New System.Drawing.Size(59, 15)
         Me.lblRecetas.TabIndex = 26
@@ -79,7 +79,7 @@ Partial Class Principal
         Me.btnRecetas.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.btnRecetas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRecetas.Image = CType(resources.GetObject("btnRecetas.Image"), System.Drawing.Image)
-        Me.btnRecetas.Location = New System.Drawing.Point(341, 47)
+        Me.btnRecetas.Location = New System.Drawing.Point(345, 248)
         Me.btnRecetas.Name = "btnRecetas"
         Me.btnRecetas.Size = New System.Drawing.Size(156, 143)
         Me.btnRecetas.TabIndex = 23
@@ -90,7 +90,7 @@ Partial Class Principal
         Me.btnConsultas.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.btnConsultas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnConsultas.Image = CType(resources.GetObject("btnConsultas.Image"), System.Drawing.Image)
-        Me.btnConsultas.Location = New System.Drawing.Point(341, 248)
+        Me.btnConsultas.Location = New System.Drawing.Point(345, 47)
         Me.btnConsultas.Name = "btnConsultas"
         Me.btnConsultas.Size = New System.Drawing.Size(156, 143)
         Me.btnConsultas.TabIndex = 22

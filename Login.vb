@@ -43,12 +43,7 @@ Public Class Login
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        MsgBox("Cerrando aplicación.", MsgBoxStyle.Information, "Información")
-
-        Me.Close()
-    End Sub
-
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        MsgBox("Cerrando aplicación.", MsgBoxStyle.Information, "Cerrando...")
+        End
     End Sub
 End Class
