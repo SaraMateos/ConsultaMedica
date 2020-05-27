@@ -25,20 +25,13 @@ Partial Class Receta
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Receta))
         Me.btnVolver = New System.Windows.Forms.Button()
-        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.btnActualizar = New System.Windows.Forms.Button()
-        Me.IdRecetaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DosisDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaCreacionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdMedicoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdPacienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdEnfermedadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RECETASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ConsultaMedicaDataSet = New WindowsApp1.ConsultaMedicaDataSet()
+        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.RECETASTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.RECETASTableAdapter()
-        Me.Button1 = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.RECETASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -52,62 +45,6 @@ Partial Class Receta
         Me.btnVolver.Text = "Volver"
         Me.btnVolver.UseVisualStyleBackColor = True
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdRecetaDataGridViewTextBoxColumn, Me.DosisDataGridViewTextBoxColumn, Me.FechaCreacionDataGridViewTextBoxColumn, Me.IdMedicoDataGridViewTextBoxColumn, Me.IdPacienteDataGridViewTextBoxColumn, Me.IdEnfermedadDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.RECETASBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(363, 36)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(647, 607)
-        Me.DataGridView1.TabIndex = 64
-        '
-        'btnActualizar
-        '
-        Me.btnActualizar.Location = New System.Drawing.Point(937, 695)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(89, 32)
-        Me.btnActualizar.TabIndex = 65
-        Me.btnActualizar.Text = "Actualizar"
-        Me.btnActualizar.UseVisualStyleBackColor = True
-        '
-        'IdRecetaDataGridViewTextBoxColumn
-        '
-        Me.IdRecetaDataGridViewTextBoxColumn.DataPropertyName = "idReceta"
-        Me.IdRecetaDataGridViewTextBoxColumn.HeaderText = "idReceta"
-        Me.IdRecetaDataGridViewTextBoxColumn.Name = "IdRecetaDataGridViewTextBoxColumn"
-        '
-        'DosisDataGridViewTextBoxColumn
-        '
-        Me.DosisDataGridViewTextBoxColumn.DataPropertyName = "dosis"
-        Me.DosisDataGridViewTextBoxColumn.HeaderText = "dosis"
-        Me.DosisDataGridViewTextBoxColumn.Name = "DosisDataGridViewTextBoxColumn"
-        '
-        'FechaCreacionDataGridViewTextBoxColumn
-        '
-        Me.FechaCreacionDataGridViewTextBoxColumn.DataPropertyName = "fechaCreacion"
-        Me.FechaCreacionDataGridViewTextBoxColumn.HeaderText = "fechaCreacion"
-        Me.FechaCreacionDataGridViewTextBoxColumn.Name = "FechaCreacionDataGridViewTextBoxColumn"
-        '
-        'IdMedicoDataGridViewTextBoxColumn
-        '
-        Me.IdMedicoDataGridViewTextBoxColumn.DataPropertyName = "idMedico"
-        Me.IdMedicoDataGridViewTextBoxColumn.HeaderText = "idMedico"
-        Me.IdMedicoDataGridViewTextBoxColumn.Name = "IdMedicoDataGridViewTextBoxColumn"
-        '
-        'IdPacienteDataGridViewTextBoxColumn
-        '
-        Me.IdPacienteDataGridViewTextBoxColumn.DataPropertyName = "idPaciente"
-        Me.IdPacienteDataGridViewTextBoxColumn.HeaderText = "idPaciente"
-        Me.IdPacienteDataGridViewTextBoxColumn.Name = "IdPacienteDataGridViewTextBoxColumn"
-        '
-        'IdEnfermedadDataGridViewTextBoxColumn
-        '
-        Me.IdEnfermedadDataGridViewTextBoxColumn.DataPropertyName = "idEnfermedad"
-        Me.IdEnfermedadDataGridViewTextBoxColumn.HeaderText = "idEnfermedad"
-        Me.IdEnfermedadDataGridViewTextBoxColumn.Name = "IdEnfermedadDataGridViewTextBoxColumn"
-        '
         'RECETASBindingSource
         '
         Me.RECETASBindingSource.DataMember = "RECETAS"
@@ -118,18 +55,46 @@ Partial Class Receta
         Me.ConsultaMedicaDataSet.DataSetName = "ConsultaMedicaDataSet"
         Me.ConsultaMedicaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'btnActualizar
+        '
+        Me.btnActualizar.Location = New System.Drawing.Point(937, 695)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(89, 32)
+        Me.btnActualizar.TabIndex = 65
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = True
+        '
         'RECETASTableAdapter
         '
         Me.RECETASTableAdapter.ClearBeforeFill = True
         '
-        'Button1
+        'btnImprimir
         '
-        Me.Button1.Location = New System.Drawing.Point(601, 695)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(89, 32)
-        Me.Button1.TabIndex = 66
-        Me.Button1.Text = "reporte"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnImprimir.Location = New System.Drawing.Point(458, 695)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(89, 32)
+        Me.btnImprimir.TabIndex = 66
+        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.UseVisualStyleBackColor = True
+        '
+        'btnNuevo
+        '
+        Me.btnNuevo.Location = New System.Drawing.Point(842, 695)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(89, 32)
+        Me.btnNuevo.TabIndex = 67
+        Me.btnNuevo.Text = "Nuevo"
+        Me.btnNuevo.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 21)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(275, 37)
+        Me.Label1.TabIndex = 68
+        Me.Label1.Text = "Recetas medicas"
         '
         'Receta
         '
@@ -137,32 +102,27 @@ Partial Class Receta
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.ClientSize = New System.Drawing.Size(1038, 739)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btnNuevo)
+        Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnActualizar)
-        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnVolver)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Receta"
         Me.Text = "Receta"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RECETASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents btnVolver As Button
-    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents ConsultaMedicaDataSet As ConsultaMedicaDataSet
     Friend WithEvents RECETASBindingSource As BindingSource
     Friend WithEvents RECETASTableAdapter As ConsultaMedicaDataSetTableAdapters.RECETASTableAdapter
-    Friend WithEvents IdRecetaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DosisDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents FechaCreacionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents IdMedicoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents IdPacienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents IdEnfermedadDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btnActualizar As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnImprimir As Button
+    Friend WithEvents btnNuevo As Button
+    Friend WithEvents Label1 As Label
 End Class
