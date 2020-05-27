@@ -82,7 +82,7 @@ Partial Class Principal
         Me.btnRecetas.Location = New System.Drawing.Point(345, 267)
         Me.btnRecetas.Name = "btnRecetas"
         Me.btnRecetas.Size = New System.Drawing.Size(156, 154)
-        Me.btnRecetas.TabIndex = 23
+        Me.btnRecetas.TabIndex = 3
         Me.btnRecetas.UseVisualStyleBackColor = True
         '
         'btnConsultas
@@ -93,7 +93,7 @@ Partial Class Principal
         Me.btnConsultas.Location = New System.Drawing.Point(345, 51)
         Me.btnConsultas.Name = "btnConsultas"
         Me.btnConsultas.Size = New System.Drawing.Size(156, 154)
-        Me.btnConsultas.TabIndex = 22
+        Me.btnConsultas.TabIndex = 1
         Me.btnConsultas.UseVisualStyleBackColor = True
         '
         'btnMedicos
@@ -104,7 +104,7 @@ Partial Class Principal
         Me.btnMedicos.Location = New System.Drawing.Point(52, 267)
         Me.btnMedicos.Name = "btnMedicos"
         Me.btnMedicos.Size = New System.Drawing.Size(158, 154)
-        Me.btnMedicos.TabIndex = 21
+        Me.btnMedicos.TabIndex = 2
         Me.btnMedicos.UseVisualStyleBackColor = True
         '
         'btnPacientes
@@ -115,7 +115,7 @@ Partial Class Principal
         Me.btnPacientes.Location = New System.Drawing.Point(52, 51)
         Me.btnPacientes.Name = "btnPacientes"
         Me.btnPacientes.Size = New System.Drawing.Size(158, 154)
-        Me.btnPacientes.TabIndex = 20
+        Me.btnPacientes.TabIndex = 0
         Me.btnPacientes.UseVisualStyleBackColor = True
         '
         'btnCerrarSesion
@@ -126,7 +126,7 @@ Partial Class Principal
         Me.btnCerrarSesion.Location = New System.Drawing.Point(508, 5)
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
         Me.btnCerrarSesion.Size = New System.Drawing.Size(27, 32)
-        Me.btnCerrarSesion.TabIndex = 28
+        Me.btnCerrarSesion.TabIndex = 4
         Me.btnCerrarSesion.UseVisualStyleBackColor = True
         '
         'Principal

@@ -61,8 +61,6 @@ Partial Class Consulta
         Me.PACIENTESTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.PACIENTESTableAdapter()
         Me.MEDICOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MEDICOSTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.MEDICOSTableAdapter()
-        Me.btnSiguiente = New System.Windows.Forms.Button()
-        Me.btnAnterior = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         CType(Me.CONSULTABindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,7 +76,7 @@ Partial Class Consulta
         Me.btnVolver.Location = New System.Drawing.Point(19, 534)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(89, 34)
-        Me.btnVolver.TabIndex = 79
+        Me.btnVolver.TabIndex = 7
         Me.btnVolver.Text = "Volver"
         Me.btnVolver.UseVisualStyleBackColor = True
         '
@@ -90,7 +88,7 @@ Partial Class Consulta
         Me.txtTratamiento.Multiline = True
         Me.txtTratamiento.Name = "txtTratamiento"
         Me.txtTratamiento.Size = New System.Drawing.Size(639, 71)
-        Me.txtTratamiento.TabIndex = 76
+        Me.txtTratamiento.TabIndex = 6
         '
         'CONSULTABindingSource
         '
@@ -120,7 +118,7 @@ Partial Class Consulta
         Me.txtDiagnostico.Multiline = True
         Me.txtDiagnostico.Name = "txtDiagnostico"
         Me.txtDiagnostico.Size = New System.Drawing.Size(639, 71)
-        Me.txtDiagnostico.TabIndex = 74
+        Me.txtDiagnostico.TabIndex = 5
         '
         'Label7
         '
@@ -140,7 +138,7 @@ Partial Class Consulta
         Me.txtMotivo.Multiline = True
         Me.txtMotivo.Name = "txtMotivo"
         Me.txtMotivo.Size = New System.Drawing.Size(639, 71)
-        Me.txtMotivo.TabIndex = 71
+        Me.txtMotivo.TabIndex = 4
         '
         'Label5
         '
@@ -168,7 +166,7 @@ Partial Class Consulta
         Me.btnBorrar.Location = New System.Drawing.Point(577, 534)
         Me.btnBorrar.Name = "btnBorrar"
         Me.btnBorrar.Size = New System.Drawing.Size(83, 34)
-        Me.btnBorrar.TabIndex = 69
+        Me.btnBorrar.TabIndex = 9
         Me.btnBorrar.Text = "Borrar"
         Me.btnBorrar.UseVisualStyleBackColor = True
         '
@@ -178,7 +176,7 @@ Partial Class Consulta
         Me.btnNuevo.Location = New System.Drawing.Point(467, 534)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(89, 34)
-        Me.btnNuevo.TabIndex = 67
+        Me.btnNuevo.TabIndex = 8
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
@@ -205,7 +203,7 @@ Partial Class Consulta
         Me.txtNumHistorial.Multiline = True
         Me.txtNumHistorial.Name = "txtNumHistorial"
         Me.txtNumHistorial.Size = New System.Drawing.Size(163, 21)
-        Me.txtNumHistorial.TabIndex = 65
+        Me.txtNumHistorial.TabIndex = 0
         '
         'Label2
         '
@@ -236,7 +234,7 @@ Partial Class Consulta
         Me.btnBuscar.Location = New System.Drawing.Point(600, 27)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(75, 25)
-        Me.btnBuscar.TabIndex = 2
+        Me.btnBuscar.TabIndex = 1
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
@@ -246,7 +244,7 @@ Partial Class Consulta
         Me.txtPacientes.Multiline = True
         Me.txtPacientes.Name = "txtPacientes"
         Me.txtPacientes.Size = New System.Drawing.Size(485, 24)
-        Me.txtPacientes.TabIndex = 1
+        Me.txtPacientes.TabIndex = 0
         '
         'lblBuscar
         '
@@ -332,7 +330,7 @@ Partial Class Consulta
         Me.txtNombreMedico.Multiline = True
         Me.txtNombreMedico.Name = "txtNombreMedico"
         Me.txtNombreMedico.Size = New System.Drawing.Size(335, 21)
-        Me.txtNombreMedico.TabIndex = 81
+        Me.txtNombreMedico.TabIndex = 1
         '
         'DTPFechaRealizada
         '
@@ -343,7 +341,7 @@ Partial Class Consulta
         Me.DTPFechaRealizada.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         Me.DTPFechaRealizada.Name = "DTPFechaRealizada"
         Me.DTPFechaRealizada.Size = New System.Drawing.Size(335, 23)
-        Me.DTPFechaRealizada.TabIndex = 20
+        Me.DTPFechaRealizada.TabIndex = 2
         '
         'txtEnfermedad
         '
@@ -353,7 +351,7 @@ Partial Class Consulta
         Me.txtEnfermedad.Multiline = True
         Me.txtEnfermedad.Name = "txtEnfermedad"
         Me.txtEnfermedad.Size = New System.Drawing.Size(163, 21)
-        Me.txtEnfermedad.TabIndex = 84
+        Me.txtEnfermedad.TabIndex = 3
         '
         'lblEnfermedad
         '
@@ -382,35 +380,13 @@ Partial Class Consulta
         '
         Me.MEDICOSTableAdapter.ClearBeforeFill = True
         '
-        'btnSiguiente
-        '
-        Me.btnSiguiente.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSiguiente.Image = CType(resources.GetObject("btnSiguiente.Image"), System.Drawing.Image)
-        Me.btnSiguiente.Location = New System.Drawing.Point(1301, 13)
-        Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(56, 52)
-        Me.btnSiguiente.TabIndex = 86
-        Me.btnSiguiente.UseVisualStyleBackColor = True
-        '
-        'btnAnterior
-        '
-        Me.btnAnterior.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAnterior.Image = CType(resources.GetObject("btnAnterior.Image"), System.Drawing.Image)
-        Me.btnAnterior.Location = New System.Drawing.Point(1239, 13)
-        Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(56, 52)
-        Me.btnAnterior.TabIndex = 85
-        Me.btnAnterior.UseVisualStyleBackColor = True
-        '
         'btnActualizar
         '
         Me.btnActualizar.Font = New System.Drawing.Font("Maiandra GD", 11.25!)
-        Me.btnActualizar.Location = New System.Drawing.Point(712, 33)
+        Me.btnActualizar.Location = New System.Drawing.Point(730, 33)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(79, 32)
-        Me.btnActualizar.TabIndex = 87
+        Me.btnActualizar.TabIndex = 10
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
@@ -421,8 +397,6 @@ Partial Class Consulta
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.ClientSize = New System.Drawing.Size(1376, 579)
         Me.Controls.Add(Me.btnActualizar)
-        Me.Controls.Add(Me.btnSiguiente)
-        Me.Controls.Add(Me.btnAnterior)
         Me.Controls.Add(Me.txtEnfermedad)
         Me.Controls.Add(Me.lblEnfermedad)
         Me.Controls.Add(Me.DTPFechaRealizada)
@@ -489,8 +463,6 @@ Partial Class Consulta
     Friend WithEvents MEDICOSTableAdapter As ConsultaMedicaDataSetTableAdapters.MEDICOSTableAdapter
     Friend WithEvents txtEnfermedad As TextBox
     Friend WithEvents lblEnfermedad As Label
-    Friend WithEvents btnSiguiente As Button
-    Friend WithEvents btnAnterior As Button
     Friend WithEvents IdConsultaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdPacienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdMedicoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

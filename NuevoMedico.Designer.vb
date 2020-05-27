@@ -60,7 +60,7 @@ Partial Class NuevoMedico
         Me.btnVolver.Location = New System.Drawing.Point(38, 304)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(75, 32)
-        Me.btnVolver.TabIndex = 69
+        Me.btnVolver.TabIndex = 1
         Me.btnVolver.Text = "Volver"
         Me.btnVolver.UseVisualStyleBackColor = True
         '
@@ -70,7 +70,7 @@ Partial Class NuevoMedico
         Me.btnAceptar.Location = New System.Drawing.Point(941, 304)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 32)
-        Me.btnAceptar.TabIndex = 68
+        Me.btnAceptar.TabIndex = 0
         Me.btnAceptar.Text = "Añadir"
         Me.btnAceptar.UseVisualStyleBackColor = True
         '
@@ -103,7 +103,7 @@ Partial Class NuevoMedico
         Me.txtEspecialidad.Multiline = True
         Me.txtEspecialidad.Name = "txtEspecialidad"
         Me.txtEspecialidad.Size = New System.Drawing.Size(196, 21)
-        Me.txtEspecialidad.TabIndex = 21
+        Me.txtEspecialidad.TabIndex = 5
         '
         'MEDICOSBindingSource
         '
@@ -122,7 +122,7 @@ Partial Class NuevoMedico
         Me.txtSexo.Multiline = True
         Me.txtSexo.Name = "txtSexo"
         Me.txtSexo.Size = New System.Drawing.Size(228, 21)
-        Me.txtSexo.TabIndex = 16
+        Me.txtSexo.TabIndex = 3
         '
         'Label1
         '
@@ -141,7 +141,7 @@ Partial Class NuevoMedico
         Me.DTPFNacimiento.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         Me.DTPFNacimiento.Name = "DTPFNacimiento"
         Me.DTPFNacimiento.Size = New System.Drawing.Size(228, 23)
-        Me.DTPFNacimiento.TabIndex = 20
+        Me.DTPFNacimiento.TabIndex = 2
         '
         'txtNombre
         '
@@ -150,7 +150,7 @@ Partial Class NuevoMedico
         Me.txtNombre.Multiline = True
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(228, 21)
-        Me.txtNombre.TabIndex = 13
+        Me.txtNombre.TabIndex = 1
         '
         'Label8
         '
@@ -168,7 +168,7 @@ Partial Class NuevoMedico
         Me.txtTelefono.Multiline = True
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(196, 21)
-        Me.txtTelefono.TabIndex = 11
+        Me.txtTelefono.TabIndex = 4
         '
         'lblTelefono
         '
@@ -204,7 +204,7 @@ Partial Class NuevoMedico
         Me.txtAbreviatura.Multiline = True
         Me.txtAbreviatura.Name = "txtAbreviatura"
         Me.txtAbreviatura.Size = New System.Drawing.Size(188, 21)
-        Me.txtAbreviatura.TabIndex = 1
+        Me.txtAbreviatura.TabIndex = 0
         '
         'lblAbreviatura
         '

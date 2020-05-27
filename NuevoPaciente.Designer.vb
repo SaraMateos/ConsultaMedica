@@ -91,7 +91,7 @@ Partial Class NuevoPaciente
         Me.btnVolver.Location = New System.Drawing.Point(32, 523)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(75, 32)
-        Me.btnVolver.TabIndex = 66
+        Me.btnVolver.TabIndex = 1
         Me.btnVolver.Text = "Volver"
         Me.btnVolver.UseVisualStyleBackColor = True
         '
@@ -101,7 +101,7 @@ Partial Class NuevoPaciente
         Me.btnAceptar.Location = New System.Drawing.Point(935, 523)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 32)
-        Me.btnAceptar.TabIndex = 65
+        Me.btnAceptar.TabIndex = 0
         Me.btnAceptar.Text = "Añadir"
         Me.btnAceptar.UseVisualStyleBackColor = True
         '
@@ -136,7 +136,7 @@ Partial Class NuevoPaciente
         Me.txtSexo.Multiline = True
         Me.txtSexo.Name = "txtSexo"
         Me.txtSexo.Size = New System.Drawing.Size(236, 21)
-        Me.txtSexo.TabIndex = 18
+        Me.txtSexo.TabIndex = 3
         '
         'Label1
         '
@@ -155,7 +155,7 @@ Partial Class NuevoPaciente
         Me.DTPFNacimiento.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         Me.DTPFNacimiento.Name = "DTPFNacimiento"
         Me.DTPFNacimiento.Size = New System.Drawing.Size(236, 23)
-        Me.DTPFNacimiento.TabIndex = 17
+        Me.DTPFNacimiento.TabIndex = 2
         '
         'txtNombre
         '
@@ -165,7 +165,7 @@ Partial Class NuevoPaciente
         Me.txtNombre.Multiline = True
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(236, 21)
-        Me.txtNombre.TabIndex = 16
+        Me.txtNombre.TabIndex = 1
         '
         'Label8
         '
@@ -183,7 +183,7 @@ Partial Class NuevoPaciente
         Me.txtTelefono.Multiline = True
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(196, 21)
-        Me.txtTelefono.TabIndex = 22
+        Me.txtTelefono.TabIndex = 6
         '
         'lblTelefono
         '
@@ -201,7 +201,7 @@ Partial Class NuevoPaciente
         Me.txtDireccion.Multiline = True
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(196, 21)
-        Me.txtDireccion.TabIndex = 21
+        Me.txtDireccion.TabIndex = 5
         '
         'lblDireccion
         '
@@ -219,7 +219,7 @@ Partial Class NuevoPaciente
         Me.txtPoblacion.Multiline = True
         Me.txtPoblacion.Name = "txtPoblacion"
         Me.txtPoblacion.Size = New System.Drawing.Size(196, 21)
-        Me.txtPoblacion.TabIndex = 19
+        Me.txtPoblacion.TabIndex = 4
         '
         'lblPoblacion
         '
@@ -246,7 +246,7 @@ Partial Class NuevoPaciente
         Me.txtNIF.Multiline = True
         Me.txtNIF.Name = "txtNIF"
         Me.txtNIF.Size = New System.Drawing.Size(188, 21)
-        Me.txtNIF.TabIndex = 1
+        Me.txtNIF.TabIndex = 0
         '
         'lblNIF
         '

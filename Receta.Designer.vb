@@ -29,6 +29,15 @@ Partial Class Receta
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataRecetas = New System.Windows.Forms.DataGridView()
+        Me.IdRecetaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdMedicoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdPacienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaCreacionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdEnfermedadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdMedicamentoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DosisDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RECETASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ConsultaMedicaDataSet = New WindowsApp1.ConsultaMedicaDataSet()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblIdReceta = New System.Windows.Forms.Label()
         Me.txtIdReceta = New System.Windows.Forms.TextBox()
@@ -44,20 +53,11 @@ Partial Class Receta
         Me.txtDosis = New System.Windows.Forms.TextBox()
         Me.txtEnfermedad = New System.Windows.Forms.TextBox()
         Me.lblEnfermedad = New System.Windows.Forms.Label()
-        Me.RECETASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ConsultaMedicaDataSet = New WindowsApp1.ConsultaMedicaDataSet()
         Me.RECETASTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.RECETASTableAdapter()
-        Me.IdRecetaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdMedicoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdPacienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaCreacionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdEnfermedadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdMedicamentoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DosisDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataRecetas, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RECETASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnVolver
@@ -66,7 +66,7 @@ Partial Class Receta
         Me.btnVolver.Location = New System.Drawing.Point(19, 546)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(89, 34)
-        Me.btnVolver.TabIndex = 62
+        Me.btnVolver.TabIndex = 8
         Me.btnVolver.Text = "Volver"
         Me.btnVolver.UseVisualStyleBackColor = True
         '
@@ -76,7 +76,7 @@ Partial Class Receta
         Me.btnActualizar.Location = New System.Drawing.Point(863, 546)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(89, 34)
-        Me.btnActualizar.TabIndex = 65
+        Me.btnActualizar.TabIndex = 7
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
@@ -86,7 +86,7 @@ Partial Class Receta
         Me.btnNuevo.Location = New System.Drawing.Point(863, 475)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(89, 34)
-        Me.btnNuevo.TabIndex = 67
+        Me.btnNuevo.TabIndex = 6
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
@@ -113,6 +113,59 @@ Partial Class Receta
         Me.DataRecetas.Name = "DataRecetas"
         Me.DataRecetas.Size = New System.Drawing.Size(644, 278)
         Me.DataRecetas.TabIndex = 69
+        '
+        'IdRecetaDataGridViewTextBoxColumn
+        '
+        Me.IdRecetaDataGridViewTextBoxColumn.DataPropertyName = "idReceta"
+        Me.IdRecetaDataGridViewTextBoxColumn.HeaderText = "Num. Receta"
+        Me.IdRecetaDataGridViewTextBoxColumn.Name = "IdRecetaDataGridViewTextBoxColumn"
+        Me.IdRecetaDataGridViewTextBoxColumn.Visible = False
+        '
+        'IdMedicoDataGridViewTextBoxColumn
+        '
+        Me.IdMedicoDataGridViewTextBoxColumn.DataPropertyName = "idMedico"
+        Me.IdMedicoDataGridViewTextBoxColumn.HeaderText = "Médico"
+        Me.IdMedicoDataGridViewTextBoxColumn.Name = "IdMedicoDataGridViewTextBoxColumn"
+        '
+        'IdPacienteDataGridViewTextBoxColumn
+        '
+        Me.IdPacienteDataGridViewTextBoxColumn.DataPropertyName = "idPaciente"
+        Me.IdPacienteDataGridViewTextBoxColumn.HeaderText = "Paciente"
+        Me.IdPacienteDataGridViewTextBoxColumn.Name = "IdPacienteDataGridViewTextBoxColumn"
+        '
+        'FechaCreacionDataGridViewTextBoxColumn
+        '
+        Me.FechaCreacionDataGridViewTextBoxColumn.DataPropertyName = "fechaCreacion"
+        Me.FechaCreacionDataGridViewTextBoxColumn.HeaderText = "Fecha"
+        Me.FechaCreacionDataGridViewTextBoxColumn.Name = "FechaCreacionDataGridViewTextBoxColumn"
+        '
+        'IdEnfermedadDataGridViewTextBoxColumn
+        '
+        Me.IdEnfermedadDataGridViewTextBoxColumn.DataPropertyName = "idEnfermedad"
+        Me.IdEnfermedadDataGridViewTextBoxColumn.HeaderText = "Enfermedad"
+        Me.IdEnfermedadDataGridViewTextBoxColumn.Name = "IdEnfermedadDataGridViewTextBoxColumn"
+        '
+        'IdMedicamentoDataGridViewTextBoxColumn
+        '
+        Me.IdMedicamentoDataGridViewTextBoxColumn.DataPropertyName = "idMedicamento"
+        Me.IdMedicamentoDataGridViewTextBoxColumn.HeaderText = "Medicamento"
+        Me.IdMedicamentoDataGridViewTextBoxColumn.Name = "IdMedicamentoDataGridViewTextBoxColumn"
+        '
+        'DosisDataGridViewTextBoxColumn
+        '
+        Me.DosisDataGridViewTextBoxColumn.DataPropertyName = "dosis"
+        Me.DosisDataGridViewTextBoxColumn.HeaderText = "Dosis"
+        Me.DosisDataGridViewTextBoxColumn.Name = "DosisDataGridViewTextBoxColumn"
+        '
+        'RECETASBindingSource
+        '
+        Me.RECETASBindingSource.DataMember = "RECETAS"
+        Me.RECETASBindingSource.DataSource = Me.ConsultaMedicaDataSet
+        '
+        'ConsultaMedicaDataSet
+        '
+        Me.ConsultaMedicaDataSet.DataSetName = "ConsultaMedicaDataSet"
+        Me.ConsultaMedicaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'PictureBox1
         '
@@ -172,7 +225,7 @@ Partial Class Receta
         Me.txtPaciente.Location = New System.Drawing.Point(103, 195)
         Me.txtPaciente.Name = "txtPaciente"
         Me.txtPaciente.Size = New System.Drawing.Size(229, 23)
-        Me.txtPaciente.TabIndex = 75
+        Me.txtPaciente.TabIndex = 1
         '
         'txtMedico
         '
@@ -181,7 +234,7 @@ Partial Class Receta
         Me.txtMedico.Location = New System.Drawing.Point(103, 150)
         Me.txtMedico.Name = "txtMedico"
         Me.txtMedico.Size = New System.Drawing.Size(229, 23)
-        Me.txtMedico.TabIndex = 76
+        Me.txtMedico.TabIndex = 0
         '
         'lblFecha
         '
@@ -203,7 +256,7 @@ Partial Class Receta
         Me.DTPFechaCreacion.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         Me.DTPFechaCreacion.Name = "DTPFechaCreacion"
         Me.DTPFechaCreacion.Size = New System.Drawing.Size(229, 23)
-        Me.DTPFechaCreacion.TabIndex = 78
+        Me.DTPFechaCreacion.TabIndex = 2
         '
         'lblMedicamento
         '
@@ -222,7 +275,7 @@ Partial Class Receta
         Me.txtMedicamento.Location = New System.Drawing.Point(506, 186)
         Me.txtMedicamento.Name = "txtMedicamento"
         Me.txtMedicamento.Size = New System.Drawing.Size(200, 23)
-        Me.txtMedicamento.TabIndex = 80
+        Me.txtMedicamento.TabIndex = 4
         '
         'lblDosis
         '
@@ -242,7 +295,7 @@ Partial Class Receta
         Me.txtDosis.Multiline = True
         Me.txtDosis.Name = "txtDosis"
         Me.txtDosis.Size = New System.Drawing.Size(295, 48)
-        Me.txtDosis.TabIndex = 82
+        Me.txtDosis.TabIndex = 5
         '
         'txtEnfermedad
         '
@@ -251,7 +304,7 @@ Partial Class Receta
         Me.txtEnfermedad.Location = New System.Drawing.Point(506, 150)
         Me.txtEnfermedad.Name = "txtEnfermedad"
         Me.txtEnfermedad.Size = New System.Drawing.Size(200, 23)
-        Me.txtEnfermedad.TabIndex = 84
+        Me.txtEnfermedad.TabIndex = 3
         '
         'lblEnfermedad
         '
@@ -263,62 +316,9 @@ Partial Class Receta
         Me.lblEnfermedad.TabIndex = 83
         Me.lblEnfermedad.Text = "Enfermedad"
         '
-        'RECETASBindingSource
-        '
-        Me.RECETASBindingSource.DataMember = "RECETAS"
-        Me.RECETASBindingSource.DataSource = Me.ConsultaMedicaDataSet
-        '
-        'ConsultaMedicaDataSet
-        '
-        Me.ConsultaMedicaDataSet.DataSetName = "ConsultaMedicaDataSet"
-        Me.ConsultaMedicaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'RECETASTableAdapter
         '
         Me.RECETASTableAdapter.ClearBeforeFill = True
-        '
-        'IdRecetaDataGridViewTextBoxColumn
-        '
-        Me.IdRecetaDataGridViewTextBoxColumn.DataPropertyName = "idReceta"
-        Me.IdRecetaDataGridViewTextBoxColumn.HeaderText = "Num. Receta"
-        Me.IdRecetaDataGridViewTextBoxColumn.Name = "IdRecetaDataGridViewTextBoxColumn"
-        Me.IdRecetaDataGridViewTextBoxColumn.Visible = False
-        '
-        'IdMedicoDataGridViewTextBoxColumn
-        '
-        Me.IdMedicoDataGridViewTextBoxColumn.DataPropertyName = "idMedico"
-        Me.IdMedicoDataGridViewTextBoxColumn.HeaderText = "Médico"
-        Me.IdMedicoDataGridViewTextBoxColumn.Name = "IdMedicoDataGridViewTextBoxColumn"
-        '
-        'IdPacienteDataGridViewTextBoxColumn
-        '
-        Me.IdPacienteDataGridViewTextBoxColumn.DataPropertyName = "idPaciente"
-        Me.IdPacienteDataGridViewTextBoxColumn.HeaderText = "Paciente"
-        Me.IdPacienteDataGridViewTextBoxColumn.Name = "IdPacienteDataGridViewTextBoxColumn"
-        '
-        'FechaCreacionDataGridViewTextBoxColumn
-        '
-        Me.FechaCreacionDataGridViewTextBoxColumn.DataPropertyName = "fechaCreacion"
-        Me.FechaCreacionDataGridViewTextBoxColumn.HeaderText = "Fecha"
-        Me.FechaCreacionDataGridViewTextBoxColumn.Name = "FechaCreacionDataGridViewTextBoxColumn"
-        '
-        'IdEnfermedadDataGridViewTextBoxColumn
-        '
-        Me.IdEnfermedadDataGridViewTextBoxColumn.DataPropertyName = "idEnfermedad"
-        Me.IdEnfermedadDataGridViewTextBoxColumn.HeaderText = "Enfermedad"
-        Me.IdEnfermedadDataGridViewTextBoxColumn.Name = "IdEnfermedadDataGridViewTextBoxColumn"
-        '
-        'IdMedicamentoDataGridViewTextBoxColumn
-        '
-        Me.IdMedicamentoDataGridViewTextBoxColumn.DataPropertyName = "idMedicamento"
-        Me.IdMedicamentoDataGridViewTextBoxColumn.HeaderText = "Medicamento"
-        Me.IdMedicamentoDataGridViewTextBoxColumn.Name = "IdMedicamentoDataGridViewTextBoxColumn"
-        '
-        'DosisDataGridViewTextBoxColumn
-        '
-        Me.DosisDataGridViewTextBoxColumn.DataPropertyName = "dosis"
-        Me.DosisDataGridViewTextBoxColumn.HeaderText = "Dosis"
-        Me.DosisDataGridViewTextBoxColumn.Name = "DosisDataGridViewTextBoxColumn"
         '
         'Receta
         '
@@ -352,9 +352,9 @@ Partial Class Receta
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Receta"
         CType(Me.DataRecetas, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RECETASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

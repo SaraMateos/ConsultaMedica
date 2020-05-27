@@ -72,7 +72,7 @@ Partial Class VerMedicos
         Me.btnNuevo.Location = New System.Drawing.Point(490, 563)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(75, 36)
-        Me.btnNuevo.TabIndex = 65
+        Me.btnNuevo.TabIndex = 3
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
@@ -82,7 +82,7 @@ Partial Class VerMedicos
         Me.btnEliminar.Location = New System.Drawing.Point(844, 563)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(75, 36)
-        Me.btnEliminar.TabIndex = 64
+        Me.btnEliminar.TabIndex = 2
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
@@ -92,7 +92,7 @@ Partial Class VerMedicos
         Me.btnVolver.Location = New System.Drawing.Point(39, 563)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(75, 36)
-        Me.btnVolver.TabIndex = 63
+        Me.btnVolver.TabIndex = 4
         Me.btnVolver.Text = "Volver"
         Me.btnVolver.UseVisualStyleBackColor = True
         '
@@ -102,7 +102,7 @@ Partial Class VerMedicos
         Me.btnActualizar.Location = New System.Drawing.Point(937, 563)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(80, 36)
-        Me.btnActualizar.TabIndex = 62
+        Me.btnActualizar.TabIndex = 1
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
@@ -124,7 +124,7 @@ Partial Class VerMedicos
         Me.GBDatosPersonales.Location = New System.Drawing.Point(273, 72)
         Me.GBDatosPersonales.Name = "GBDatosPersonales"
         Me.GBDatosPersonales.Size = New System.Drawing.Size(732, 216)
-        Me.GBDatosPersonales.TabIndex = 61
+        Me.GBDatosPersonales.TabIndex = 0
         Me.GBDatosPersonales.TabStop = False
         Me.GBDatosPersonales.Text = "Datos Personales"
         '
@@ -135,7 +135,7 @@ Partial Class VerMedicos
         Me.txtEspecialidad.Multiline = True
         Me.txtEspecialidad.Name = "txtEspecialidad"
         Me.txtEspecialidad.Size = New System.Drawing.Size(196, 21)
-        Me.txtEspecialidad.TabIndex = 22
+        Me.txtEspecialidad.TabIndex = 5
         '
         'MEDICOSBindingSource
         '
@@ -154,7 +154,7 @@ Partial Class VerMedicos
         Me.txtSexo.Multiline = True
         Me.txtSexo.Name = "txtSexo"
         Me.txtSexo.Size = New System.Drawing.Size(230, 21)
-        Me.txtSexo.TabIndex = 16
+        Me.txtSexo.TabIndex = 3
         '
         'Label1
         '
@@ -171,7 +171,7 @@ Partial Class VerMedicos
         Me.DTPFNacimiento.Location = New System.Drawing.Point(129, 111)
         Me.DTPFNacimiento.Name = "DTPFNacimiento"
         Me.DTPFNacimiento.Size = New System.Drawing.Size(230, 23)
-        Me.DTPFNacimiento.TabIndex = 14
+        Me.DTPFNacimiento.TabIndex = 2
         '
         'txtNombre
         '
@@ -180,7 +180,7 @@ Partial Class VerMedicos
         Me.txtNombre.Multiline = True
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(230, 21)
-        Me.txtNombre.TabIndex = 13
+        Me.txtNombre.TabIndex = 1
         '
         'Label8
         '
@@ -198,7 +198,7 @@ Partial Class VerMedicos
         Me.txtTelefono.Multiline = True
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(196, 21)
-        Me.txtTelefono.TabIndex = 11
+        Me.txtTelefono.TabIndex = 4
         '
         'lblTelefono
         '
@@ -234,7 +234,7 @@ Partial Class VerMedicos
         Me.txtAbreviatura.Multiline = True
         Me.txtAbreviatura.Name = "txtAbreviatura"
         Me.txtAbreviatura.Size = New System.Drawing.Size(188, 21)
-        Me.txtAbreviatura.TabIndex = 1
+        Me.txtAbreviatura.TabIndex = 0
         '
         'lblAbreviatura
         '
@@ -340,7 +340,7 @@ Partial Class VerMedicos
         Me.btnCerrarSesion.Location = New System.Drawing.Point(978, 19)
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
         Me.btnCerrarSesion.Size = New System.Drawing.Size(27, 32)
-        Me.btnCerrarSesion.TabIndex = 71
+        Me.btnCerrarSesion.TabIndex = 5
         Me.btnCerrarSesion.UseVisualStyleBackColor = True
         '
         'txtColegiado
@@ -382,7 +382,7 @@ Partial Class VerMedicos
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VerMedicos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "VerMedicos"
+        Me.Text = "Lista de médicos"
         Me.GBDatosPersonales.ResumeLayout(False)
         Me.GBDatosPersonales.PerformLayout()
         CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

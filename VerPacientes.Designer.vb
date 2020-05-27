@@ -556,7 +556,7 @@ Partial Class VerPacientes
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VerPacientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Datos de pacientes"
+        Me.Text = "Lista de pacientes"
         CType(Me.PACIENTESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GBDatosMedicos.ResumeLayout(False)
