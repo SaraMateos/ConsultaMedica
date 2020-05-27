@@ -76,11 +76,22 @@ Public Class VerPacientes
 
     End Sub
 
+    Private Sub Actualizar()
+        abrir()
+        Dim ole As New OleDbCommand("Select * from PACIENTES", conexion1)
+        Dim ds As New DataSet
+        Dim dataadapter3 As New OleDbDataAdapter
+        dataadapter3.SelectCommand = ole
+        dataadapter3.Fill(ds, "PACIENTES")
+        DataPacientes.DataSource = ds
+        DataPacientes.DataMember = "PACIENTES"
+    End Sub
 
     'Actualizar
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
 
         abrir()
+        Actualizar()
         ' Me.PACIENTESTableAdapter.UpdateQuery(txtHistorial.Text, txtNIF.Text, txtNombre.Text, DTPFNacimiento.Value.Date, txtSexo.Text, txtPoblacion.Text,
         'Dim si As Byte
 
@@ -174,7 +185,7 @@ Public Class VerPacientes
         End
     End Sub
 
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) 
         Dim consulta As String
         Dim oda As New OleDbDataAdapter
         Dim ods As DataSet

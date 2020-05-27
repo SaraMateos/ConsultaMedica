@@ -77,8 +77,6 @@ Partial Class VerPacientes
         Me.ObservacionesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtHistorial = New System.Windows.Forms.TextBox()
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
-        Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.txtNomPaciente = New System.Windows.Forms.TextBox()
         CType(Me.PACIENTESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBDatosMedicos.SuspendLayout()
@@ -556,31 +554,12 @@ Partial Class VerPacientes
         Me.btnCerrarSesion.TabIndex = 61
         Me.btnCerrarSesion.UseVisualStyleBackColor = True
         '
-        'btnBuscar
-        '
-        Me.btnBuscar.Location = New System.Drawing.Point(790, 25)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
-        Me.btnBuscar.TabIndex = 63
-        Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseVisualStyleBackColor = True
-        '
-        'txtNomPaciente
-        '
-        Me.txtNomPaciente.Location = New System.Drawing.Point(299, 25)
-        Me.txtNomPaciente.Multiline = True
-        Me.txtNomPaciente.Name = "txtNomPaciente"
-        Me.txtNomPaciente.Size = New System.Drawing.Size(485, 23)
-        Me.txtNomPaciente.TabIndex = 62
-        '
         'VerPacientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.ClientSize = New System.Drawing.Size(1044, 763)
-        Me.Controls.Add(Me.btnBuscar)
-        Me.Controls.Add(Me.txtNomPaciente)
         Me.Controls.Add(Me.btnCerrarSesion)
         Me.Controls.Add(Me.txtHistorial)
         Me.Controls.Add(Me.DataPacientes)
@@ -662,6 +641,4 @@ Partial Class VerPacientes
     Friend WithEvents AlergiasDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ObservacionesDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btnCerrarSesion As Button
-    Friend WithEvents btnBuscar As Button
-    Friend WithEvents txtNomPaciente As TextBox
 End Class
