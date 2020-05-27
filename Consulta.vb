@@ -125,4 +125,16 @@ Public Class Consulta
 
         End If
     End Sub
+
+    'Botón para actualizar la tabla
+    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        Dim ole As New OleDbCommand("Select * from CONSULTA", conexion1)
+        Dim ds As New DataSet
+        Dim dataadapter3 As New OleDbDataAdapter
+        dataadapter3.SelectCommand = ole
+        dataadapter3.Fill(ds, "CONSULTA")
+        DataConsultas.DataSource = ds
+        DataConsultas.DataMember = "CONSULTA"
+    End Sub
+
 End Class

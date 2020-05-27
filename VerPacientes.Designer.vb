@@ -221,6 +221,7 @@ Partial Class VerPacientes
         Me.txtSangre.Name = "txtSangre"
         Me.txtSangre.Size = New System.Drawing.Size(188, 20)
         Me.txtSangre.TabIndex = 2
+        Me.txtSangre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblSangre
         '
@@ -240,6 +241,7 @@ Partial Class VerPacientes
         Me.txtAltura.Name = "txtAltura"
         Me.txtAltura.Size = New System.Drawing.Size(188, 20)
         Me.txtAltura.TabIndex = 1
+        Me.txtAltura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblAltura
         '
@@ -258,6 +260,7 @@ Partial Class VerPacientes
         Me.txtPeso.Name = "txtPeso"
         Me.txtPeso.Size = New System.Drawing.Size(188, 20)
         Me.txtPeso.TabIndex = 0
+        Me.txtPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblPeso
         '
@@ -299,6 +302,7 @@ Partial Class VerPacientes
         Me.txtSexo.Name = "txtSexo"
         Me.txtSexo.Size = New System.Drawing.Size(196, 20)
         Me.txtSexo.TabIndex = 3
+        Me.txtSexo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
@@ -346,6 +350,7 @@ Partial Class VerPacientes
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(196, 20)
         Me.txtTelefono.TabIndex = 6
+        Me.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblTelefono
         '
@@ -382,6 +387,7 @@ Partial Class VerPacientes
         Me.txtPoblacion.Name = "txtPoblacion"
         Me.txtPoblacion.Size = New System.Drawing.Size(196, 20)
         Me.txtPoblacion.TabIndex = 4
+        Me.txtPoblacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblPoblacion
         '
@@ -409,6 +415,7 @@ Partial Class VerPacientes
         Me.txtNIF.Name = "txtNIF"
         Me.txtNIF.Size = New System.Drawing.Size(188, 20)
         Me.txtNIF.TabIndex = 0
+        Me.txtNIF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblNIF
         '
@@ -542,6 +549,7 @@ Partial Class VerPacientes
         Me.txtHistorial.ReadOnly = True
         Me.txtHistorial.Size = New System.Drawing.Size(134, 20)
         Me.txtHistorial.TabIndex = 60
+        Me.txtHistorial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnCerrarSesion
         '

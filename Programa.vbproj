@@ -51,6 +51,24 @@
     <ApplicationIcon>medico.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.OleDb, Version=4.0.1.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -99,6 +117,11 @@
     <Compile Include="ConsultaMedicaDataSet.vb">
       <DependentUpon>ConsultaMedicaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ConsultaMedicaDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConsultaMedicaDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -133,6 +156,12 @@
       <DependentUpon>Receta.vb</DependentUpon>
     </Compile>
     <Compile Include="Receta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecImprimir.Designer.vb">
+      <DependentUpon>RecImprimir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RecImprimir.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VerMedicos.Designer.vb">
@@ -187,6 +216,10 @@
     <EmbeddedResource Include="Receta.resx">
       <DependentUpon>Receta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecImprimir.resx">
+      <DependentUpon>RecImprimir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecetaMedica.rdlc" />
     <EmbeddedResource Include="VerMedicos.resx">
       <DependentUpon>VerMedicos.vb</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +245,17 @@
     <None Include="ConsultaMedicaDataSet.xss">
       <DependentUpon>ConsultaMedicaDataSet.xsd</DependentUpon>
     </None>
+    <None Include="ConsultaMedicaDataSet1.xsc">
+      <DependentUpon>ConsultaMedicaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ConsultaMedicaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConsultaMedicaDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ConsultaMedicaDataSet1.xss">
+      <DependentUpon>ConsultaMedicaDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -226,6 +270,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="medico.ico" />
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

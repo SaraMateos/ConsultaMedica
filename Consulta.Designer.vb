@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Consulta
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Consulta
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Consulta))
@@ -45,7 +45,7 @@ Partial Class Consulta
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtPacientes = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblBuscar = New System.Windows.Forms.Label()
         Me.DataConsultas = New System.Windows.Forms.DataGridView()
         Me.IdConsultaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdPacienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -65,6 +65,7 @@ Partial Class Consulta
         Me.MEDICOSTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.MEDICOSTableAdapter()
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.btnAnterior = New System.Windows.Forms.Button()
+        Me.btnActualizar = New System.Windows.Forms.Button()
         CType(Me.CONSULTABindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PACIENTESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -185,6 +186,7 @@ Partial Class Consulta
         'txtNombrePaciente
         '
         Me.txtNombrePaciente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "Nombre", True))
+        Me.txtNombrePaciente.DataBindings.Add(New System.Windows.Forms.Binding("Tag", Me.PACIENTESBindingSource, "Nombre", True))
         Me.txtNombrePaciente.Location = New System.Drawing.Point(133, 134)
         Me.txtNombrePaciente.Multiline = True
         Me.txtNombrePaciente.Name = "txtNombrePaciente"
@@ -227,7 +229,7 @@ Partial Class Consulta
         '
         Me.GroupBox1.Controls.Add(Me.btnBuscar)
         Me.GroupBox1.Controls.Add(Me.txtPacientes)
-        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.lblBuscar)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 11)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(653, 69)
@@ -252,14 +254,14 @@ Partial Class Consulta
         Me.txtPacientes.Size = New System.Drawing.Size(485, 23)
         Me.txtPacientes.TabIndex = 1
         '
-        'Label1
+        'lblBuscar
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 29)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(49, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Paciente"
+        Me.lblBuscar.AutoSize = True
+        Me.lblBuscar.Location = New System.Drawing.Point(6, 29)
+        Me.lblBuscar.Name = "lblBuscar"
+        Me.lblBuscar.Size = New System.Drawing.Size(72, 13)
+        Me.lblBuscar.TabIndex = 0
+        Me.lblBuscar.Text = "Num. Historial"
         '
         'DataConsultas
         '
@@ -404,12 +406,22 @@ Partial Class Consulta
         Me.btnAnterior.TabIndex = 85
         Me.btnAnterior.UseVisualStyleBackColor = True
         '
+        'btnActualizar
+        '
+        Me.btnActualizar.Location = New System.Drawing.Point(916, 25)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
+        Me.btnActualizar.TabIndex = 87
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = True
+        '
         'Consulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.ClientSize = New System.Drawing.Size(1376, 588)
+        Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.btnSiguiente)
         Me.Controls.Add(Me.btnAnterior)
         Me.Controls.Add(Me.txtEnfermedad)
@@ -466,7 +478,7 @@ Partial Class Consulta
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnBuscar As Button
     Friend WithEvents txtPacientes As TextBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblBuscar As Label
     Friend WithEvents DataConsultas As DataGridView
     Friend WithEvents ConsultaMedicaDataSet As ConsultaMedicaDataSet
     Friend WithEvents CONSULTABindingSource As BindingSource
@@ -490,4 +502,5 @@ Partial Class Consulta
     Friend WithEvents DiagnosticoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TratamientoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents idEnfermedad As DataGridViewTextBoxColumn
+    Friend WithEvents btnActualizar As Button
 End Class

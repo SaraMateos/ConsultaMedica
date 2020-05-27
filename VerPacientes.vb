@@ -73,10 +73,10 @@ Public Class VerPacientes
         comand = New OleDbCommand(eliminarRegistro, conexion1)
         comand.ExecuteNonQuery()
 
-
     End Sub
 
-    Private Sub Actualizar()
+    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+
         abrir()
         Dim ole As New OleDbCommand("Select * from PACIENTES", conexion1)
         Dim ds As New DataSet
@@ -85,13 +85,6 @@ Public Class VerPacientes
         dataadapter3.Fill(ds, "PACIENTES")
         DataPacientes.DataSource = ds
         DataPacientes.DataMember = "PACIENTES"
-    End Sub
-
-    'Actualizar
-    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-
-        abrir()
-        Actualizar()
         ' Me.PACIENTESTableAdapter.UpdateQuery(txtHistorial.Text, txtNIF.Text, txtNombre.Text, DTPFNacimiento.Value.Date, txtSexo.Text, txtPoblacion.Text,
         'Dim si As Byte
 
@@ -180,46 +173,10 @@ Public Class VerPacientes
         Principal.Show()
     End Sub
 
+    'Mensaje a la hora de cerrar la aplicación
     Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
         MsgBox("Cerrando aplicación.", MsgBoxStyle.Information, "Cerrando...")
         End
     End Sub
 
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) 
-        Dim consulta As String
-        Dim oda As New OleDbDataAdapter
-        Dim ods As DataSet
-        Dim registro As Byte
-
-        If txtNomPaciente.Text <> "" Then
-            consulta = "SELECT * FROM PACIENTES WHERE Nombre = " & txtNomPaciente.Text & ""
-            oda = New OleDbDataAdapter(consulta, conexion1)
-            ods = New DataSet
-            oda.Fill(ods, "PACIENTES")
-            registro = ods.Tables("PACIENTES").Rows.Count
-
-            If registro <> 0 Then
-                DataPacientes.DataSource = ods
-                DataPacientes.DataMember = "PACIENTES"
-
-                txtHistorial.Text = ods.Tables("PACIENTES").Rows(0).Item("idPaciente")
-                txtNIF.Text = ods.Tables("PACIENTES").Rows(0).Item("NIF")
-                txtNombre.Text = ods.Tables("PACIENTES").Rows(0).Item("Nombre")
-                DTPFNacimiento.Value = ods.Tables("PACIENTES").Rows(0).Item("fechaNacimiento")
-                txtSexo.Text = ods.Tables("PACIENTES").Rows(0).Item("sexo")
-                txtPoblacion.Text = ods.Tables("PACIENTES").Rows(0).Item("Poblacion")
-                txtDireccion.Text = ods.Tables("PACIENTES").Rows(0).Item("dirección")
-                txtTelefono.Text = ods.Tables("PACIENTES").Rows(0).Item("teléfono")
-                txtSangre.Text = ods.Tables("PACIENTES").Rows(0).Item("TipoGrupoSanguineo")
-                txtAltura.Text = ods.Tables("PACIENTES").Rows(0).Item("altura")
-                txtPeso.Text = ods.Tables("PACIENTES").Rows(0).Item("peso")
-                txtAlergias.Text = ods.Tables("PACIENTES").Rows(0).Item("alergias")
-                txtObservaciones.Text = ods.Tables("PACIENTES").Rows(0).Item("observaciones")
-
-            Else
-                MsgBox("No exixte el código", vbCritical, "Atención")
-            End If
-
-        End If
-    End Sub
 End Class

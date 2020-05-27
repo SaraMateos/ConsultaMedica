@@ -100,35 +100,15 @@ Public Class VerMedicos
 
     'Editar
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+
         abrir()
-        Dim si As Byte
-
-        Try
-            si = MsgBox("¿Estás seguro de modificar el paciente?", vbYesNo, "Atención")
-
-            If si = vbYes Then
-
-                comand = New OleDbCommand("UPDATE INTO MEDICOS(idMedico = txtAbreviatura, Nombre = txtNombre, fechaNacimiento= DTPFNacimiento, numColegiado =txtColegiado, sexo=txtSexo, telefono=txtTelefono,
-                    idEspecialidad=cbEspecialidad)", conexion1)
-
-                comand.Parameters.AddWithValue("@idMedico", txtAbreviatura.Text)
-                comand.Parameters.AddWithValue("@Nombre", txtNombre.Text)
-                comand.Parameters.AddWithValue("@fechaNaciemiento", DTPFNacimiento.Value.Date)
-                comand.Parameters.AddWithValue("@numColegiado", txtColegiado.Text)
-                comand.Parameters.AddWithValue("@Sexo", txtSexo.Text)
-                comand.Parameters.AddWithValue("@telefono", txtTelefono.Text)
-                comand.Parameters.AddWithValue("@idEspecialidad", cbEspecialidad.Text)
-
-                comand.ExecuteNonQuery()
-
-                MsgBox("Nuevo médico agregado.", MsgBoxStyle.Information, "Información")
-            Else
-                MsgBox("Se cancelo la actualización", MsgBoxStyle.Information, "Información")
-
-            End If
-        Catch ex As Exception
-            MsgBox("No se pudo actualizar por el siguiente error: " + vbCrLf + ex.Message, vbCritical, "Atención")
-        End Try
+        Dim ole As New OleDbCommand("Select * from MEDICOS", conexion1)
+        Dim ds As New DataSet
+        Dim dataadapter3 As New OleDbDataAdapter
+        dataadapter3.SelectCommand = ole
+        dataadapter3.Fill(ds, "MEDICOS")
+        DataMedicos.DataSource = ds
+        DataMedicos.DataMember = "MEDICOS"
 
     End Sub
 
