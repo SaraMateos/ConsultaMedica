@@ -6,7 +6,7 @@ Public Class Consulta
     Public cadena As OleDbConnection
     Dim comand As New OleDbCommand
 
-    'Conexión con la tabla de pacientes
+    'Conexión con la tabla de consultas
     Private Sub verConsul()
         Dim oda As New OleDbDataAdapter
         Dim ods As New DataSet
@@ -44,6 +44,17 @@ Public Class Consulta
         txtTratamiento.Text = DataConsultas.Item(6, i).Value()
         txtEnfermedad.Text = DataConsultas.Item(7, i).Value()
 
+    End Sub
+
+    'Botón para actualizar la tabla
+    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        Dim ole As New OleDbCommand("SELECT * FROM CONSULTA", conexion1)
+        Dim ds As New DataSet
+        Dim dataadapter3 As New OleDbDataAdapter
+        dataadapter3.SelectCommand = ole
+        dataadapter3.Fill(ds, "CONSULTA")
+        DataConsultas.DataSource = ds
+        DataConsultas.DataMember = "CONSULTA"
     End Sub
 
     'Nueva consulta
@@ -100,7 +111,7 @@ Public Class Consulta
         Dim registro As Byte
 
         If txtPacientes.Text <> "" Then
-            consulta = "Select * from CONSULTA where idPaciente = " & txtPacientes.Text & ""
+            consulta = "SELECT * FROM CONSULTA WHERE idPaciente = " & txtPacientes.Text & ""
             oda = New OleDbDataAdapter(consulta, conexion1)
             ods = New DataSet
             oda.Fill(ods, "CONSULTA")
@@ -124,17 +135,6 @@ Public Class Consulta
             End If
 
         End If
-    End Sub
-
-    'Botón para actualizar la tabla
-    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        Dim ole As New OleDbCommand("Select * from CONSULTA", conexion1)
-        Dim ds As New DataSet
-        Dim dataadapter3 As New OleDbDataAdapter
-        dataadapter3.SelectCommand = ole
-        dataadapter3.Fill(ds, "CONSULTA")
-        DataConsultas.DataSource = ds
-        DataConsultas.DataMember = "CONSULTA"
     End Sub
 
 End Class
