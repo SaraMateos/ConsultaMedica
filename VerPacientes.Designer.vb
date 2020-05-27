@@ -587,6 +587,7 @@ Partial Class VerPacientes
         Me.Font = New System.Drawing.Font("Maiandra GD", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VerPacientes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Datos de pacientes"
         CType(Me.PACIENTESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).EndInit()

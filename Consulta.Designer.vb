@@ -87,6 +87,7 @@ Partial Class Consulta
         'txtTratamiento
         '
         Me.txtTratamiento.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "tratamiento", True))
+        Me.txtTratamiento.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
         Me.txtTratamiento.Location = New System.Drawing.Point(21, 473)
         Me.txtTratamiento.Multiline = True
         Me.txtTratamiento.Name = "txtTratamiento"
@@ -116,6 +117,7 @@ Partial Class Consulta
         'txtDiagnostico
         '
         Me.txtDiagnostico.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "diagnostico", True))
+        Me.txtDiagnostico.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
         Me.txtDiagnostico.Location = New System.Drawing.Point(21, 370)
         Me.txtDiagnostico.Multiline = True
         Me.txtDiagnostico.Name = "txtDiagnostico"
@@ -135,6 +137,7 @@ Partial Class Consulta
         'txtMotivo
         '
         Me.txtMotivo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "motivoConsulta", True))
+        Me.txtMotivo.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
         Me.txtMotivo.Location = New System.Drawing.Point(21, 269)
         Me.txtMotivo.Multiline = True
         Me.txtMotivo.Name = "txtMotivo"
@@ -195,6 +198,7 @@ Partial Class Consulta
         '
         Me.txtNombrePaciente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "Nombre", True))
         Me.txtNombrePaciente.DataBindings.Add(New System.Windows.Forms.Binding("Tag", Me.PACIENTESBindingSource, "Nombre", True))
+        Me.txtNombrePaciente.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
         Me.txtNombrePaciente.Location = New System.Drawing.Point(133, 144)
         Me.txtNombrePaciente.Multiline = True
         Me.txtNombrePaciente.Name = "txtNombrePaciente"
@@ -219,6 +223,7 @@ Partial Class Consulta
         'txtNumHistorial
         '
         Me.txtNumHistorial.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "idPaciente", True))
+        Me.txtNumHistorial.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
         Me.txtNumHistorial.Location = New System.Drawing.Point(133, 108)
         Me.txtNumHistorial.Multiline = True
         Me.txtNumHistorial.Name = "txtNumHistorial"
@@ -283,7 +288,7 @@ Partial Class Consulta
         Me.DataConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataConsultas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdConsultaDataGridViewTextBoxColumn, Me.IdPacienteDataGridViewTextBoxColumn, Me.IdMedicoDataGridViewTextBoxColumn, Me.FechaRealizadaDataGridViewTextBoxColumn, Me.MotivoConsultaDataGridViewTextBoxColumn, Me.DiagnosticoDataGridViewTextBoxColumn, Me.TratamientoDataGridViewTextBoxColumn, Me.idEnfermedad})
         Me.DataConsultas.DataSource = Me.CONSULTABindingSource
-        Me.DataConsultas.GridColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.DataConsultas.GridColor = System.Drawing.SystemColors.ControlText
         Me.DataConsultas.Location = New System.Drawing.Point(712, 71)
         Me.DataConsultas.Name = "DataConsultas"
         Me.DataConsultas.Size = New System.Drawing.Size(646, 531)
@@ -345,6 +350,7 @@ Partial Class Consulta
         'txtNombreMedico
         '
         Me.txtNombreMedico.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "idMedico", True))
+        Me.txtNombreMedico.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
         Me.txtNombreMedico.Location = New System.Drawing.Point(133, 179)
         Me.txtNombreMedico.Multiline = True
         Me.txtNombreMedico.Name = "txtNombreMedico"
@@ -354,16 +360,18 @@ Partial Class Consulta
         'DTPFechaRealizada
         '
         Me.DTPFechaRealizada.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "fechaRealizada", True))
+        Me.DTPFechaRealizada.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
         Me.DTPFechaRealizada.Location = New System.Drawing.Point(133, 218)
         Me.DTPFechaRealizada.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
         Me.DTPFechaRealizada.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         Me.DTPFechaRealizada.Name = "DTPFechaRealizada"
-        Me.DTPFechaRealizada.Size = New System.Drawing.Size(335, 21)
+        Me.DTPFechaRealizada.Size = New System.Drawing.Size(335, 23)
         Me.DTPFechaRealizada.TabIndex = 20
         '
         'txtEnfermedad
         '
         Me.txtEnfermedad.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "idEnfermedad", True))
+        Me.txtEnfermedad.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
         Me.txtEnfermedad.Location = New System.Drawing.Point(497, 221)
         Me.txtEnfermedad.Multiline = True
         Me.txtEnfermedad.Name = "txtEnfermedad"
@@ -462,6 +470,7 @@ Partial Class Consulta
         Me.Font = New System.Drawing.Font("Maiandra GD", 8.25!)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Consulta"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Consulta"
         CType(Me.CONSULTABindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).EndInit()

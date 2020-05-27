@@ -153,12 +153,6 @@
     <Compile Include="Receta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RecImprimir.Designer.vb">
-      <DependentUpon>RecImprimir.vb</DependentUpon>
-    </Compile>
-    <Compile Include="RecImprimir.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="VerMedicos.Designer.vb">
       <DependentUpon>VerMedicos.vb</DependentUpon>
     </Compile>
@@ -210,9 +204,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Receta.resx">
       <DependentUpon>Receta.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RecImprimir.resx">
-      <DependentUpon>RecImprimir.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VerMedicos.resx">
       <DependentUpon>VerMedicos.vb</DependentUpon>

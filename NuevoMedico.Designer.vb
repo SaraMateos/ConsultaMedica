@@ -262,6 +262,7 @@ Partial Class NuevoMedico
         Me.Font = New System.Drawing.Font("Maiandra GD", 8.25!)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "NuevoMedico"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "NuevoMedico"
         Me.GBDatosPersonales.ResumeLayout(False)
         Me.GBDatosPersonales.PerformLayout()

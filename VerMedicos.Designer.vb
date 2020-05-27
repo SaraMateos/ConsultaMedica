@@ -414,6 +414,7 @@ Partial Class VerMedicos
         Me.Font = New System.Drawing.Font("Maiandra GD", 8.25!)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VerMedicos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "VerMedicos"
         Me.GBDatosPersonales.ResumeLayout(False)
         Me.GBDatosPersonales.PerformLayout()

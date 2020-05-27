@@ -44,7 +44,7 @@ Public Class Receta
 
     'Actualizar los datos de la tabla
     Private Sub btnActualizar_Click_1(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        'Botón para actualizar la tabla
+
         Dim ole As New OleDbCommand("SELECT * FROM RECETAS", conexion1)
         Dim ds As New DataSet
         Dim dataadapter3 As New OleDbDataAdapter
@@ -52,6 +52,7 @@ Public Class Receta
         dataadapter3.Fill(ds, "RECETAS")
         DataRecetas.DataSource = ds
         DataRecetas.DataMember = "RECETAS"
+
     End Sub
 
     'Muestra la pestaña Principal
@@ -59,11 +60,5 @@ Public Class Receta
         Me.Hide()
         Principal.Show()
     End Sub
-
-    'Muestra la pestaña para imprimir
-    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
-        RecImprimir.Show()
-    End Sub
-
 
 End Class

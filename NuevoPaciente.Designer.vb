@@ -30,11 +30,6 @@ Partial Class NuevoPaciente
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.GBDatosPersonales = New System.Windows.Forms.GroupBox()
-        Me.txtNIF = New System.Windows.Forms.TextBox()
-        Me.lblNIF = New System.Windows.Forms.Label()
-        Me.lblNumHistorial = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PACIENTESTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.PACIENTESTableAdapter()
         Me.txtSexo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DTPFNacimiento = New System.Windows.Forms.DateTimePicker()
@@ -47,6 +42,11 @@ Partial Class NuevoPaciente
         Me.txtPoblacion = New System.Windows.Forms.TextBox()
         Me.lblPoblacion = New System.Windows.Forms.Label()
         Me.lblFechaNacimiento = New System.Windows.Forms.Label()
+        Me.txtNIF = New System.Windows.Forms.TextBox()
+        Me.lblNIF = New System.Windows.Forms.Label()
+        Me.lblNumHistorial = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PACIENTESTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.PACIENTESTableAdapter()
         Me.GBDatosMedicos = New System.Windows.Forms.GroupBox()
         Me.txtAlergias = New System.Windows.Forms.TextBox()
         Me.lblAlergias = New System.Windows.Forms.Label()
@@ -128,49 +128,6 @@ Partial Class NuevoPaciente
         Me.GBDatosPersonales.TabIndex = 63
         Me.GBDatosPersonales.TabStop = False
         Me.GBDatosPersonales.Text = "Datos Personales"
-        '
-        'txtNIF
-        '
-        Me.txtNIF.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "NIF", True))
-        Me.txtNIF.Location = New System.Drawing.Point(315, 32)
-        Me.txtNIF.Multiline = True
-        Me.txtNIF.Name = "txtNIF"
-        Me.txtNIF.Size = New System.Drawing.Size(188, 21)
-        Me.txtNIF.TabIndex = 1
-        Me.txtNIF.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'lblNIF
-        '
-        Me.lblNIF.AutoSize = True
-        Me.lblNIF.Location = New System.Drawing.Point(226, 32)
-        Me.lblNIF.Name = "lblNIF"
-        Me.lblNIF.Size = New System.Drawing.Size(29, 16)
-        Me.lblNIF.TabIndex = 0
-        Me.lblNIF.Text = "NIF"
-        '
-        'lblNumHistorial
-        '
-        Me.lblNumHistorial.AutoSize = True
-        Me.lblNumHistorial.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
-        Me.lblNumHistorial.Location = New System.Drawing.Point(29, 25)
-        Me.lblNumHistorial.Name = "lblNumHistorial"
-        Me.lblNumHistorial.Size = New System.Drawing.Size(73, 16)
-        Me.lblNumHistorial.TabIndex = 62
-        Me.lblNumHistorial.Text = "Nº Historial"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(32, 67)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(208, 216)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 61
-        Me.PictureBox1.TabStop = False
-        '
-        'PACIENTESTableAdapter
-        '
-        Me.PACIENTESTableAdapter.ClearBeforeFill = True
         '
         'txtSexo
         '
@@ -285,6 +242,49 @@ Partial Class NuevoPaciente
         Me.lblFechaNacimiento.Size = New System.Drawing.Size(87, 16)
         Me.lblFechaNacimiento.TabIndex = 20
         Me.lblFechaNacimiento.Text = "F. Nacimiento"
+        '
+        'txtNIF
+        '
+        Me.txtNIF.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "NIF", True))
+        Me.txtNIF.Location = New System.Drawing.Point(315, 32)
+        Me.txtNIF.Multiline = True
+        Me.txtNIF.Name = "txtNIF"
+        Me.txtNIF.Size = New System.Drawing.Size(188, 21)
+        Me.txtNIF.TabIndex = 1
+        Me.txtNIF.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'lblNIF
+        '
+        Me.lblNIF.AutoSize = True
+        Me.lblNIF.Location = New System.Drawing.Point(226, 32)
+        Me.lblNIF.Name = "lblNIF"
+        Me.lblNIF.Size = New System.Drawing.Size(29, 16)
+        Me.lblNIF.TabIndex = 0
+        Me.lblNIF.Text = "NIF"
+        '
+        'lblNumHistorial
+        '
+        Me.lblNumHistorial.AutoSize = True
+        Me.lblNumHistorial.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
+        Me.lblNumHistorial.Location = New System.Drawing.Point(29, 25)
+        Me.lblNumHistorial.Name = "lblNumHistorial"
+        Me.lblNumHistorial.Size = New System.Drawing.Size(73, 16)
+        Me.lblNumHistorial.TabIndex = 62
+        Me.lblNumHistorial.Text = "Nº Historial"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(32, 67)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(208, 216)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 61
+        Me.PictureBox1.TabStop = False
+        '
+        'PACIENTESTableAdapter
+        '
+        Me.PACIENTESTableAdapter.ClearBeforeFill = True
         '
         'GBDatosMedicos
         '
@@ -418,6 +418,7 @@ Partial Class NuevoPaciente
         Me.Font = New System.Drawing.Font("Maiandra GD", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "NuevoPaciente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Agregar nuevo paciente"
         CType(Me.PACIENTESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
