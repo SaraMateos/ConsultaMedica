@@ -27,7 +27,7 @@ Partial Class NuevoMedico
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.GBDatosPersonales = New System.Windows.Forms.GroupBox()
-        Me.cbEspecialidad = New System.Windows.Forms.ComboBox()
+        Me.txtEspecialidad = New System.Windows.Forms.TextBox()
         Me.MEDICOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ConsultaMedicaDataSet = New WindowsApp1.ConsultaMedicaDataSet()
         Me.txtSexo = New System.Windows.Forms.TextBox()
@@ -45,10 +45,13 @@ Partial Class NuevoMedico
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txtColegiado = New System.Windows.Forms.TextBox()
         Me.MEDICOSTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.MEDICOSTableAdapter()
+        Me.ESPECIALIDADESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ESPECIALIDADESTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.ESPECIALIDADESTableAdapter()
         Me.GBDatosPersonales.SuspendLayout()
         CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ESPECIALIDADESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnVolver
@@ -73,7 +76,7 @@ Partial Class NuevoMedico
         '
         'GBDatosPersonales
         '
-        Me.GBDatosPersonales.Controls.Add(Me.cbEspecialidad)
+        Me.GBDatosPersonales.Controls.Add(Me.txtEspecialidad)
         Me.GBDatosPersonales.Controls.Add(Me.txtSexo)
         Me.GBDatosPersonales.Controls.Add(Me.Label1)
         Me.GBDatosPersonales.Controls.Add(Me.DTPFNacimiento)
@@ -93,16 +96,14 @@ Partial Class NuevoMedico
         Me.GBDatosPersonales.TabStop = False
         Me.GBDatosPersonales.Text = "Datos Personales"
         '
-        'cbEspecialidad
+        'txtEspecialidad
         '
-        Me.cbEspecialidad.DataSource = Me.MEDICOSBindingSource
-        Me.cbEspecialidad.DisplayMember = "idEspecialidad"
-        Me.cbEspecialidad.FormattingEnabled = True
-        Me.cbEspecialidad.Location = New System.Drawing.Point(480, 145)
-        Me.cbEspecialidad.Name = "cbEspecialidad"
-        Me.cbEspecialidad.Size = New System.Drawing.Size(196, 24)
-        Me.cbEspecialidad.TabIndex = 17
-        Me.cbEspecialidad.ValueMember = "idEspecialidad"
+        Me.txtEspecialidad.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MEDICOSBindingSource, "idEspecialidad", True))
+        Me.txtEspecialidad.Location = New System.Drawing.Point(480, 140)
+        Me.txtEspecialidad.Multiline = True
+        Me.txtEspecialidad.Name = "txtEspecialidad"
+        Me.txtEspecialidad.Size = New System.Drawing.Size(196, 21)
+        Me.txtEspecialidad.TabIndex = 21
         '
         'MEDICOSBindingSource
         '
@@ -239,13 +240,22 @@ Partial Class NuevoMedico
         Me.txtColegiado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MEDICOSBindingSource, "numColegiado", True))
         Me.txtColegiado.Location = New System.Drawing.Point(127, 20)
         Me.txtColegiado.Name = "txtColegiado"
-        Me.txtColegiado.ReadOnly = True
         Me.txtColegiado.Size = New System.Drawing.Size(119, 21)
         Me.txtColegiado.TabIndex = 70
+        Me.txtColegiado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'MEDICOSTableAdapter
         '
         Me.MEDICOSTableAdapter.ClearBeforeFill = True
+        '
+        'ESPECIALIDADESBindingSource
+        '
+        Me.ESPECIALIDADESBindingSource.DataMember = "ESPECIALIDADES"
+        Me.ESPECIALIDADESBindingSource.DataSource = Me.ConsultaMedicaDataSet
+        '
+        'ESPECIALIDADESTableAdapter
+        '
+        Me.ESPECIALIDADESTableAdapter.ClearBeforeFill = True
         '
         'NuevoMedico
         '
@@ -263,12 +273,13 @@ Partial Class NuevoMedico
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "NuevoMedico"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "NuevoMedico"
+        Me.Text = "Añadir nuevo médico"
         Me.GBDatosPersonales.ResumeLayout(False)
         Me.GBDatosPersonales.PerformLayout()
         CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ESPECIALIDADESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -277,7 +288,6 @@ Partial Class NuevoMedico
     Friend WithEvents btnVolver As Button
     Friend WithEvents btnAceptar As Button
     Friend WithEvents GBDatosPersonales As GroupBox
-    Friend WithEvents cbEspecialidad As ComboBox
     Friend WithEvents txtSexo As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents DTPFNacimiento As DateTimePicker
@@ -295,4 +305,7 @@ Partial Class NuevoMedico
     Friend WithEvents ConsultaMedicaDataSet As ConsultaMedicaDataSet
     Friend WithEvents MEDICOSBindingSource As BindingSource
     Friend WithEvents MEDICOSTableAdapter As ConsultaMedicaDataSetTableAdapters.MEDICOSTableAdapter
+    Friend WithEvents ESPECIALIDADESBindingSource As BindingSource
+    Friend WithEvents ESPECIALIDADESTableAdapter As ConsultaMedicaDataSetTableAdapters.ESPECIALIDADESTableAdapter
+    Friend WithEvents txtEspecialidad As TextBox
 End Class

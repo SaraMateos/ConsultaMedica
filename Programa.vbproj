@@ -101,7 +101,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcDatos.vb" />
     <Compile Include="Conexion.vb" />
     <Compile Include="Consulta.Designer.vb">
       <DependentUpon>Consulta.vb</DependentUpon>

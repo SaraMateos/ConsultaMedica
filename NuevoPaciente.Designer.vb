@@ -137,7 +137,6 @@ Partial Class NuevoPaciente
         Me.txtSexo.Name = "txtSexo"
         Me.txtSexo.Size = New System.Drawing.Size(236, 21)
         Me.txtSexo.TabIndex = 18
-        Me.txtSexo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label1
         '
@@ -167,7 +166,6 @@ Partial Class NuevoPaciente
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(236, 21)
         Me.txtNombre.TabIndex = 16
-        Me.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label8
         '
@@ -186,7 +184,6 @@ Partial Class NuevoPaciente
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(196, 21)
         Me.txtTelefono.TabIndex = 22
-        Me.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'lblTelefono
         '
@@ -223,7 +220,6 @@ Partial Class NuevoPaciente
         Me.txtPoblacion.Name = "txtPoblacion"
         Me.txtPoblacion.Size = New System.Drawing.Size(196, 21)
         Me.txtPoblacion.TabIndex = 19
-        Me.txtPoblacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'lblPoblacion
         '
@@ -251,7 +247,6 @@ Partial Class NuevoPaciente
         Me.txtNIF.Name = "txtNIF"
         Me.txtNIF.Size = New System.Drawing.Size(188, 21)
         Me.txtNIF.TabIndex = 1
-        Me.txtNIF.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'lblNIF
         '
@@ -314,7 +309,6 @@ Partial Class NuevoPaciente
         Me.txtAlergias.Name = "txtAlergias"
         Me.txtAlergias.Size = New System.Drawing.Size(188, 21)
         Me.txtAlergias.TabIndex = 3
-        Me.txtAlergias.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'lblAlergias
         '
@@ -352,7 +346,6 @@ Partial Class NuevoPaciente
         Me.txtSangre.Name = "txtSangre"
         Me.txtSangre.Size = New System.Drawing.Size(188, 21)
         Me.txtSangre.TabIndex = 2
-        Me.txtSangre.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'lblSangre
         '
@@ -372,7 +365,6 @@ Partial Class NuevoPaciente
         Me.txtAltura.Name = "txtAltura"
         Me.txtAltura.Size = New System.Drawing.Size(188, 21)
         Me.txtAltura.TabIndex = 1
-        Me.txtAltura.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'lblAltura
         '
@@ -391,7 +383,6 @@ Partial Class NuevoPaciente
         Me.txtPeso.Name = "txtPeso"
         Me.txtPeso.Size = New System.Drawing.Size(188, 21)
         Me.txtPeso.TabIndex = 0
-        Me.txtPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'lblPeso
         '

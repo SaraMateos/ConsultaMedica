@@ -29,7 +29,7 @@ Partial Class VerMedicos
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.GBDatosPersonales = New System.Windows.Forms.GroupBox()
-        Me.cbEspecialidad = New System.Windows.Forms.ComboBox()
+        Me.txtEspecialidad = New System.Windows.Forms.TextBox()
         Me.MEDICOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ConsultaMedicaDataSet = New WindowsApp1.ConsultaMedicaDataSet()
         Me.txtSexo = New System.Windows.Forms.TextBox()
@@ -55,8 +55,6 @@ Partial Class VerMedicos
         Me.IdEspecialidadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MEDICOSTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.MEDICOSTableAdapter()
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
-        Me.btnSiguiente = New System.Windows.Forms.Button()
-        Me.btnAnterior = New System.Windows.Forms.Button()
         Me.txtColegiado = New System.Windows.Forms.TextBox()
         Me.ESPECIALIDADESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ESPECIALIDADESTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.ESPECIALIDADESTableAdapter()
@@ -110,7 +108,7 @@ Partial Class VerMedicos
         '
         'GBDatosPersonales
         '
-        Me.GBDatosPersonales.Controls.Add(Me.cbEspecialidad)
+        Me.GBDatosPersonales.Controls.Add(Me.txtEspecialidad)
         Me.GBDatosPersonales.Controls.Add(Me.txtSexo)
         Me.GBDatosPersonales.Controls.Add(Me.Label1)
         Me.GBDatosPersonales.Controls.Add(Me.DTPFNacimiento)
@@ -130,16 +128,14 @@ Partial Class VerMedicos
         Me.GBDatosPersonales.TabStop = False
         Me.GBDatosPersonales.Text = "Datos Personales"
         '
-        'cbEspecialidad
+        'txtEspecialidad
         '
-        Me.cbEspecialidad.DataSource = Me.MEDICOSBindingSource
-        Me.cbEspecialidad.DisplayMember = "idEspecialidad"
-        Me.cbEspecialidad.FormattingEnabled = True
-        Me.cbEspecialidad.Location = New System.Drawing.Point(480, 145)
-        Me.cbEspecialidad.Name = "cbEspecialidad"
-        Me.cbEspecialidad.Size = New System.Drawing.Size(196, 24)
-        Me.cbEspecialidad.TabIndex = 17
-        Me.cbEspecialidad.ValueMember = "idEspecialidad"
+        Me.txtEspecialidad.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MEDICOSBindingSource, "idEspecialidad", True))
+        Me.txtEspecialidad.Location = New System.Drawing.Point(480, 140)
+        Me.txtEspecialidad.Multiline = True
+        Me.txtEspecialidad.Name = "txtEspecialidad"
+        Me.txtEspecialidad.Size = New System.Drawing.Size(196, 21)
+        Me.txtEspecialidad.TabIndex = 22
         '
         'MEDICOSBindingSource
         '
@@ -159,7 +155,6 @@ Partial Class VerMedicos
         Me.txtSexo.Name = "txtSexo"
         Me.txtSexo.Size = New System.Drawing.Size(230, 21)
         Me.txtSexo.TabIndex = 16
-        Me.txtSexo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label1
         '
@@ -173,7 +168,6 @@ Partial Class VerMedicos
         'DTPFNacimiento
         '
         Me.DTPFNacimiento.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MEDICOSBindingSource, "fechaNacimiento", True))
-        Me.DTPFNacimiento.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
         Me.DTPFNacimiento.Location = New System.Drawing.Point(129, 111)
         Me.DTPFNacimiento.Name = "DTPFNacimiento"
         Me.DTPFNacimiento.Size = New System.Drawing.Size(230, 23)
@@ -187,7 +181,6 @@ Partial Class VerMedicos
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(230, 21)
         Me.txtNombre.TabIndex = 13
-        Me.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label8
         '
@@ -206,7 +199,6 @@ Partial Class VerMedicos
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(196, 21)
         Me.txtTelefono.TabIndex = 11
-        Me.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'lblTelefono
         '
@@ -243,7 +235,6 @@ Partial Class VerMedicos
         Me.txtAbreviatura.Name = "txtAbreviatura"
         Me.txtAbreviatura.Size = New System.Drawing.Size(188, 21)
         Me.txtAbreviatura.TabIndex = 1
-        Me.txtAbreviatura.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'lblAbreviatura
         '
@@ -346,33 +337,11 @@ Partial Class VerMedicos
         Me.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.btnCerrarSesion.Image = CType(resources.GetObject("btnCerrarSesion.Image"), System.Drawing.Image)
-        Me.btnCerrarSesion.Location = New System.Drawing.Point(1010, 22)
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(978, 19)
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
         Me.btnCerrarSesion.Size = New System.Drawing.Size(27, 32)
         Me.btnCerrarSesion.TabIndex = 71
         Me.btnCerrarSesion.UseVisualStyleBackColor = True
-        '
-        'btnSiguiente
-        '
-        Me.btnSiguiente.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSiguiente.Image = CType(resources.GetObject("btnSiguiente.Image"), System.Drawing.Image)
-        Me.btnSiguiente.Location = New System.Drawing.Point(937, 13)
-        Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(56, 52)
-        Me.btnSiguiente.TabIndex = 70
-        Me.btnSiguiente.UseVisualStyleBackColor = True
-        '
-        'btnAnterior
-        '
-        Me.btnAnterior.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAnterior.Image = CType(resources.GetObject("btnAnterior.Image"), System.Drawing.Image)
-        Me.btnAnterior.Location = New System.Drawing.Point(875, 13)
-        Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(56, 52)
-        Me.btnAnterior.TabIndex = 69
-        Me.btnAnterior.UseVisualStyleBackColor = True
         '
         'txtColegiado
         '
@@ -401,8 +370,6 @@ Partial Class VerMedicos
         Me.ClientSize = New System.Drawing.Size(1044, 607)
         Me.Controls.Add(Me.txtColegiado)
         Me.Controls.Add(Me.btnCerrarSesion)
-        Me.Controls.Add(Me.btnSiguiente)
-        Me.Controls.Add(Me.btnAnterior)
         Me.Controls.Add(Me.DataMedicos)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.btnEliminar)
@@ -432,7 +399,6 @@ Partial Class VerMedicos
     Friend WithEvents btnVolver As Button
     Friend WithEvents btnActualizar As Button
     Friend WithEvents GBDatosPersonales As GroupBox
-    Friend WithEvents cbEspecialidad As ComboBox
     Friend WithEvents txtSexo As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents DTPFNacimiento As DateTimePicker
@@ -458,9 +424,8 @@ Partial Class VerMedicos
     Friend WithEvents TelefonoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdEspecialidadDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btnCerrarSesion As Button
-    Friend WithEvents btnSiguiente As Button
-    Friend WithEvents btnAnterior As Button
     Friend WithEvents txtColegiado As TextBox
     Friend WithEvents ESPECIALIDADESBindingSource As BindingSource
     Friend WithEvents ESPECIALIDADESTableAdapter As ConsultaMedicaDataSetTableAdapters.ESPECIALIDADESTableAdapter
+    Friend WithEvents txtEspecialidad As TextBox
 End Class

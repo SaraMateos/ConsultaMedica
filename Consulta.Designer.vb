@@ -37,9 +37,7 @@ Partial Class Consulta
         Me.btnBorrar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtNombrePaciente = New System.Windows.Forms.TextBox()
         Me.PACIENTESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.txtNumHistorial = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -77,7 +75,7 @@ Partial Class Consulta
         'btnVolver
         '
         Me.btnVolver.Font = New System.Drawing.Font("Maiandra GD", 11.25!)
-        Me.btnVolver.Location = New System.Drawing.Point(19, 568)
+        Me.btnVolver.Location = New System.Drawing.Point(19, 534)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(89, 34)
         Me.btnVolver.TabIndex = 79
@@ -88,7 +86,7 @@ Partial Class Consulta
         '
         Me.txtTratamiento.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "tratamiento", True))
         Me.txtTratamiento.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
-        Me.txtTratamiento.Location = New System.Drawing.Point(21, 473)
+        Me.txtTratamiento.Location = New System.Drawing.Point(21, 439)
         Me.txtTratamiento.Multiline = True
         Me.txtTratamiento.Name = "txtTratamiento"
         Me.txtTratamiento.Size = New System.Drawing.Size(639, 71)
@@ -108,7 +106,7 @@ Partial Class Consulta
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
-        Me.Label8.Location = New System.Drawing.Point(18, 456)
+        Me.Label8.Location = New System.Drawing.Point(18, 422)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(80, 16)
         Me.Label8.TabIndex = 77
@@ -118,7 +116,7 @@ Partial Class Consulta
         '
         Me.txtDiagnostico.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "diagnostico", True))
         Me.txtDiagnostico.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
-        Me.txtDiagnostico.Location = New System.Drawing.Point(21, 370)
+        Me.txtDiagnostico.Location = New System.Drawing.Point(21, 336)
         Me.txtDiagnostico.Multiline = True
         Me.txtDiagnostico.Name = "txtDiagnostico"
         Me.txtDiagnostico.Size = New System.Drawing.Size(639, 71)
@@ -128,7 +126,7 @@ Partial Class Consulta
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
-        Me.Label7.Location = New System.Drawing.Point(18, 353)
+        Me.Label7.Location = New System.Drawing.Point(18, 319)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(77, 16)
         Me.Label7.TabIndex = 75
@@ -138,7 +136,7 @@ Partial Class Consulta
         '
         Me.txtMotivo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "motivoConsulta", True))
         Me.txtMotivo.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
-        Me.txtMotivo.Location = New System.Drawing.Point(21, 269)
+        Me.txtMotivo.Location = New System.Drawing.Point(21, 235)
         Me.txtMotivo.Multiline = True
         Me.txtMotivo.Name = "txtMotivo"
         Me.txtMotivo.Size = New System.Drawing.Size(639, 71)
@@ -148,7 +146,7 @@ Partial Class Consulta
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
-        Me.Label5.Location = New System.Drawing.Point(18, 252)
+        Me.Label5.Location = New System.Drawing.Point(18, 218)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(121, 16)
         Me.Label5.TabIndex = 73
@@ -158,7 +156,7 @@ Partial Class Consulta
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
-        Me.Label6.Location = New System.Drawing.Point(18, 218)
+        Me.Label6.Location = New System.Drawing.Point(18, 184)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(107, 16)
         Me.Label6.TabIndex = 70
@@ -167,7 +165,7 @@ Partial Class Consulta
         'btnBorrar
         '
         Me.btnBorrar.Font = New System.Drawing.Font("Maiandra GD", 11.25!)
-        Me.btnBorrar.Location = New System.Drawing.Point(577, 568)
+        Me.btnBorrar.Location = New System.Drawing.Point(577, 534)
         Me.btnBorrar.Name = "btnBorrar"
         Me.btnBorrar.Size = New System.Drawing.Size(83, 34)
         Me.btnBorrar.TabIndex = 69
@@ -177,7 +175,7 @@ Partial Class Consulta
         'btnNuevo
         '
         Me.btnNuevo.Font = New System.Drawing.Font("Maiandra GD", 11.25!)
-        Me.btnNuevo.Location = New System.Drawing.Point(467, 568)
+        Me.btnNuevo.Location = New System.Drawing.Point(467, 534)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(89, 34)
         Me.btnNuevo.TabIndex = 67
@@ -188,37 +186,16 @@ Partial Class Consulta
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
-        Me.Label4.Location = New System.Drawing.Point(18, 182)
+        Me.Label4.Location = New System.Drawing.Point(18, 148)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(51, 16)
         Me.Label4.TabIndex = 66
         Me.Label4.Text = "Médico"
         '
-        'txtNombrePaciente
-        '
-        Me.txtNombrePaciente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "Nombre", True))
-        Me.txtNombrePaciente.DataBindings.Add(New System.Windows.Forms.Binding("Tag", Me.PACIENTESBindingSource, "Nombre", True))
-        Me.txtNombrePaciente.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
-        Me.txtNombrePaciente.Location = New System.Drawing.Point(133, 144)
-        Me.txtNombrePaciente.Multiline = True
-        Me.txtNombrePaciente.Name = "txtNombrePaciente"
-        Me.txtNombrePaciente.Size = New System.Drawing.Size(335, 21)
-        Me.txtNombrePaciente.TabIndex = 64
-        '
         'PACIENTESBindingSource
         '
         Me.PACIENTESBindingSource.DataMember = "PACIENTES"
         Me.PACIENTESBindingSource.DataSource = Me.ConsultaMedicaDataSet
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
-        Me.Label3.Location = New System.Drawing.Point(18, 148)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(53, 16)
-        Me.Label3.TabIndex = 63
-        Me.Label3.Text = "Paciente"
         '
         'txtNumHistorial
         '
@@ -291,7 +268,7 @@ Partial Class Consulta
         Me.DataConsultas.GridColor = System.Drawing.SystemColors.ControlText
         Me.DataConsultas.Location = New System.Drawing.Point(712, 71)
         Me.DataConsultas.Name = "DataConsultas"
-        Me.DataConsultas.Size = New System.Drawing.Size(646, 531)
+        Me.DataConsultas.Size = New System.Drawing.Size(646, 497)
         Me.DataConsultas.TabIndex = 80
         '
         'IdConsultaDataGridViewTextBoxColumn
@@ -351,7 +328,7 @@ Partial Class Consulta
         '
         Me.txtNombreMedico.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "idMedico", True))
         Me.txtNombreMedico.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
-        Me.txtNombreMedico.Location = New System.Drawing.Point(133, 179)
+        Me.txtNombreMedico.Location = New System.Drawing.Point(133, 145)
         Me.txtNombreMedico.Multiline = True
         Me.txtNombreMedico.Name = "txtNombreMedico"
         Me.txtNombreMedico.Size = New System.Drawing.Size(335, 21)
@@ -361,7 +338,7 @@ Partial Class Consulta
         '
         Me.DTPFechaRealizada.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "fechaRealizada", True))
         Me.DTPFechaRealizada.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
-        Me.DTPFechaRealizada.Location = New System.Drawing.Point(133, 218)
+        Me.DTPFechaRealizada.Location = New System.Drawing.Point(133, 184)
         Me.DTPFechaRealizada.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
         Me.DTPFechaRealizada.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         Me.DTPFechaRealizada.Name = "DTPFechaRealizada"
@@ -372,7 +349,7 @@ Partial Class Consulta
         '
         Me.txtEnfermedad.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "idEnfermedad", True))
         Me.txtEnfermedad.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
-        Me.txtEnfermedad.Location = New System.Drawing.Point(497, 221)
+        Me.txtEnfermedad.Location = New System.Drawing.Point(497, 187)
         Me.txtEnfermedad.Multiline = True
         Me.txtEnfermedad.Name = "txtEnfermedad"
         Me.txtEnfermedad.Size = New System.Drawing.Size(163, 21)
@@ -382,7 +359,7 @@ Partial Class Consulta
         '
         Me.lblEnfermedad.AutoSize = True
         Me.lblEnfermedad.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
-        Me.lblEnfermedad.Location = New System.Drawing.Point(494, 204)
+        Me.lblEnfermedad.Location = New System.Drawing.Point(494, 170)
         Me.lblEnfermedad.Name = "lblEnfermedad"
         Me.lblEnfermedad.Size = New System.Drawing.Size(76, 16)
         Me.lblEnfermedad.TabIndex = 83
@@ -442,7 +419,7 @@ Partial Class Consulta
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1376, 613)
+        Me.ClientSize = New System.Drawing.Size(1376, 579)
         Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.btnSiguiente)
         Me.Controls.Add(Me.btnAnterior)
@@ -462,8 +439,6 @@ Partial Class Consulta
         Me.Controls.Add(Me.btnBorrar)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.txtNombrePaciente)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtNumHistorial)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.GroupBox1)
@@ -495,8 +470,6 @@ Partial Class Consulta
     Friend WithEvents btnBorrar As Button
     Friend WithEvents btnNuevo As Button
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtNombrePaciente As TextBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents txtNumHistorial As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox1 As GroupBox

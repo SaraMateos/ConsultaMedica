@@ -26,8 +26,6 @@ Partial Class VerPacientes
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VerPacientes))
         Me.PACIENTESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ConsultaMedicaDataSet = New WindowsApp1.ConsultaMedicaDataSet()
-        Me.btnSiguiente = New System.Windows.Forms.Button()
-        Me.btnAnterior = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnVolver = New System.Windows.Forms.Button()
@@ -94,28 +92,6 @@ Partial Class VerPacientes
         '
         Me.ConsultaMedicaDataSet.DataSetName = "ConsultaMedicaDataSet"
         Me.ConsultaMedicaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'btnSiguiente
-        '
-        Me.btnSiguiente.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSiguiente.Image = CType(resources.GetObject("btnSiguiente.Image"), System.Drawing.Image)
-        Me.btnSiguiente.Location = New System.Drawing.Point(932, 12)
-        Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(56, 52)
-        Me.btnSiguiente.TabIndex = 58
-        Me.btnSiguiente.UseVisualStyleBackColor = True
-        '
-        'btnAnterior
-        '
-        Me.btnAnterior.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAnterior.Image = CType(resources.GetObject("btnAnterior.Image"), System.Drawing.Image)
-        Me.btnAnterior.Location = New System.Drawing.Point(870, 12)
-        Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(56, 52)
-        Me.btnAnterior.TabIndex = 57
-        Me.btnAnterior.UseVisualStyleBackColor = True
         '
         'btnNuevo
         '
@@ -559,7 +535,7 @@ Partial Class VerPacientes
         Me.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.btnCerrarSesion.Image = CType(resources.GetObject("btnCerrarSesion.Image"), System.Drawing.Image)
-        Me.btnCerrarSesion.Location = New System.Drawing.Point(1005, 20)
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(986, 23)
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
         Me.btnCerrarSesion.Size = New System.Drawing.Size(27, 32)
         Me.btnCerrarSesion.TabIndex = 61
@@ -574,8 +550,6 @@ Partial Class VerPacientes
         Me.Controls.Add(Me.btnCerrarSesion)
         Me.Controls.Add(Me.txtHistorial)
         Me.Controls.Add(Me.DataPacientes)
-        Me.Controls.Add(Me.btnSiguiente)
-        Me.Controls.Add(Me.btnAnterior)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnVolver)
@@ -601,8 +575,6 @@ Partial Class VerPacientes
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnSiguiente As Button
-    Friend WithEvents btnAnterior As Button
     Friend WithEvents btnNuevo As Button
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnVolver As Button

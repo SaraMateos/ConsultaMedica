@@ -46,4 +46,5 @@ Public Class Login
         MsgBox("Cerrando aplicación.", MsgBoxStyle.Information, "Cerrando...")
         End
     End Sub
+
 End Class

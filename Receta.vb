@@ -28,7 +28,7 @@ Public Class Receta
     End Sub
 
     'Mostrar datos de la tabla es su correspondiente lugar
-    Private Sub DataConsultas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataRecetas.CellContentClick
+    Private Sub DataRecetas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataRecetas.CellContentClick
 
         Dim i As Integer
         i = DataRecetas.CurrentRow.Index
@@ -37,19 +37,20 @@ Public Class Receta
         txtMedico.Text = DataRecetas.Item(1, i).Value()
         txtPaciente.Text = DataRecetas.Item(2, i).Value()
         DTPFechaCreacion.Text = DataRecetas.Item(3, i).Value()
+        txtEnfermedad.Text = DataRecetas.Item(4, i).Value()
         txtMedicamento.Text = DataRecetas.Item(5, i).Value()
         txtDosis.Text = DataRecetas.Item(6, i).Value()
 
     End Sub
 
-    'Actualizar los datos de la tabla
-    Private Sub btnActualizar_Click_1(sender As Object, e As EventArgs) Handles btnActualizar.Click
+    'Actualiza los datos de la tabla
+    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
 
-        Dim ole As New OleDbCommand("SELECT * FROM RECETAS", conexion1)
+        Dim oledc As New OleDbCommand("SELECT * FROM RECETAS", conexion1)
         Dim ds As New DataSet
-        Dim dataadapter3 As New OleDbDataAdapter
-        dataadapter3.SelectCommand = ole
-        dataadapter3.Fill(ds, "RECETAS")
+        Dim adaptar As New OleDbDataAdapter
+        adaptar.SelectCommand = oledc
+        adaptar.Fill(ds, "RECETAS")
         DataRecetas.DataSource = ds
         DataRecetas.DataMember = "RECETAS"
 
@@ -61,4 +62,21 @@ Public Class Receta
         Principal.Show()
     End Sub
 
+    'Añade una nueva receta
+    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+
+        comand = New OleDbCommand("INSERT INTO RECETAS(idMedico, idPaciente, fechaCreacion, idEnfermedad,
+            idMedicamento, dosis)" & " VALUES(txtMedico, txtPaciente, DTPFechaCreacion, txtEnfermedad, txtMedicamento, txtDosis)", conexion1)
+        comand.Parameters.AddWithValue("@idMedico", txtMedico.Text)
+        comand.Parameters.AddWithValue("@idPaciente", txtPaciente.Text)
+        comand.Parameters.AddWithValue("@fechaCreacion", DTPFechaCreacion.Value.Date)
+        comand.Parameters.AddWithValue("@idEnfermedad", txtEnfermedad.Text)
+        comand.Parameters.AddWithValue("@idMedicamento", txtMedicamento.Text)
+        comand.Parameters.AddWithValue("@dosis", txtDosis.Text)
+
+        comand.ExecuteNonQuery()
+
+        MsgBox("Nueva receta agregada.", MsgBoxStyle.Information, "Información")
+
+    End Sub
 End Class

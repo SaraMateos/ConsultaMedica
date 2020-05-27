@@ -1495,6 +1495,8 @@ Partial Public Class ConsultaMedicaDataSet
         
         Private columnidReceta As Global.System.Data.DataColumn
         
+        Private columntipo As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -1563,6 +1565,14 @@ Partial Public Class ConsultaMedicaDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property tipoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntipo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1599,9 +1609,9 @@ Partial Public Class ConsultaMedicaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddMEDICAMENTOSRow(ByVal nombre As String, ByVal parentENFERMEDADESRowByEnfermedadMedicamento As ENFERMEDADESRow, ByVal parentRECETASRowByRecetaMedicamento As RECETASRow) As MEDICAMENTOSRow
+        Public Overloads Function AddMEDICAMENTOSRow(ByVal nombre As String, ByVal parentENFERMEDADESRowByEnfermedadMedicamento As ENFERMEDADESRow, ByVal parentRECETASRowByRecetaMedicamento As RECETASRow, ByVal tipo As String) As MEDICAMENTOSRow
             Dim rowMEDICAMENTOSRow As MEDICAMENTOSRow = CType(Me.NewRow,MEDICAMENTOSRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, nombre, Nothing, Nothing}
+            Dim columnValuesArray() As Object = New Object() {Nothing, nombre, Nothing, Nothing, tipo}
             If (Not (parentENFERMEDADESRowByEnfermedadMedicamento) Is Nothing) Then
                 columnValuesArray(2) = parentENFERMEDADESRowByEnfermedadMedicamento(0)
             End If
@@ -1640,6 +1650,7 @@ Partial Public Class ConsultaMedicaDataSet
             Me.columnnombre = MyBase.Columns("nombre")
             Me.columnidEnfermedad = MyBase.Columns("idEnfermedad")
             Me.columnidReceta = MyBase.Columns("idReceta")
+            Me.columntipo = MyBase.Columns("tipo")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1653,6 +1664,8 @@ Partial Public Class ConsultaMedicaDataSet
             MyBase.Columns.Add(Me.columnidEnfermedad)
             Me.columnidReceta = New Global.System.Data.DataColumn("idReceta", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnidReceta)
+            Me.columntipo = New Global.System.Data.DataColumn("tipo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntipo)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnidMedicamento}, true))
             Me.columnidMedicamento.AutoIncrement = true
             Me.columnidMedicamento.AutoIncrementSeed = -1
@@ -1660,6 +1673,7 @@ Partial Public Class ConsultaMedicaDataSet
             Me.columnidMedicamento.AllowDBNull = false
             Me.columnidMedicamento.Unique = true
             Me.columnnombre.MaxLength = 255
+            Me.columntipo.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3658,6 +3672,21 @@ Partial Public Class ConsultaMedicaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property tipo() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableMEDICAMENTOS.tipoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'tipo' de la tabla 'MEDICAMENTOS' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableMEDICAMENTOS.tipoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property ENFERMEDADESRow() As ENFERMEDADESRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("EnfermedadMedicamento")),ENFERMEDADESRow)
@@ -3712,6 +3741,18 @@ Partial Public Class ConsultaMedicaDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetidRecetaNull()
             Me(Me.tableMEDICAMENTOS.idRecetaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IstipoNull() As Boolean
+            Return Me.IsNull(Me.tableMEDICAMENTOS.tipoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SettipoNull()
+            Me(Me.tableMEDICAMENTOS.tipoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -6090,12 +6131,14 @@ Namespace ConsultaMedicaDataSetTableAdapters
             tableMapping.ColumnMappings.Add("nombre", "nombre")
             tableMapping.ColumnMappings.Add("idEnfermedad", "idEnfermedad")
             tableMapping.ColumnMappings.Add("idReceta", "idReceta")
+            tableMapping.ColumnMappings.Add("tipo", "tipo")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM `MEDICAMENTOS` WHERE ((`idMedicamento` = ?) AND ((? = 1 AND `nombre` "& _ 
                 "IS NULL) OR (`nombre` = ?)) AND ((? = 1 AND `idEnfermedad` IS NULL) OR (`idEnfer"& _ 
-                "medad` = ?)) AND ((? = 1 AND `idReceta` IS NULL) OR (`idReceta` = ?)))"
+                "medad` = ?)) AND ((? = 1 AND `idReceta` IS NULL) OR (`idReceta` = ?)) AND ((? = "& _ 
+                "1 AND `tipo` IS NULL) OR (`tipo` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_idMedicamento", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idMedicamento", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_nombre", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "nombre", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -6104,26 +6147,31 @@ Namespace ConsultaMedicaDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_idEnfermedad", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idEnfermedad", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_idReceta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idReceta", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_idReceta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idReceta", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_tipo", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "tipo", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_tipo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "tipo", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `MEDICAMENTOS` (`idMedicamento`, `nombre`, `idEnfermedad`, `idReceta`"& _ 
-                ") VALUES (?, ?, ?, ?)"
+                ", `tipo`) VALUES (?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idMedicamento", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idMedicamento", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("nombre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "nombre", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idEnfermedad", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idEnfermedad", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idReceta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idReceta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("tipo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "tipo", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `MEDICAMENTOS` SET `idMedicamento` = ?, `nombre` = ?, `idEnfermedad` = ?, "& _ 
-                "`idReceta` = ? WHERE ((`idMedicamento` = ?) AND ((? = 1 AND `nombre` IS NULL) OR"& _ 
-                " (`nombre` = ?)) AND ((? = 1 AND `idEnfermedad` IS NULL) OR (`idEnfermedad` = ?)"& _ 
-                ") AND ((? = 1 AND `idReceta` IS NULL) OR (`idReceta` = ?)))"
+                "`idReceta` = ?, `tipo` = ? WHERE ((`idMedicamento` = ?) AND ((? = 1 AND `nombre`"& _ 
+                " IS NULL) OR (`nombre` = ?)) AND ((? = 1 AND `idEnfermedad` IS NULL) OR (`idEnfe"& _ 
+                "rmedad` = ?)) AND ((? = 1 AND `idReceta` IS NULL) OR (`idReceta` = ?)) AND ((? ="& _ 
+                " 1 AND `tipo` IS NULL) OR (`tipo` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idMedicamento", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idMedicamento", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("nombre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "nombre", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idEnfermedad", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idEnfermedad", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idReceta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idReceta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("tipo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "tipo", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_idMedicamento", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idMedicamento", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_nombre", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "nombre", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_nombre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "nombre", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -6131,6 +6179,8 @@ Namespace ConsultaMedicaDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_idEnfermedad", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idEnfermedad", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_idReceta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idReceta", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_idReceta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idReceta", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_tipo", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "tipo", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_tipo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "tipo", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6146,7 +6196,7 @@ Namespace ConsultaMedicaDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT idMedicamento, nombre, idEnfermedad, idReceta FROM MEDICAMENTOS"
+            Me._commandCollection(0).CommandText = "SELECT idMedicamento, nombre, idEnfermedad, idReceta, tipo FROM MEDICAMENTOS"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -6206,7 +6256,7 @@ Namespace ConsultaMedicaDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_idMedicamento As String, ByVal Original_nombre As String, ByVal Original_idEnfermedad As String, ByVal Original_idReceta As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_idMedicamento As String, ByVal Original_nombre As String, ByVal Original_idEnfermedad As String, ByVal Original_idReceta As Global.System.Nullable(Of Integer), ByVal Original_tipo As String) As Integer
             If (Original_idMedicamento Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_idMedicamento")
             Else
@@ -6233,6 +6283,13 @@ Namespace ConsultaMedicaDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
+            If (Original_tipo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_tipo,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -6252,7 +6309,7 @@ Namespace ConsultaMedicaDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal idMedicamento As String, ByVal nombre As String, ByVal idEnfermedad As String, ByVal idReceta As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Insert(ByVal idMedicamento As String, ByVal nombre As String, ByVal idEnfermedad As String, ByVal idReceta As Global.System.Nullable(Of Integer), ByVal tipo As String) As Integer
             If (idMedicamento Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("idMedicamento")
             Else
@@ -6273,6 +6330,11 @@ Namespace ConsultaMedicaDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
+            If (tipo Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(tipo,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -6292,7 +6354,7 @@ Namespace ConsultaMedicaDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal idMedicamento As String, ByVal nombre As String, ByVal idEnfermedad As String, ByVal idReceta As Global.System.Nullable(Of Integer), ByVal Original_idMedicamento As String, ByVal Original_nombre As String, ByVal Original_idEnfermedad As String, ByVal Original_idReceta As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Update(ByVal idMedicamento As String, ByVal nombre As String, ByVal idEnfermedad As String, ByVal idReceta As Global.System.Nullable(Of Integer), ByVal tipo As String, ByVal Original_idMedicamento As String, ByVal Original_nombre As String, ByVal Original_idEnfermedad As String, ByVal Original_idReceta As Global.System.Nullable(Of Integer), ByVal Original_tipo As String) As Integer
             If (idMedicamento Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("idMedicamento")
             Else
@@ -6313,31 +6375,43 @@ Namespace ConsultaMedicaDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
+            If (tipo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(tipo,String)
+            End If
             If (Original_idMedicamento Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_idMedicamento")
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_idMedicamento,String)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_idMedicamento,String)
             End If
             If (Original_nombre Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_nombre,String)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_nombre,String)
             End If
             If (Original_idEnfermedad Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_idEnfermedad,String)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_idEnfermedad,String)
             End If
             If (Original_idReceta.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_idReceta.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_idReceta.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            End If
+            If (Original_tipo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_tipo,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -6358,8 +6432,8 @@ Namespace ConsultaMedicaDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal nombre As String, ByVal idEnfermedad As String, ByVal idReceta As Global.System.Nullable(Of Integer), ByVal Original_idMedicamento As String, ByVal Original_nombre As String, ByVal Original_idEnfermedad As String, ByVal Original_idReceta As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(Original_idMedicamento, nombre, idEnfermedad, idReceta, Original_idMedicamento, Original_nombre, Original_idEnfermedad, Original_idReceta)
+        Public Overloads Overridable Function Update(ByVal nombre As String, ByVal idEnfermedad As String, ByVal idReceta As Global.System.Nullable(Of Integer), ByVal tipo As String, ByVal Original_idMedicamento As String, ByVal Original_nombre As String, ByVal Original_idEnfermedad As String, ByVal Original_idReceta As Global.System.Nullable(Of Integer), ByVal Original_tipo As String) As Integer
+            Return Me.Update(Original_idMedicamento, nombre, idEnfermedad, idReceta, tipo, Original_idMedicamento, Original_nombre, Original_idEnfermedad, Original_idReceta, Original_tipo)
         End Function
     End Class
     

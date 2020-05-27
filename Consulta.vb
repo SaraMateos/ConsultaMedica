@@ -22,15 +22,15 @@ Public Class Consulta
 
     Private Sub Consulta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'abrir conexión
+        'Abre la conexión
         abrir()
 
-        'Carga la tabla de pacientes
+        'Carga la tabla de consultas
         verConsul()
 
     End Sub
 
-    'Mostrar datos de la tabla es su correspondiente lugar
+    'Muestra los datos de la tabla es su correspondiente lugar
     Private Sub DataConsultas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataConsultas.CellContentClick
 
         Dim i As Integer
@@ -46,7 +46,7 @@ Public Class Consulta
 
     End Sub
 
-    'Botón para actualizar la tabla
+    'Actualiza la tabla
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Dim ole As New OleDbCommand("SELECT * FROM CONSULTA", conexion1)
         Dim ds As New DataSet
@@ -57,11 +57,8 @@ Public Class Consulta
         DataConsultas.DataMember = "CONSULTA"
     End Sub
 
-    'Nueva consulta
+    'Añade una consulta
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-
-        'Abrir conexión
-        'abrir()
 
         comand = New OleDbCommand("INSERT INTO CONSULTA(idPaciente, idMedico, fechaRealizada, motivoConsulta, diagnostico, 
             tratamiento, idEnfermedad)" & " VALUES(txtNumHistorial, txtNombreMedico, DTPFechaRealizada, txtMotivo, txtDiagnostico, txtTratamiento, txtEnfermedad)", conexion1)
@@ -73,14 +70,13 @@ Public Class Consulta
         comand.Parameters.AddWithValue("@tratamiento", txtTratamiento.Text)
         comand.Parameters.AddWithValue("@idEnfermedad", txtEnfermedad.Text)
 
-
         comand.ExecuteNonQuery()
 
         MsgBox("Nueva consulta agregada.", MsgBoxStyle.Information, "Información")
 
     End Sub
 
-    'Borrar consulta
+    'Borrar una consulta
     Private Sub btnBorrar_Click(sender As Object, e As EventArgs) Handles btnBorrar.Click
 
         abrir()
@@ -94,7 +90,7 @@ Public Class Consulta
         comand = New OleDbCommand(eliminarRegistro, conexion1)
         comand.ExecuteNonQuery()
 
-        MsgBox("Eliminado corectamente.", vbInformation, "Información")
+        MsgBox("Eliminado correctamente.", vbInformation, "Información")
 
     End Sub
 
@@ -104,6 +100,7 @@ Public Class Consulta
         Principal.Show()
     End Sub
 
+    'Busca el paciente y muestra sus consultas
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Dim consulta As String
         Dim oda As New OleDbDataAdapter
@@ -130,7 +127,7 @@ Public Class Consulta
                 txtEnfermedad.Text = ods.Tables("CONSULTA").Rows(0).Item("idEnfermedad")
 
             Else
-                MsgBox("No exixte el código", vbCritical, "Atención")
+                MsgBox("Este paciente no tiene ninguna consulta.", vbCritical, "Atención")
 
             End If
 
