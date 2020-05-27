@@ -33,7 +33,7 @@ Public Class NuevoUsuario
             Me.Hide()
 
         Catch ex As Exception
-            MsgBox("No se pudo agregar la cuenta de usuario.", MsgBoxStyle.Critical, "Atención")
+            MsgBox("No se pudo agregar la cuenta de usuario. Intentalo de nuevo", MsgBoxStyle.Critical, "Atención")
         End Try
 
 

@@ -37,40 +37,40 @@ Partial Class Principal
         'lblConsultas
         '
         Me.lblConsultas.AutoSize = True
-        Me.lblConsultas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblConsultas.Location = New System.Drawing.Point(348, 31)
+        Me.lblConsultas.Font = New System.Drawing.Font("Maiandra GD", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.lblConsultas.Location = New System.Drawing.Point(342, 28)
         Me.lblConsultas.Name = "lblConsultas"
-        Me.lblConsultas.Size = New System.Drawing.Size(63, 15)
+        Me.lblConsultas.Size = New System.Drawing.Size(72, 18)
         Me.lblConsultas.TabIndex = 27
         Me.lblConsultas.Text = "Consulta"
         '
         'lblRecetas
         '
         Me.lblRecetas.AutoSize = True
-        Me.lblRecetas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRecetas.Location = New System.Drawing.Point(345, 232)
+        Me.lblRecetas.Font = New System.Drawing.Font("Maiandra GD", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.lblRecetas.Location = New System.Drawing.Point(342, 250)
         Me.lblRecetas.Name = "lblRecetas"
-        Me.lblRecetas.Size = New System.Drawing.Size(59, 15)
+        Me.lblRecetas.Size = New System.Drawing.Size(62, 18)
         Me.lblRecetas.TabIndex = 26
         Me.lblRecetas.Text = "Recetas"
         '
         'lblDoctor
         '
         Me.lblDoctor.AutoSize = True
-        Me.lblDoctor.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDoctor.Location = New System.Drawing.Point(49, 232)
+        Me.lblDoctor.Font = New System.Drawing.Font("Maiandra GD", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.lblDoctor.Location = New System.Drawing.Point(49, 244)
         Me.lblDoctor.Name = "lblDoctor"
-        Me.lblDoctor.Size = New System.Drawing.Size(61, 15)
+        Me.lblDoctor.Size = New System.Drawing.Size(69, 18)
         Me.lblDoctor.TabIndex = 25
         Me.lblDoctor.Text = "Médicos"
         '
         'lblPacient
         '
         Me.lblPacient.AutoSize = True
-        Me.lblPacient.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPacient.Location = New System.Drawing.Point(49, 31)
+        Me.lblPacient.Font = New System.Drawing.Font("Maiandra GD", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPacient.Location = New System.Drawing.Point(49, 28)
         Me.lblPacient.Name = "lblPacient"
-        Me.lblPacient.Size = New System.Drawing.Size(70, 15)
+        Me.lblPacient.Size = New System.Drawing.Size(74, 18)
         Me.lblPacient.TabIndex = 24
         Me.lblPacient.Text = "Pacientes"
         '
@@ -79,9 +79,9 @@ Partial Class Principal
         Me.btnRecetas.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.btnRecetas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRecetas.Image = CType(resources.GetObject("btnRecetas.Image"), System.Drawing.Image)
-        Me.btnRecetas.Location = New System.Drawing.Point(345, 248)
+        Me.btnRecetas.Location = New System.Drawing.Point(345, 267)
         Me.btnRecetas.Name = "btnRecetas"
-        Me.btnRecetas.Size = New System.Drawing.Size(156, 143)
+        Me.btnRecetas.Size = New System.Drawing.Size(156, 154)
         Me.btnRecetas.TabIndex = 23
         Me.btnRecetas.UseVisualStyleBackColor = True
         '
@@ -90,9 +90,9 @@ Partial Class Principal
         Me.btnConsultas.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.btnConsultas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnConsultas.Image = CType(resources.GetObject("btnConsultas.Image"), System.Drawing.Image)
-        Me.btnConsultas.Location = New System.Drawing.Point(345, 47)
+        Me.btnConsultas.Location = New System.Drawing.Point(345, 51)
         Me.btnConsultas.Name = "btnConsultas"
-        Me.btnConsultas.Size = New System.Drawing.Size(156, 143)
+        Me.btnConsultas.Size = New System.Drawing.Size(156, 154)
         Me.btnConsultas.TabIndex = 22
         Me.btnConsultas.UseVisualStyleBackColor = True
         '
@@ -101,9 +101,9 @@ Partial Class Principal
         Me.btnMedicos.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.btnMedicos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMedicos.Image = CType(resources.GetObject("btnMedicos.Image"), System.Drawing.Image)
-        Me.btnMedicos.Location = New System.Drawing.Point(52, 248)
+        Me.btnMedicos.Location = New System.Drawing.Point(52, 267)
         Me.btnMedicos.Name = "btnMedicos"
-        Me.btnMedicos.Size = New System.Drawing.Size(158, 143)
+        Me.btnMedicos.Size = New System.Drawing.Size(158, 154)
         Me.btnMedicos.TabIndex = 21
         Me.btnMedicos.UseVisualStyleBackColor = True
         '
@@ -112,9 +112,9 @@ Partial Class Principal
         Me.btnPacientes.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.btnPacientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPacientes.Image = CType(resources.GetObject("btnPacientes.Image"), System.Drawing.Image)
-        Me.btnPacientes.Location = New System.Drawing.Point(52, 47)
+        Me.btnPacientes.Location = New System.Drawing.Point(52, 51)
         Me.btnPacientes.Name = "btnPacientes"
-        Me.btnPacientes.Size = New System.Drawing.Size(158, 143)
+        Me.btnPacientes.Size = New System.Drawing.Size(158, 154)
         Me.btnPacientes.TabIndex = 20
         Me.btnPacientes.UseVisualStyleBackColor = True
         '
@@ -125,16 +125,16 @@ Partial Class Principal
         Me.btnCerrarSesion.Image = CType(resources.GetObject("btnCerrarSesion.Image"), System.Drawing.Image)
         Me.btnCerrarSesion.Location = New System.Drawing.Point(508, 5)
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
-        Me.btnCerrarSesion.Size = New System.Drawing.Size(27, 30)
+        Me.btnCerrarSesion.Size = New System.Drawing.Size(27, 32)
         Me.btnCerrarSesion.TabIndex = 28
         Me.btnCerrarSesion.UseVisualStyleBackColor = True
         '
         'Principal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.ClientSize = New System.Drawing.Size(547, 423)
+        Me.ClientSize = New System.Drawing.Size(547, 456)
         Me.Controls.Add(Me.btnCerrarSesion)
         Me.Controls.Add(Me.lblConsultas)
         Me.Controls.Add(Me.lblRecetas)
@@ -144,6 +144,7 @@ Partial Class Principal
         Me.Controls.Add(Me.btnConsultas)
         Me.Controls.Add(Me.btnMedicos)
         Me.Controls.Add(Me.btnPacientes)
+        Me.Font = New System.Drawing.Font("Maiandra GD", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Principal"
         Me.Text = "Principal"

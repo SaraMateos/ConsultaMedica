@@ -14,12 +14,11 @@ Public Class Login
     'Iniciar sesión
     Private Sub btnIniciar_Click(sender As Object, e As EventArgs) Handles btnIniciar.Click
 
-        'Verificar si el usuario es apto o no
-        'Verificar que la conexión ha ido bien antes de la conexión
         If conn.State = ConnectionState.Closed Then
             conn.Open()
         End If
 
+        'Verificar si el usuario es apto o no
         If txtUsuario.Text = Nothing Or txtContrasena.Text = Nothing Then
             MessageBox.Show("Por favor introduce los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
@@ -36,12 +35,13 @@ Public Class Login
                 Me.Hide()
                 Principal.Show()
             Else
-                MessageBox.Show("Oops! Datos incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MsgBox("Oops! Datos incorrectos.", MessageBoxIcon.Error, "Atención")
             End If
 
         End Using
     End Sub
 
+    'Salir
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         MsgBox("Cerrando aplicación.", MsgBoxStyle.Information, "Cerrando...")
         End

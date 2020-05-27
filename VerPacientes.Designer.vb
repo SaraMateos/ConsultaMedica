@@ -100,9 +100,9 @@ Partial Class VerPacientes
         Me.btnSiguiente.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSiguiente.Image = CType(resources.GetObject("btnSiguiente.Image"), System.Drawing.Image)
-        Me.btnSiguiente.Location = New System.Drawing.Point(932, 11)
+        Me.btnSiguiente.Location = New System.Drawing.Point(932, 12)
         Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(56, 48)
+        Me.btnSiguiente.Size = New System.Drawing.Size(56, 52)
         Me.btnSiguiente.TabIndex = 58
         Me.btnSiguiente.UseVisualStyleBackColor = True
         '
@@ -111,48 +111,48 @@ Partial Class VerPacientes
         Me.btnAnterior.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAnterior.Image = CType(resources.GetObject("btnAnterior.Image"), System.Drawing.Image)
-        Me.btnAnterior.Location = New System.Drawing.Point(870, 11)
+        Me.btnAnterior.Location = New System.Drawing.Point(870, 12)
         Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(56, 48)
+        Me.btnAnterior.Size = New System.Drawing.Size(56, 52)
         Me.btnAnterior.TabIndex = 57
         Me.btnAnterior.UseVisualStyleBackColor = True
         '
         'btnNuevo
         '
-        Me.btnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNuevo.Location = New System.Drawing.Point(486, 727)
+        Me.btnNuevo.Font = New System.Drawing.Font("Maiandra GD", 11.25!)
+        Me.btnNuevo.Location = New System.Drawing.Point(486, 783)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(75, 30)
+        Me.btnNuevo.Size = New System.Drawing.Size(75, 32)
         Me.btnNuevo.TabIndex = 2
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
         'btnEliminar
         '
-        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminar.Location = New System.Drawing.Point(836, 727)
+        Me.btnEliminar.Font = New System.Drawing.Font("Maiandra GD", 11.25!)
+        Me.btnEliminar.Location = New System.Drawing.Point(828, 783)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(75, 30)
+        Me.btnEliminar.Size = New System.Drawing.Size(75, 32)
         Me.btnEliminar.TabIndex = 1
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'btnVolver
         '
-        Me.btnVolver.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVolver.Location = New System.Drawing.Point(35, 727)
+        Me.btnVolver.Font = New System.Drawing.Font("Maiandra GD", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVolver.Location = New System.Drawing.Point(35, 783)
         Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(75, 30)
+        Me.btnVolver.Size = New System.Drawing.Size(75, 32)
         Me.btnVolver.TabIndex = 5
         Me.btnVolver.Text = "Volver"
         Me.btnVolver.UseVisualStyleBackColor = True
         '
         'btnActualizar
         '
-        Me.btnActualizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnActualizar.Location = New System.Drawing.Point(938, 727)
+        Me.btnActualizar.Font = New System.Drawing.Font("Maiandra GD", 10.0!)
+        Me.btnActualizar.Location = New System.Drawing.Point(932, 783)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(75, 30)
+        Me.btnActualizar.Size = New System.Drawing.Size(82, 32)
         Me.btnActualizar.TabIndex = 0
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
@@ -169,9 +169,10 @@ Partial Class VerPacientes
         Me.GBDatosMedicos.Controls.Add(Me.lblAltura)
         Me.GBDatosMedicos.Controls.Add(Me.txtPeso)
         Me.GBDatosMedicos.Controls.Add(Me.lblPeso)
-        Me.GBDatosMedicos.Location = New System.Drawing.Point(35, 295)
+        Me.GBDatosMedicos.Font = New System.Drawing.Font("Maiandra GD", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GBDatosMedicos.Location = New System.Drawing.Point(35, 318)
         Me.GBDatosMedicos.Name = "GBDatosMedicos"
-        Me.GBDatosMedicos.Size = New System.Drawing.Size(978, 178)
+        Me.GBDatosMedicos.Size = New System.Drawing.Size(978, 192)
         Me.GBDatosMedicos.TabIndex = 52
         Me.GBDatosMedicos.TabStop = False
         Me.GBDatosMedicos.Text = "Datos Médicos"
@@ -179,95 +180,95 @@ Partial Class VerPacientes
         'txtAlergias
         '
         Me.txtAlergias.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "alergias", True))
-        Me.txtAlergias.Location = New System.Drawing.Point(135, 138)
+        Me.txtAlergias.Location = New System.Drawing.Point(141, 149)
         Me.txtAlergias.Multiline = True
         Me.txtAlergias.Name = "txtAlergias"
-        Me.txtAlergias.Size = New System.Drawing.Size(188, 20)
+        Me.txtAlergias.Size = New System.Drawing.Size(188, 21)
         Me.txtAlergias.TabIndex = 3
         '
         'lblAlergias
         '
         Me.lblAlergias.AutoSize = True
-        Me.lblAlergias.Location = New System.Drawing.Point(30, 138)
+        Me.lblAlergias.Location = New System.Drawing.Point(30, 149)
         Me.lblAlergias.Name = "lblAlergias"
         Me.lblAlergias.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblAlergias.Size = New System.Drawing.Size(44, 13)
+        Me.lblAlergias.Size = New System.Drawing.Size(51, 16)
         Me.lblAlergias.TabIndex = 8
         Me.lblAlergias.Text = "Alergias"
         '
         'txtObservaciones
         '
         Me.txtObservaciones.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "observaciones", True))
-        Me.txtObservaciones.Location = New System.Drawing.Point(395, 47)
+        Me.txtObservaciones.Location = New System.Drawing.Point(395, 51)
         Me.txtObservaciones.Multiline = True
         Me.txtObservaciones.Name = "txtObservaciones"
-        Me.txtObservaciones.Size = New System.Drawing.Size(565, 104)
+        Me.txtObservaciones.Size = New System.Drawing.Size(565, 112)
         Me.txtObservaciones.TabIndex = 4
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(392, 31)
+        Me.Label4.Location = New System.Drawing.Point(392, 33)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(78, 13)
+        Me.Label4.Size = New System.Drawing.Size(88, 16)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Observaciones"
         '
         'txtSangre
         '
         Me.txtSangre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "TipoGrupoSanguineo", True))
-        Me.txtSangre.Location = New System.Drawing.Point(135, 100)
+        Me.txtSangre.Location = New System.Drawing.Point(141, 108)
         Me.txtSangre.Multiline = True
         Me.txtSangre.Name = "txtSangre"
-        Me.txtSangre.Size = New System.Drawing.Size(188, 20)
+        Me.txtSangre.Size = New System.Drawing.Size(188, 21)
         Me.txtSangre.TabIndex = 2
         Me.txtSangre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblSangre
         '
         Me.lblSangre.AutoSize = True
-        Me.lblSangre.Location = New System.Drawing.Point(30, 100)
+        Me.lblSangre.Location = New System.Drawing.Point(30, 108)
         Me.lblSangre.Name = "lblSangre"
         Me.lblSangre.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblSangre.Size = New System.Drawing.Size(88, 13)
+        Me.lblSangre.Size = New System.Drawing.Size(105, 16)
         Me.lblSangre.TabIndex = 4
-        Me.lblSangre.Text = "Grupo sanguineo"
+        Me.lblSangre.Text = "Grupo sanguíneo"
         '
         'txtAltura
         '
         Me.txtAltura.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "altura", True))
-        Me.txtAltura.Location = New System.Drawing.Point(135, 65)
+        Me.txtAltura.Location = New System.Drawing.Point(141, 70)
         Me.txtAltura.Multiline = True
         Me.txtAltura.Name = "txtAltura"
-        Me.txtAltura.Size = New System.Drawing.Size(188, 20)
+        Me.txtAltura.Size = New System.Drawing.Size(188, 21)
         Me.txtAltura.TabIndex = 1
         Me.txtAltura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblAltura
         '
         Me.lblAltura.AutoSize = True
-        Me.lblAltura.Location = New System.Drawing.Point(30, 65)
+        Me.lblAltura.Location = New System.Drawing.Point(30, 70)
         Me.lblAltura.Name = "lblAltura"
-        Me.lblAltura.Size = New System.Drawing.Size(34, 13)
+        Me.lblAltura.Size = New System.Drawing.Size(42, 16)
         Me.lblAltura.TabIndex = 2
         Me.lblAltura.Text = "Altura" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'txtPeso
         '
         Me.txtPeso.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "peso", True))
-        Me.txtPeso.Location = New System.Drawing.Point(135, 32)
+        Me.txtPeso.Location = New System.Drawing.Point(141, 34)
         Me.txtPeso.Multiline = True
         Me.txtPeso.Name = "txtPeso"
-        Me.txtPeso.Size = New System.Drawing.Size(188, 20)
+        Me.txtPeso.Size = New System.Drawing.Size(188, 21)
         Me.txtPeso.TabIndex = 0
         Me.txtPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblPeso
         '
         Me.lblPeso.AutoSize = True
-        Me.lblPeso.Location = New System.Drawing.Point(30, 32)
+        Me.lblPeso.Location = New System.Drawing.Point(30, 34)
         Me.lblPeso.Name = "lblPeso"
-        Me.lblPeso.Size = New System.Drawing.Size(31, 13)
+        Me.lblPeso.Size = New System.Drawing.Size(33, 16)
         Me.lblPeso.TabIndex = 0
         Me.lblPeso.Text = "Peso"
         '
@@ -287,9 +288,10 @@ Partial Class VerPacientes
         Me.GBDatosPersonales.Controls.Add(Me.lblFechaNacimiento)
         Me.GBDatosPersonales.Controls.Add(Me.txtNIF)
         Me.GBDatosPersonales.Controls.Add(Me.lblNIF)
-        Me.GBDatosPersonales.Location = New System.Drawing.Point(281, 65)
+        Me.GBDatosPersonales.Font = New System.Drawing.Font("Maiandra GD", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GBDatosPersonales.Location = New System.Drawing.Point(281, 70)
         Me.GBDatosPersonales.Name = "GBDatosPersonales"
-        Me.GBDatosPersonales.Size = New System.Drawing.Size(732, 201)
+        Me.GBDatosPersonales.Size = New System.Drawing.Size(732, 216)
         Me.GBDatosPersonales.TabIndex = 51
         Me.GBDatosPersonales.TabStop = False
         Me.GBDatosPersonales.Text = "Datos Personales"
@@ -297,150 +299,151 @@ Partial Class VerPacientes
         'txtSexo
         '
         Me.txtSexo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "sexo", True))
-        Me.txtSexo.Location = New System.Drawing.Point(149, 142)
+        Me.txtSexo.Location = New System.Drawing.Point(133, 153)
         Me.txtSexo.Multiline = True
         Me.txtSexo.Name = "txtSexo"
-        Me.txtSexo.Size = New System.Drawing.Size(196, 20)
+        Me.txtSexo.Size = New System.Drawing.Size(236, 21)
         Me.txtSexo.TabIndex = 3
         Me.txtSexo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(60, 142)
+        Me.Label1.Location = New System.Drawing.Point(40, 155)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(31, 13)
+        Me.Label1.Size = New System.Drawing.Size(35, 16)
         Me.Label1.TabIndex = 15
         Me.Label1.Text = "Sexo"
         '
         'DTPFNacimiento
         '
         Me.DTPFNacimiento.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "fechaNacimiento", True))
-        Me.DTPFNacimiento.Location = New System.Drawing.Point(149, 107)
+        Me.DTPFNacimiento.Location = New System.Drawing.Point(133, 115)
         Me.DTPFNacimiento.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
         Me.DTPFNacimiento.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         Me.DTPFNacimiento.Name = "DTPFNacimiento"
-        Me.DTPFNacimiento.Size = New System.Drawing.Size(196, 20)
+        Me.DTPFNacimiento.Size = New System.Drawing.Size(236, 23)
         Me.DTPFNacimiento.TabIndex = 2
         '
         'txtNombre
         '
         Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "Nombre", True))
         Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Tag", Me.PACIENTESBindingSource, "Nombre", True))
-        Me.txtNombre.Location = New System.Drawing.Point(149, 74)
+        Me.txtNombre.Location = New System.Drawing.Point(133, 80)
         Me.txtNombre.Multiline = True
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(196, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(236, 21)
         Me.txtNombre.TabIndex = 1
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(60, 74)
+        Me.Label8.Location = New System.Drawing.Point(40, 82)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(44, 13)
+        Me.Label8.Size = New System.Drawing.Size(55, 16)
         Me.Label8.TabIndex = 12
         Me.Label8.Text = "Nombre"
         '
         'txtTelefono
         '
         Me.txtTelefono.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "teléfono", True))
-        Me.txtTelefono.Location = New System.Drawing.Point(480, 142)
+        Me.txtTelefono.Location = New System.Drawing.Point(480, 153)
         Me.txtTelefono.Multiline = True
         Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(196, 20)
+        Me.txtTelefono.Size = New System.Drawing.Size(196, 21)
         Me.txtTelefono.TabIndex = 6
         Me.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblTelefono
         '
         Me.lblTelefono.AutoSize = True
-        Me.lblTelefono.Location = New System.Drawing.Point(391, 142)
+        Me.lblTelefono.Location = New System.Drawing.Point(399, 153)
         Me.lblTelefono.Name = "lblTelefono"
-        Me.lblTelefono.Size = New System.Drawing.Size(49, 13)
+        Me.lblTelefono.Size = New System.Drawing.Size(58, 16)
         Me.lblTelefono.TabIndex = 10
-        Me.lblTelefono.Text = "Telefono"
+        Me.lblTelefono.Text = "Teléfono"
         '
         'txtDireccion
         '
         Me.txtDireccion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "dirección", True))
-        Me.txtDireccion.Location = New System.Drawing.Point(480, 107)
+        Me.txtDireccion.Location = New System.Drawing.Point(480, 115)
         Me.txtDireccion.Multiline = True
         Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(196, 20)
+        Me.txtDireccion.Size = New System.Drawing.Size(196, 21)
         Me.txtDireccion.TabIndex = 5
         '
         'lblDireccion
         '
         Me.lblDireccion.AutoSize = True
-        Me.lblDireccion.Location = New System.Drawing.Point(391, 107)
+        Me.lblDireccion.Location = New System.Drawing.Point(399, 115)
         Me.lblDireccion.Name = "lblDireccion"
-        Me.lblDireccion.Size = New System.Drawing.Size(52, 13)
+        Me.lblDireccion.Size = New System.Drawing.Size(61, 16)
         Me.lblDireccion.TabIndex = 8
-        Me.lblDireccion.Text = "Direccion"
+        Me.lblDireccion.Text = "Dirección"
         '
         'txtPoblacion
         '
         Me.txtPoblacion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "Poblacion", True))
-        Me.txtPoblacion.Location = New System.Drawing.Point(480, 74)
+        Me.txtPoblacion.Location = New System.Drawing.Point(480, 80)
         Me.txtPoblacion.Multiline = True
         Me.txtPoblacion.Name = "txtPoblacion"
-        Me.txtPoblacion.Size = New System.Drawing.Size(196, 20)
+        Me.txtPoblacion.Size = New System.Drawing.Size(196, 21)
         Me.txtPoblacion.TabIndex = 4
         Me.txtPoblacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblPoblacion
         '
         Me.lblPoblacion.AutoSize = True
-        Me.lblPoblacion.Location = New System.Drawing.Point(391, 74)
+        Me.lblPoblacion.Location = New System.Drawing.Point(399, 80)
         Me.lblPoblacion.Name = "lblPoblacion"
-        Me.lblPoblacion.Size = New System.Drawing.Size(54, 13)
+        Me.lblPoblacion.Size = New System.Drawing.Size(63, 16)
         Me.lblPoblacion.TabIndex = 6
-        Me.lblPoblacion.Text = "Poblacion"
+        Me.lblPoblacion.Text = "Población"
         '
         'lblFechaNacimiento
         '
         Me.lblFechaNacimiento.AutoSize = True
-        Me.lblFechaNacimiento.Location = New System.Drawing.Point(60, 108)
+        Me.lblFechaNacimiento.Location = New System.Drawing.Point(40, 118)
         Me.lblFechaNacimiento.Name = "lblFechaNacimiento"
-        Me.lblFechaNacimiento.Size = New System.Drawing.Size(72, 13)
+        Me.lblFechaNacimiento.Size = New System.Drawing.Size(87, 16)
         Me.lblFechaNacimiento.TabIndex = 4
         Me.lblFechaNacimiento.Text = "F. Nacimiento"
         '
         'txtNIF
         '
         Me.txtNIF.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "NIF", True))
-        Me.txtNIF.Location = New System.Drawing.Point(315, 30)
+        Me.txtNIF.Location = New System.Drawing.Point(315, 32)
         Me.txtNIF.Multiline = True
         Me.txtNIF.Name = "txtNIF"
-        Me.txtNIF.Size = New System.Drawing.Size(188, 20)
+        Me.txtNIF.Size = New System.Drawing.Size(188, 21)
         Me.txtNIF.TabIndex = 0
         Me.txtNIF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblNIF
         '
         Me.lblNIF.AutoSize = True
-        Me.lblNIF.Location = New System.Drawing.Point(226, 30)
+        Me.lblNIF.Location = New System.Drawing.Point(226, 32)
         Me.lblNIF.Name = "lblNIF"
-        Me.lblNIF.Size = New System.Drawing.Size(24, 13)
+        Me.lblNIF.Size = New System.Drawing.Size(29, 16)
         Me.lblNIF.TabIndex = 0
         Me.lblNIF.Text = "NIF"
         '
         'lblNumHistorial
         '
         Me.lblNumHistorial.AutoSize = True
-        Me.lblNumHistorial.Location = New System.Drawing.Point(32, 28)
+        Me.lblNumHistorial.Font = New System.Drawing.Font("Maiandra GD", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNumHistorial.Location = New System.Drawing.Point(32, 30)
         Me.lblNumHistorial.Name = "lblNumHistorial"
-        Me.lblNumHistorial.Size = New System.Drawing.Size(59, 13)
+        Me.lblNumHistorial.Size = New System.Drawing.Size(73, 16)
         Me.lblNumHistorial.TabIndex = 50
         Me.lblNumHistorial.Text = "Nº Historial"
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(35, 65)
+        Me.PictureBox1.Location = New System.Drawing.Point(35, 70)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(208, 201)
+        Me.PictureBox1.Size = New System.Drawing.Size(208, 216)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 48
         Me.PictureBox1.TabStop = False
@@ -458,9 +461,9 @@ Partial Class VerPacientes
         Me.DataPacientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdPacienteDataGridViewTextBoxColumn, Me.NIFDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.FechaNacimientoDataGridViewTextBoxColumn, Me.SexoDataGridViewTextBoxColumn, Me.PoblacionDataGridViewTextBoxColumn, Me.DirecciónDataGridViewTextBoxColumn, Me.TeléfonoDataGridViewTextBoxColumn, Me.TipoGrupoSanguineoDataGridViewTextBoxColumn, Me.AlturaDataGridViewTextBoxColumn, Me.PesoDataGridViewTextBoxColumn, Me.AlergiasDataGridViewTextBoxColumn, Me.ObservacionesDataGridViewTextBoxColumn})
         Me.DataPacientes.DataSource = Me.PACIENTESBindingSource
         Me.DataPacientes.GridColor = System.Drawing.SystemColors.ControlText
-        Me.DataPacientes.Location = New System.Drawing.Point(35, 497)
+        Me.DataPacientes.Location = New System.Drawing.Point(35, 535)
         Me.DataPacientes.Name = "DataPacientes"
-        Me.DataPacientes.Size = New System.Drawing.Size(978, 215)
+        Me.DataPacientes.Size = New System.Drawing.Size(978, 232)
         Me.DataPacientes.TabIndex = 59
         '
         'IdPacienteDataGridViewTextBoxColumn
@@ -544,10 +547,10 @@ Partial Class VerPacientes
         'txtHistorial
         '
         Me.txtHistorial.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "idPaciente", True))
-        Me.txtHistorial.Location = New System.Drawing.Point(109, 25)
+        Me.txtHistorial.Location = New System.Drawing.Point(109, 27)
         Me.txtHistorial.Name = "txtHistorial"
         Me.txtHistorial.ReadOnly = True
-        Me.txtHistorial.Size = New System.Drawing.Size(134, 20)
+        Me.txtHistorial.Size = New System.Drawing.Size(134, 21)
         Me.txtHistorial.TabIndex = 60
         Me.txtHistorial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -556,18 +559,18 @@ Partial Class VerPacientes
         Me.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.btnCerrarSesion.Image = CType(resources.GetObject("btnCerrarSesion.Image"), System.Drawing.Image)
-        Me.btnCerrarSesion.Location = New System.Drawing.Point(1005, 19)
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(1005, 20)
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
-        Me.btnCerrarSesion.Size = New System.Drawing.Size(27, 30)
+        Me.btnCerrarSesion.Size = New System.Drawing.Size(27, 32)
         Me.btnCerrarSesion.TabIndex = 61
         Me.btnCerrarSesion.UseVisualStyleBackColor = True
         '
         'VerPacientes
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1044, 763)
+        Me.ClientSize = New System.Drawing.Size(1044, 822)
         Me.Controls.Add(Me.btnCerrarSesion)
         Me.Controls.Add(Me.txtHistorial)
         Me.Controls.Add(Me.DataPacientes)
@@ -581,6 +584,7 @@ Partial Class VerPacientes
         Me.Controls.Add(Me.GBDatosPersonales)
         Me.Controls.Add(Me.lblNumHistorial)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Font = New System.Drawing.Font("Maiandra GD", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "VerPacientes"
         Me.Text = "Datos de pacientes"

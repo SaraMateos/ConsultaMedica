@@ -36,85 +36,87 @@ Partial Class NuevoUsuario
         '
         'btnCancelar
         '
-        Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(389, 248)
+        Me.btnCancelar.Font = New System.Drawing.Font("Maiandra GD", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelar.Location = New System.Drawing.Point(398, 269)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(85, 30)
-        Me.btnCancelar.TabIndex = 38
+        Me.btnCancelar.Size = New System.Drawing.Size(85, 32)
+        Me.btnCancelar.TabIndex = 3
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'btnRegistrar
         '
-        Me.btnRegistrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistrar.Font = New System.Drawing.Font("Maiandra GD", 11.25!)
         Me.btnRegistrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnRegistrar.Location = New System.Drawing.Point(539, 248)
+        Me.btnRegistrar.Location = New System.Drawing.Point(548, 269)
         Me.btnRegistrar.Name = "btnRegistrar"
-        Me.btnRegistrar.Size = New System.Drawing.Size(85, 30)
-        Me.btnRegistrar.TabIndex = 37
+        Me.btnRegistrar.Size = New System.Drawing.Size(85, 32)
+        Me.btnRegistrar.TabIndex = 2
         Me.btnRegistrar.Text = "Registrar"
         Me.btnRegistrar.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(28, 67)
+        Me.PictureBox1.Location = New System.Drawing.Point(28, 72)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(308, 222)
+        Me.PictureBox1.Size = New System.Drawing.Size(308, 239)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 36
         Me.PictureBox1.TabStop = False
         '
         'txtUsuario
         '
-        Me.txtUsuario.Location = New System.Drawing.Point(481, 111)
+        Me.txtUsuario.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
+        Me.txtUsuario.Location = New System.Drawing.Point(481, 120)
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(161, 20)
-        Me.txtUsuario.TabIndex = 35
+        Me.txtUsuario.Size = New System.Drawing.Size(161, 23)
+        Me.txtUsuario.TabIndex = 0
         '
         'txtContrasena
         '
-        Me.txtContrasena.Location = New System.Drawing.Point(481, 168)
+        Me.txtContrasena.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
+        Me.txtContrasena.Location = New System.Drawing.Point(481, 181)
         Me.txtContrasena.Name = "txtContrasena"
-        Me.txtContrasena.Size = New System.Drawing.Size(161, 20)
-        Me.txtContrasena.TabIndex = 34
+        Me.txtContrasena.Size = New System.Drawing.Size(161, 23)
+        Me.txtContrasena.TabIndex = 1
         '
         'lblContrasena
         '
         Me.lblContrasena.AutoSize = True
-        Me.lblContrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblContrasena.Location = New System.Drawing.Point(351, 167)
+        Me.lblContrasena.Font = New System.Drawing.Font("Maiandra GD", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblContrasena.Location = New System.Drawing.Point(351, 180)
         Me.lblContrasena.Name = "lblContrasena"
-        Me.lblContrasena.Size = New System.Drawing.Size(85, 18)
+        Me.lblContrasena.Size = New System.Drawing.Size(102, 22)
         Me.lblContrasena.TabIndex = 33
         Me.lblContrasena.Text = "Contraseña"
         '
         'lblUsuario
         '
         Me.lblUsuario.AutoSize = True
-        Me.lblUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsuario.Location = New System.Drawing.Point(351, 110)
+        Me.lblUsuario.Font = New System.Drawing.Font("Maiandra GD", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUsuario.Location = New System.Drawing.Point(351, 118)
         Me.lblUsuario.Name = "lblUsuario"
-        Me.lblUsuario.Size = New System.Drawing.Size(60, 18)
+        Me.lblUsuario.Size = New System.Drawing.Size(73, 22)
         Me.lblUsuario.TabIndex = 32
         Me.lblUsuario.Text = "Usuario"
         '
         'lblIniciarSesion
         '
         Me.lblIniciarSesion.AutoSize = True
-        Me.lblIniciarSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIniciarSesion.Location = New System.Drawing.Point(35, 15)
+        Me.lblIniciarSesion.Font = New System.Drawing.Font("Maiandra GD", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIniciarSesion.Location = New System.Drawing.Point(35, 16)
         Me.lblIniciarSesion.Name = "lblIniciarSesion"
-        Me.lblIniciarSesion.Size = New System.Drawing.Size(189, 31)
+        Me.lblIniciarSesion.Size = New System.Drawing.Size(234, 39)
         Me.lblIniciarSesion.TabIndex = 31
         Me.lblIniciarSesion.Text = "Nuevo usuario"
         '
         'NuevoUsuario
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.ClientSize = New System.Drawing.Size(681, 301)
+        Me.ClientSize = New System.Drawing.Size(681, 324)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnRegistrar)
         Me.Controls.Add(Me.PictureBox1)
@@ -123,6 +125,7 @@ Partial Class NuevoUsuario
         Me.Controls.Add(Me.lblContrasena)
         Me.Controls.Add(Me.lblUsuario)
         Me.Controls.Add(Me.lblIniciarSesion)
+        Me.Font = New System.Drawing.Font("Maiandra GD", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "NuevoUsuario"
         Me.Text = "NuevoUsuario"

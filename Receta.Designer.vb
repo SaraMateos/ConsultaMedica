@@ -33,6 +33,13 @@ Partial Class Receta
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataRecetas = New System.Windows.Forms.DataGridView()
+        Me.IdRecetaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdMedicoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdPacienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaCreacionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdEnfermedadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdMedicamentoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DosisDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblIdReceta = New System.Windows.Forms.Label()
         Me.txtIdReceta = New System.Windows.Forms.TextBox()
@@ -42,13 +49,6 @@ Partial Class Receta
         Me.txtMedico = New System.Windows.Forms.TextBox()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.DTPFechaCreacion = New System.Windows.Forms.DateTimePicker()
-        Me.IdRecetaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdMedicoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdPacienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaCreacionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdEnfermedadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdMedicamentoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DosisDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblMedicamento = New System.Windows.Forms.Label()
         Me.txtMedicamento = New System.Windows.Forms.TextBox()
         Me.lblDosis = New System.Windows.Forms.Label()
@@ -61,9 +61,10 @@ Partial Class Receta
         '
         'btnVolver
         '
-        Me.btnVolver.Location = New System.Drawing.Point(19, 507)
+        Me.btnVolver.Font = New System.Drawing.Font("Maiandra GD", 11.25!)
+        Me.btnVolver.Location = New System.Drawing.Point(19, 546)
         Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(89, 32)
+        Me.btnVolver.Size = New System.Drawing.Size(89, 34)
         Me.btnVolver.TabIndex = 62
         Me.btnVolver.Text = "Volver"
         Me.btnVolver.UseVisualStyleBackColor = True
@@ -80,9 +81,10 @@ Partial Class Receta
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(875, 440)
+        Me.btnActualizar.Font = New System.Drawing.Font("Maiandra GD", 11.25!)
+        Me.btnActualizar.Location = New System.Drawing.Point(875, 474)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(89, 32)
+        Me.btnActualizar.Size = New System.Drawing.Size(89, 34)
         Me.btnActualizar.TabIndex = 65
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
@@ -93,18 +95,20 @@ Partial Class Receta
         '
         'btnImprimir
         '
-        Me.btnImprimir.Location = New System.Drawing.Point(875, 507)
+        Me.btnImprimir.Font = New System.Drawing.Font("Maiandra GD", 11.25!)
+        Me.btnImprimir.Location = New System.Drawing.Point(875, 546)
         Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(89, 32)
+        Me.btnImprimir.Size = New System.Drawing.Size(89, 34)
         Me.btnImprimir.TabIndex = 66
         Me.btnImprimir.Text = "Imprimir"
         Me.btnImprimir.UseVisualStyleBackColor = True
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(875, 374)
+        Me.btnNuevo.Font = New System.Drawing.Font("Maiandra GD", 11.25!)
+        Me.btnNuevo.Location = New System.Drawing.Point(875, 403)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(89, 32)
+        Me.btnNuevo.Size = New System.Drawing.Size(89, 34)
         Me.btnNuevo.TabIndex = 67
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
@@ -112,10 +116,10 @@ Partial Class Receta
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 21)
+        Me.Label1.Font = New System.Drawing.Font("Maiandra GD", 24.0!, System.Drawing.FontStyle.Bold)
+        Me.Label1.Location = New System.Drawing.Point(12, 23)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(275, 37)
+        Me.Label1.Size = New System.Drawing.Size(256, 39)
         Me.Label1.TabIndex = 68
         Me.Label1.Text = "Recetas medicas"
         '
@@ -126,93 +130,10 @@ Partial Class Receta
         Me.DataRecetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataRecetas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdRecetaDataGridViewTextBoxColumn, Me.IdMedicoDataGridViewTextBoxColumn, Me.IdPacienteDataGridViewTextBoxColumn, Me.FechaCreacionDataGridViewTextBoxColumn, Me.IdEnfermedadDataGridViewTextBoxColumn, Me.IdMedicamentoDataGridViewTextBoxColumn, Me.DosisDataGridViewTextBoxColumn})
         Me.DataRecetas.DataSource = Me.RECETASBindingSource
-        Me.DataRecetas.Location = New System.Drawing.Point(209, 281)
+        Me.DataRecetas.Location = New System.Drawing.Point(209, 303)
         Me.DataRecetas.Name = "DataRecetas"
-        Me.DataRecetas.Size = New System.Drawing.Size(644, 258)
+        Me.DataRecetas.Size = New System.Drawing.Size(644, 278)
         Me.DataRecetas.TabIndex = 69
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(760, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(204, 178)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 70
-        Me.PictureBox1.TabStop = False
-        '
-        'lblIdReceta
-        '
-        Me.lblIdReceta.AutoSize = True
-        Me.lblIdReceta.Location = New System.Drawing.Point(16, 85)
-        Me.lblIdReceta.Name = "lblIdReceta"
-        Me.lblIdReceta.Size = New System.Drawing.Size(70, 13)
-        Me.lblIdReceta.TabIndex = 71
-        Me.lblIdReceta.Text = "Num. Receta"
-        '
-        'txtIdReceta
-        '
-        Me.txtIdReceta.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RECETASBindingSource, "idReceta", True))
-        Me.txtIdReceta.Location = New System.Drawing.Point(103, 85)
-        Me.txtIdReceta.Name = "txtIdReceta"
-        Me.txtIdReceta.ReadOnly = True
-        Me.txtIdReceta.Size = New System.Drawing.Size(100, 20)
-        Me.txtIdReceta.TabIndex = 72
-        Me.txtIdReceta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'lblMédico
-        '
-        Me.lblMédico.AutoSize = True
-        Me.lblMédico.Location = New System.Drawing.Point(16, 139)
-        Me.lblMédico.Name = "lblMédico"
-        Me.lblMédico.Size = New System.Drawing.Size(42, 13)
-        Me.lblMédico.TabIndex = 73
-        Me.lblMédico.Text = "Médico"
-        '
-        'lblPaciente
-        '
-        Me.lblPaciente.AutoSize = True
-        Me.lblPaciente.Location = New System.Drawing.Point(16, 181)
-        Me.lblPaciente.Name = "lblPaciente"
-        Me.lblPaciente.Size = New System.Drawing.Size(49, 13)
-        Me.lblPaciente.TabIndex = 74
-        Me.lblPaciente.Text = "Paciente"
-        '
-        'txtPaciente
-        '
-        Me.txtPaciente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RECETASBindingSource, "idPaciente", True))
-        Me.txtPaciente.Location = New System.Drawing.Point(103, 181)
-        Me.txtPaciente.Name = "txtPaciente"
-        Me.txtPaciente.Size = New System.Drawing.Size(200, 20)
-        Me.txtPaciente.TabIndex = 75
-        '
-        'txtMedico
-        '
-        Me.txtMedico.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RECETASBindingSource, "idMedico", True))
-        Me.txtMedico.Location = New System.Drawing.Point(103, 139)
-        Me.txtMedico.Name = "txtMedico"
-        Me.txtMedico.Size = New System.Drawing.Size(200, 20)
-        Me.txtMedico.TabIndex = 76
-        '
-        'lblFecha
-        '
-        Me.lblFecha.AutoSize = True
-        Me.lblFecha.Location = New System.Drawing.Point(19, 225)
-        Me.lblFecha.Name = "lblFecha"
-        Me.lblFecha.Size = New System.Drawing.Size(37, 13)
-        Me.lblFecha.TabIndex = 77
-        Me.lblFecha.Text = "Fecha"
-        '
-        'DTPFechaCreacion
-        '
-        Me.DTPFechaCreacion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RECETASBindingSource, "fechaCreacion", True))
-        Me.DTPFechaCreacion.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.RECETASBindingSource, "fechaCreacion", True))
-        Me.DTPFechaCreacion.Location = New System.Drawing.Point(103, 220)
-        Me.DTPFechaCreacion.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
-        Me.DTPFechaCreacion.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
-        Me.DTPFechaCreacion.Name = "DTPFechaCreacion"
-        Me.DTPFechaCreacion.Size = New System.Drawing.Size(200, 20)
-        Me.DTPFechaCreacion.TabIndex = 78
         '
         'IdRecetaDataGridViewTextBoxColumn
         '
@@ -257,47 +178,136 @@ Partial Class Receta
         Me.DosisDataGridViewTextBoxColumn.HeaderText = "dosis"
         Me.DosisDataGridViewTextBoxColumn.Name = "DosisDataGridViewTextBoxColumn"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(760, 13)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(204, 192)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 70
+        Me.PictureBox1.TabStop = False
+        '
+        'lblIdReceta
+        '
+        Me.lblIdReceta.AutoSize = True
+        Me.lblIdReceta.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
+        Me.lblIdReceta.Location = New System.Drawing.Point(16, 92)
+        Me.lblIdReceta.Name = "lblIdReceta"
+        Me.lblIdReceta.Size = New System.Drawing.Size(80, 16)
+        Me.lblIdReceta.TabIndex = 71
+        Me.lblIdReceta.Text = "Num. Receta"
+        '
+        'txtIdReceta
+        '
+        Me.txtIdReceta.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RECETASBindingSource, "idReceta", True))
+        Me.txtIdReceta.Location = New System.Drawing.Point(103, 92)
+        Me.txtIdReceta.Name = "txtIdReceta"
+        Me.txtIdReceta.ReadOnly = True
+        Me.txtIdReceta.Size = New System.Drawing.Size(100, 21)
+        Me.txtIdReceta.TabIndex = 72
+        Me.txtIdReceta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblMédico
+        '
+        Me.lblMédico.AutoSize = True
+        Me.lblMédico.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
+        Me.lblMédico.Location = New System.Drawing.Point(16, 150)
+        Me.lblMédico.Name = "lblMédico"
+        Me.lblMédico.Size = New System.Drawing.Size(51, 16)
+        Me.lblMédico.TabIndex = 73
+        Me.lblMédico.Text = "Médico"
+        '
+        'lblPaciente
+        '
+        Me.lblPaciente.AutoSize = True
+        Me.lblPaciente.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
+        Me.lblPaciente.Location = New System.Drawing.Point(16, 195)
+        Me.lblPaciente.Name = "lblPaciente"
+        Me.lblPaciente.Size = New System.Drawing.Size(53, 16)
+        Me.lblPaciente.TabIndex = 74
+        Me.lblPaciente.Text = "Paciente"
+        '
+        'txtPaciente
+        '
+        Me.txtPaciente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RECETASBindingSource, "idPaciente", True))
+        Me.txtPaciente.Location = New System.Drawing.Point(103, 195)
+        Me.txtPaciente.Name = "txtPaciente"
+        Me.txtPaciente.Size = New System.Drawing.Size(200, 21)
+        Me.txtPaciente.TabIndex = 75
+        '
+        'txtMedico
+        '
+        Me.txtMedico.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RECETASBindingSource, "idMedico", True))
+        Me.txtMedico.Location = New System.Drawing.Point(103, 150)
+        Me.txtMedico.Name = "txtMedico"
+        Me.txtMedico.Size = New System.Drawing.Size(200, 21)
+        Me.txtMedico.TabIndex = 76
+        '
+        'lblFecha
+        '
+        Me.lblFecha.AutoSize = True
+        Me.lblFecha.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
+        Me.lblFecha.Location = New System.Drawing.Point(19, 242)
+        Me.lblFecha.Name = "lblFecha"
+        Me.lblFecha.Size = New System.Drawing.Size(40, 16)
+        Me.lblFecha.TabIndex = 77
+        Me.lblFecha.Text = "Fecha"
+        '
+        'DTPFechaCreacion
+        '
+        Me.DTPFechaCreacion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RECETASBindingSource, "fechaCreacion", True))
+        Me.DTPFechaCreacion.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.RECETASBindingSource, "fechaCreacion", True))
+        Me.DTPFechaCreacion.Location = New System.Drawing.Point(103, 237)
+        Me.DTPFechaCreacion.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
+        Me.DTPFechaCreacion.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
+        Me.DTPFechaCreacion.Name = "DTPFechaCreacion"
+        Me.DTPFechaCreacion.Size = New System.Drawing.Size(200, 21)
+        Me.DTPFechaCreacion.TabIndex = 78
+        '
         'lblMedicamento
         '
         Me.lblMedicamento.AutoSize = True
-        Me.lblMedicamento.Location = New System.Drawing.Point(419, 173)
+        Me.lblMedicamento.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
+        Me.lblMedicamento.Location = New System.Drawing.Point(419, 186)
         Me.lblMedicamento.Name = "lblMedicamento"
-        Me.lblMedicamento.Size = New System.Drawing.Size(71, 13)
+        Me.lblMedicamento.Size = New System.Drawing.Size(85, 16)
         Me.lblMedicamento.TabIndex = 79
         Me.lblMedicamento.Text = "Medicamento"
         '
         'txtMedicamento
         '
         Me.txtMedicamento.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RECETASBindingSource, "idMedicamento", True))
-        Me.txtMedicamento.Location = New System.Drawing.Point(506, 173)
+        Me.txtMedicamento.Location = New System.Drawing.Point(506, 186)
         Me.txtMedicamento.Name = "txtMedicamento"
-        Me.txtMedicamento.Size = New System.Drawing.Size(200, 20)
+        Me.txtMedicamento.Size = New System.Drawing.Size(200, 21)
         Me.txtMedicamento.TabIndex = 80
         '
         'lblDosis
         '
         Me.lblDosis.AutoSize = True
-        Me.lblDosis.Location = New System.Drawing.Point(419, 215)
+        Me.lblDosis.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
+        Me.lblDosis.Location = New System.Drawing.Point(419, 232)
         Me.lblDosis.Name = "lblDosis"
-        Me.lblDosis.Size = New System.Drawing.Size(33, 13)
+        Me.lblDosis.Size = New System.Drawing.Size(36, 16)
         Me.lblDosis.TabIndex = 81
         Me.lblDosis.Text = "Dosis"
         '
         'txtDosis
         '
         Me.txtDosis.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RECETASBindingSource, "dosis", True))
-        Me.txtDosis.Location = New System.Drawing.Point(506, 212)
+        Me.txtDosis.Location = New System.Drawing.Point(506, 228)
         Me.txtDosis.Multiline = True
         Me.txtDosis.Name = "txtDosis"
-        Me.txtDosis.Size = New System.Drawing.Size(295, 45)
+        Me.txtDosis.Size = New System.Drawing.Size(295, 48)
         Me.txtDosis.TabIndex = 82
         '
         'Receta
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.ClientSize = New System.Drawing.Size(978, 552)
+        Me.ClientSize = New System.Drawing.Size(978, 594)
         Me.Controls.Add(Me.txtDosis)
         Me.Controls.Add(Me.lblDosis)
         Me.Controls.Add(Me.txtMedicamento)
@@ -317,6 +327,7 @@ Partial Class Receta
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.btnVolver)
+        Me.Font = New System.Drawing.Font("Maiandra GD", 8.25!)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Receta"
         Me.Text = "Receta"
