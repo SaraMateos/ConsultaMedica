@@ -24,9 +24,9 @@ Public Class Login
             Exit Sub
         End If
 
-        Using Command As New OleDbCommand("SELECT COUNT(*) FROM USUARIOS WHERE usuario = @usuario AND contrasena = @contrasena", conn)
+        Using Command As New OleDbCommand("SELECT COUNT(*) FROM USUARIOS WHERE usuario = @usuario AND contra = @contrasena", conn)
             Command.Parameters.AddWithValue("@usuario", OleDbType.VarChar).Value = txtUsuario.Text.Trim
-            Command.Parameters.AddWithValue("@contrasena", OleDbType.VarChar).Value = txtContrasena.Text.Trim
+            Command.Parameters.AddWithValue("@contra", OleDbType.VarChar).Value = txtContrasena.Text.Trim
 
             Dim count = Convert.ToInt32(Command.ExecuteScalar())
 

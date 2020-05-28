@@ -22,9 +22,9 @@ Public Class NuevoUsuario
 
         Try
 
-            comand = New OleDb.OleDbCommand("INSERT INTO USUARIOS(usuario, contrasena) VALUES(txtUsuario, txtContrasena)", conexion1)
+            comand = New OleDb.OleDbCommand("INSERT INTO USUARIOS(usuario, contra) VALUES(txtUsuario, txtContrasena)", conexion1)
             comand.Parameters.AddWithValue("@usuario", txtUsuario.Text)
-            comand.Parameters.AddWithValue("@contrasena", txtContrasena.Text)
+            comand.Parameters.AddWithValue("@contra", txtContrasena.Text)
             comand.ExecuteNonQuery()
 
             MsgBox("Se ha creado una nueva cuenta de usuario.", MsgBoxStyle.Information, "Información")
