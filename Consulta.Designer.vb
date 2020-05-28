@@ -26,8 +26,6 @@ Partial Class Consulta
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Consulta))
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.txtTratamiento = New System.Windows.Forms.TextBox()
-        Me.CONSULTABindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ConsultaMedicaDataSet = New WindowsApp1.ConsultaMedicaDataSet()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtDiagnostico = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -37,7 +35,6 @@ Partial Class Consulta
         Me.btnBorrar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.PACIENTESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.txtNumHistorial = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -45,6 +42,14 @@ Partial Class Consulta
         Me.txtPacientes = New System.Windows.Forms.TextBox()
         Me.lblBuscar = New System.Windows.Forms.Label()
         Me.DataConsultas = New System.Windows.Forms.DataGridView()
+        Me.txtNombreMedico = New System.Windows.Forms.TextBox()
+        Me.DTPFechaRealizada = New System.Windows.Forms.DateTimePicker()
+        Me.txtEnfermedad = New System.Windows.Forms.TextBox()
+        Me.lblEnfermedad = New System.Windows.Forms.Label()
+        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.ConsultaMedicaDataSet1 = New WindowsApp1.ConsultaMedicaDataSet1()
+        Me.CONSULTABindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CONSULTATableAdapter = New WindowsApp1.ConsultaMedicaDataSet1TableAdapters.CONSULTATableAdapter()
         Me.IdConsultaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdPacienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdMedicoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -52,22 +57,11 @@ Partial Class Consulta
         Me.MotivoConsultaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DiagnosticoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TratamientoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idEnfermedad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txtNombreMedico = New System.Windows.Forms.TextBox()
-        Me.DTPFechaRealizada = New System.Windows.Forms.DateTimePicker()
-        Me.txtEnfermedad = New System.Windows.Forms.TextBox()
-        Me.lblEnfermedad = New System.Windows.Forms.Label()
-        Me.CONSULTATableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.CONSULTATableAdapter()
-        Me.PACIENTESTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.PACIENTESTableAdapter()
-        Me.MEDICOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MEDICOSTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.MEDICOSTableAdapter()
-        Me.btnActualizar = New System.Windows.Forms.Button()
-        CType(Me.CONSULTABindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PACIENTESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.IdEnfermedadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataConsultas, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ConsultaMedicaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CONSULTABindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnVolver
@@ -89,16 +83,6 @@ Partial Class Consulta
         Me.txtTratamiento.Name = "txtTratamiento"
         Me.txtTratamiento.Size = New System.Drawing.Size(639, 71)
         Me.txtTratamiento.TabIndex = 6
-        '
-        'CONSULTABindingSource
-        '
-        Me.CONSULTABindingSource.DataMember = "CONSULTA"
-        Me.CONSULTABindingSource.DataSource = Me.ConsultaMedicaDataSet
-        '
-        'ConsultaMedicaDataSet
-        '
-        Me.ConsultaMedicaDataSet.DataSetName = "ConsultaMedicaDataSet"
-        Me.ConsultaMedicaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label8
         '
@@ -190,11 +174,6 @@ Partial Class Consulta
         Me.Label4.TabIndex = 66
         Me.Label4.Text = "Médico"
         '
-        'PACIENTESBindingSource
-        '
-        Me.PACIENTESBindingSource.DataMember = "PACIENTES"
-        Me.PACIENTESBindingSource.DataSource = Me.ConsultaMedicaDataSet
-        '
         'txtNumHistorial
         '
         Me.txtNumHistorial.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "idPaciente", True))
@@ -261,7 +240,7 @@ Partial Class Consulta
         Me.DataConsultas.AutoGenerateColumns = False
         Me.DataConsultas.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.DataConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataConsultas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdConsultaDataGridViewTextBoxColumn, Me.IdPacienteDataGridViewTextBoxColumn, Me.IdMedicoDataGridViewTextBoxColumn, Me.FechaRealizadaDataGridViewTextBoxColumn, Me.MotivoConsultaDataGridViewTextBoxColumn, Me.DiagnosticoDataGridViewTextBoxColumn, Me.TratamientoDataGridViewTextBoxColumn, Me.idEnfermedad})
+        Me.DataConsultas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdConsultaDataGridViewTextBoxColumn, Me.IdPacienteDataGridViewTextBoxColumn, Me.IdMedicoDataGridViewTextBoxColumn, Me.FechaRealizadaDataGridViewTextBoxColumn, Me.MotivoConsultaDataGridViewTextBoxColumn, Me.DiagnosticoDataGridViewTextBoxColumn, Me.TratamientoDataGridViewTextBoxColumn, Me.IdEnfermedadDataGridViewTextBoxColumn})
         Me.DataConsultas.DataSource = Me.CONSULTABindingSource
         Me.DataConsultas.GridColor = System.Drawing.SystemColors.ControlText
         Me.DataConsultas.Location = New System.Drawing.Point(712, 71)
@@ -269,62 +248,9 @@ Partial Class Consulta
         Me.DataConsultas.Size = New System.Drawing.Size(646, 497)
         Me.DataConsultas.TabIndex = 80
         '
-        'IdConsultaDataGridViewTextBoxColumn
-        '
-        Me.IdConsultaDataGridViewTextBoxColumn.DataPropertyName = "idConsulta"
-        Me.IdConsultaDataGridViewTextBoxColumn.HeaderText = "Consulta"
-        Me.IdConsultaDataGridViewTextBoxColumn.Name = "IdConsultaDataGridViewTextBoxColumn"
-        Me.IdConsultaDataGridViewTextBoxColumn.Visible = False
-        Me.IdConsultaDataGridViewTextBoxColumn.Width = 30
-        '
-        'IdPacienteDataGridViewTextBoxColumn
-        '
-        Me.IdPacienteDataGridViewTextBoxColumn.DataPropertyName = "idPaciente"
-        Me.IdPacienteDataGridViewTextBoxColumn.HeaderText = "Num. Paciente"
-        Me.IdPacienteDataGridViewTextBoxColumn.Name = "IdPacienteDataGridViewTextBoxColumn"
-        Me.IdPacienteDataGridViewTextBoxColumn.Width = 60
-        '
-        'IdMedicoDataGridViewTextBoxColumn
-        '
-        Me.IdMedicoDataGridViewTextBoxColumn.DataPropertyName = "idMedico"
-        Me.IdMedicoDataGridViewTextBoxColumn.HeaderText = "Medico"
-        Me.IdMedicoDataGridViewTextBoxColumn.Name = "IdMedicoDataGridViewTextBoxColumn"
-        Me.IdMedicoDataGridViewTextBoxColumn.Width = 60
-        '
-        'FechaRealizadaDataGridViewTextBoxColumn
-        '
-        Me.FechaRealizadaDataGridViewTextBoxColumn.DataPropertyName = "fechaRealizada"
-        Me.FechaRealizadaDataGridViewTextBoxColumn.HeaderText = "Fecha de la consulta"
-        Me.FechaRealizadaDataGridViewTextBoxColumn.Name = "FechaRealizadaDataGridViewTextBoxColumn"
-        '
-        'MotivoConsultaDataGridViewTextBoxColumn
-        '
-        Me.MotivoConsultaDataGridViewTextBoxColumn.DataPropertyName = "motivoConsulta"
-        Me.MotivoConsultaDataGridViewTextBoxColumn.HeaderText = "Motivo"
-        Me.MotivoConsultaDataGridViewTextBoxColumn.Name = "MotivoConsultaDataGridViewTextBoxColumn"
-        '
-        'DiagnosticoDataGridViewTextBoxColumn
-        '
-        Me.DiagnosticoDataGridViewTextBoxColumn.DataPropertyName = "diagnostico"
-        Me.DiagnosticoDataGridViewTextBoxColumn.HeaderText = "Diagnostico"
-        Me.DiagnosticoDataGridViewTextBoxColumn.Name = "DiagnosticoDataGridViewTextBoxColumn"
-        '
-        'TratamientoDataGridViewTextBoxColumn
-        '
-        Me.TratamientoDataGridViewTextBoxColumn.DataPropertyName = "tratamiento"
-        Me.TratamientoDataGridViewTextBoxColumn.HeaderText = "Tratamiento"
-        Me.TratamientoDataGridViewTextBoxColumn.Name = "TratamientoDataGridViewTextBoxColumn"
-        '
-        'idEnfermedad
-        '
-        Me.idEnfermedad.DataPropertyName = "idEnfermedad"
-        Me.idEnfermedad.HeaderText = "idEnfermedad"
-        Me.idEnfermedad.Name = "idEnfermedad"
-        Me.idEnfermedad.Width = 80
-        '
         'txtNombreMedico
         '
-        Me.txtNombreMedico.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "idMedico", True))
+        Me.txtNombreMedico.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "idPaciente", True))
         Me.txtNombreMedico.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
         Me.txtNombreMedico.Location = New System.Drawing.Point(133, 145)
         Me.txtNombreMedico.Multiline = True
@@ -334,6 +260,7 @@ Partial Class Consulta
         '
         'DTPFechaRealizada
         '
+        Me.DTPFechaRealizada.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.CONSULTABindingSource, "fechaRealizada", True))
         Me.DTPFechaRealizada.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CONSULTABindingSource, "fechaRealizada", True))
         Me.DTPFechaRealizada.Font = New System.Drawing.Font("Maiandra GD", 9.75!)
         Me.DTPFechaRealizada.Location = New System.Drawing.Point(133, 184)
@@ -363,23 +290,6 @@ Partial Class Consulta
         Me.lblEnfermedad.TabIndex = 83
         Me.lblEnfermedad.Text = "Enfermedad"
         '
-        'CONSULTATableAdapter
-        '
-        Me.CONSULTATableAdapter.ClearBeforeFill = True
-        '
-        'PACIENTESTableAdapter
-        '
-        Me.PACIENTESTableAdapter.ClearBeforeFill = True
-        '
-        'MEDICOSBindingSource
-        '
-        Me.MEDICOSBindingSource.DataMember = "MEDICOS"
-        Me.MEDICOSBindingSource.DataSource = Me.ConsultaMedicaDataSet
-        '
-        'MEDICOSTableAdapter
-        '
-        Me.MEDICOSTableAdapter.ClearBeforeFill = True
-        '
         'btnActualizar
         '
         Me.btnActualizar.Font = New System.Drawing.Font("Maiandra GD", 11.25!)
@@ -389,6 +299,69 @@ Partial Class Consulta
         Me.btnActualizar.TabIndex = 10
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
+        '
+        'ConsultaMedicaDataSet1
+        '
+        Me.ConsultaMedicaDataSet1.DataSetName = "ConsultaMedicaDataSet1"
+        Me.ConsultaMedicaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CONSULTABindingSource
+        '
+        Me.CONSULTABindingSource.DataMember = "CONSULTA"
+        Me.CONSULTABindingSource.DataSource = Me.ConsultaMedicaDataSet1
+        '
+        'CONSULTATableAdapter
+        '
+        Me.CONSULTATableAdapter.ClearBeforeFill = True
+        '
+        'IdConsultaDataGridViewTextBoxColumn
+        '
+        Me.IdConsultaDataGridViewTextBoxColumn.DataPropertyName = "idConsulta"
+        Me.IdConsultaDataGridViewTextBoxColumn.HeaderText = "idConsulta"
+        Me.IdConsultaDataGridViewTextBoxColumn.Name = "IdConsultaDataGridViewTextBoxColumn"
+        Me.IdConsultaDataGridViewTextBoxColumn.Visible = False
+        '
+        'IdPacienteDataGridViewTextBoxColumn
+        '
+        Me.IdPacienteDataGridViewTextBoxColumn.DataPropertyName = "idPaciente"
+        Me.IdPacienteDataGridViewTextBoxColumn.HeaderText = "Num. Paciente"
+        Me.IdPacienteDataGridViewTextBoxColumn.Name = "IdPacienteDataGridViewTextBoxColumn"
+        '
+        'IdMedicoDataGridViewTextBoxColumn
+        '
+        Me.IdMedicoDataGridViewTextBoxColumn.DataPropertyName = "idMedico"
+        Me.IdMedicoDataGridViewTextBoxColumn.HeaderText = "Médico"
+        Me.IdMedicoDataGridViewTextBoxColumn.Name = "IdMedicoDataGridViewTextBoxColumn"
+        '
+        'FechaRealizadaDataGridViewTextBoxColumn
+        '
+        Me.FechaRealizadaDataGridViewTextBoxColumn.DataPropertyName = "fechaRealizada"
+        Me.FechaRealizadaDataGridViewTextBoxColumn.HeaderText = "Fecha"
+        Me.FechaRealizadaDataGridViewTextBoxColumn.Name = "FechaRealizadaDataGridViewTextBoxColumn"
+        '
+        'MotivoConsultaDataGridViewTextBoxColumn
+        '
+        Me.MotivoConsultaDataGridViewTextBoxColumn.DataPropertyName = "motivoConsulta"
+        Me.MotivoConsultaDataGridViewTextBoxColumn.HeaderText = "Motivo"
+        Me.MotivoConsultaDataGridViewTextBoxColumn.Name = "MotivoConsultaDataGridViewTextBoxColumn"
+        '
+        'DiagnosticoDataGridViewTextBoxColumn
+        '
+        Me.DiagnosticoDataGridViewTextBoxColumn.DataPropertyName = "diagnostico"
+        Me.DiagnosticoDataGridViewTextBoxColumn.HeaderText = "Diagnóstico"
+        Me.DiagnosticoDataGridViewTextBoxColumn.Name = "DiagnosticoDataGridViewTextBoxColumn"
+        '
+        'TratamientoDataGridViewTextBoxColumn
+        '
+        Me.TratamientoDataGridViewTextBoxColumn.DataPropertyName = "tratamiento"
+        Me.TratamientoDataGridViewTextBoxColumn.HeaderText = "Tratamiento"
+        Me.TratamientoDataGridViewTextBoxColumn.Name = "TratamientoDataGridViewTextBoxColumn"
+        '
+        'IdEnfermedadDataGridViewTextBoxColumn
+        '
+        Me.IdEnfermedadDataGridViewTextBoxColumn.DataPropertyName = "idEnfermedad"
+        Me.IdEnfermedadDataGridViewTextBoxColumn.HeaderText = "idEnfermedad"
+        Me.IdEnfermedadDataGridViewTextBoxColumn.Name = "IdEnfermedadDataGridViewTextBoxColumn"
         '
         'Consulta
         '
@@ -421,13 +394,11 @@ Partial Class Consulta
         Me.Name = "Consulta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Consulta"
-        CType(Me.CONSULTABindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PACIENTESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DataConsultas, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ConsultaMedicaDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CONSULTABindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -451,18 +422,15 @@ Partial Class Consulta
     Friend WithEvents txtPacientes As TextBox
     Friend WithEvents lblBuscar As Label
     Friend WithEvents DataConsultas As DataGridView
-    Friend WithEvents ConsultaMedicaDataSet As ConsultaMedicaDataSet
-    Friend WithEvents CONSULTABindingSource As BindingSource
-    Friend WithEvents CONSULTATableAdapter As ConsultaMedicaDataSetTableAdapters.CONSULTATableAdapter
     Friend WithEvents DiagnoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents txtNombreMedico As TextBox
     Friend WithEvents DTPFechaRealizada As DateTimePicker
-    Friend WithEvents PACIENTESBindingSource As BindingSource
-    Friend WithEvents PACIENTESTableAdapter As ConsultaMedicaDataSetTableAdapters.PACIENTESTableAdapter
-    Friend WithEvents MEDICOSBindingSource As BindingSource
-    Friend WithEvents MEDICOSTableAdapter As ConsultaMedicaDataSetTableAdapters.MEDICOSTableAdapter
     Friend WithEvents txtEnfermedad As TextBox
     Friend WithEvents lblEnfermedad As Label
+    Friend WithEvents btnActualizar As Button
+    Friend WithEvents ConsultaMedicaDataSet1 As ConsultaMedicaDataSet1
+    Friend WithEvents CONSULTABindingSource As BindingSource
+    Friend WithEvents CONSULTATableAdapter As ConsultaMedicaDataSet1TableAdapters.CONSULTATableAdapter
     Friend WithEvents IdConsultaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdPacienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdMedicoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -470,6 +438,5 @@ Partial Class Consulta
     Friend WithEvents MotivoConsultaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DiagnosticoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TratamientoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents idEnfermedad As DataGridViewTextBoxColumn
-    Friend WithEvents btnActualizar As Button
+    Friend WithEvents IdEnfermedadDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

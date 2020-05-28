@@ -30,8 +30,6 @@ Partial Class VerMedicos
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.GBDatosPersonales = New System.Windows.Forms.GroupBox()
         Me.txtEspecialidad = New System.Windows.Forms.TextBox()
-        Me.MEDICOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ConsultaMedicaDataSet = New WindowsApp1.ConsultaMedicaDataSet()
         Me.txtSexo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DTPFNacimiento = New System.Windows.Forms.DateTimePicker()
@@ -46,6 +44,11 @@ Partial Class VerMedicos
         Me.lblNumColegiado = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.DataMedicos = New System.Windows.Forms.DataGridView()
+        Me.btnCerrarSesion = New System.Windows.Forms.Button()
+        Me.txtColegiado = New System.Windows.Forms.TextBox()
+        Me.ConsultaMedicaDataSet1 = New WindowsApp1.ConsultaMedicaDataSet1()
+        Me.MEDICOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MEDICOSTableAdapter = New WindowsApp1.ConsultaMedicaDataSet1TableAdapters.MEDICOSTableAdapter()
         Me.IdMedicoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaNacimientoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -53,17 +56,11 @@ Partial Class VerMedicos
         Me.SexoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TelefonoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdEspecialidadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MEDICOSTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.MEDICOSTableAdapter()
-        Me.btnCerrarSesion = New System.Windows.Forms.Button()
-        Me.txtColegiado = New System.Windows.Forms.TextBox()
-        Me.ESPECIALIDADESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ESPECIALIDADESTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.ESPECIALIDADESTableAdapter()
         Me.GBDatosPersonales.SuspendLayout()
-        CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataMedicos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ESPECIALIDADESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ConsultaMedicaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnNuevo
@@ -137,16 +134,6 @@ Partial Class VerMedicos
         Me.txtEspecialidad.Size = New System.Drawing.Size(196, 21)
         Me.txtEspecialidad.TabIndex = 5
         '
-        'MEDICOSBindingSource
-        '
-        Me.MEDICOSBindingSource.DataMember = "MEDICOS"
-        Me.MEDICOSBindingSource.DataSource = Me.ConsultaMedicaDataSet
-        '
-        'ConsultaMedicaDataSet
-        '
-        Me.ConsultaMedicaDataSet.DataSetName = "ConsultaMedicaDataSet"
-        Me.ConsultaMedicaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'txtSexo
         '
         Me.txtSexo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MEDICOSBindingSource, "sexo", True))
@@ -168,6 +155,7 @@ Partial Class VerMedicos
         'DTPFNacimiento
         '
         Me.DTPFNacimiento.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MEDICOSBindingSource, "fechaNacimiento", True))
+        Me.DTPFNacimiento.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.MEDICOSBindingSource, "fechaNacimiento", True))
         Me.DTPFNacimiento.Location = New System.Drawing.Point(129, 111)
         Me.DTPFNacimiento.Name = "DTPFNacimiento"
         Me.DTPFNacimiento.Size = New System.Drawing.Size(230, 23)
@@ -279,59 +267,6 @@ Partial Class VerMedicos
         Me.DataMedicos.Size = New System.Drawing.Size(749, 232)
         Me.DataMedicos.TabIndex = 68
         '
-        'IdMedicoDataGridViewTextBoxColumn
-        '
-        Me.IdMedicoDataGridViewTextBoxColumn.DataPropertyName = "idMedico"
-        Me.IdMedicoDataGridViewTextBoxColumn.HeaderText = "idMedico"
-        Me.IdMedicoDataGridViewTextBoxColumn.Name = "IdMedicoDataGridViewTextBoxColumn"
-        Me.IdMedicoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'FechaNacimientoDataGridViewTextBoxColumn
-        '
-        Me.FechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "fechaNacimiento"
-        Me.FechaNacimientoDataGridViewTextBoxColumn.HeaderText = "fechaNacimiento"
-        Me.FechaNacimientoDataGridViewTextBoxColumn.Name = "FechaNacimientoDataGridViewTextBoxColumn"
-        Me.FechaNacimientoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NumColegiadoDataGridViewTextBoxColumn
-        '
-        Me.NumColegiadoDataGridViewTextBoxColumn.DataPropertyName = "numColegiado"
-        Me.NumColegiadoDataGridViewTextBoxColumn.HeaderText = "numColegiado"
-        Me.NumColegiadoDataGridViewTextBoxColumn.Name = "NumColegiadoDataGridViewTextBoxColumn"
-        Me.NumColegiadoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'SexoDataGridViewTextBoxColumn
-        '
-        Me.SexoDataGridViewTextBoxColumn.DataPropertyName = "sexo"
-        Me.SexoDataGridViewTextBoxColumn.HeaderText = "sexo"
-        Me.SexoDataGridViewTextBoxColumn.Name = "SexoDataGridViewTextBoxColumn"
-        Me.SexoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'TelefonoDataGridViewTextBoxColumn
-        '
-        Me.TelefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono"
-        Me.TelefonoDataGridViewTextBoxColumn.HeaderText = "telefono"
-        Me.TelefonoDataGridViewTextBoxColumn.Name = "TelefonoDataGridViewTextBoxColumn"
-        Me.TelefonoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'IdEspecialidadDataGridViewTextBoxColumn
-        '
-        Me.IdEspecialidadDataGridViewTextBoxColumn.DataPropertyName = "idEspecialidad"
-        Me.IdEspecialidadDataGridViewTextBoxColumn.HeaderText = "idEspecialidad"
-        Me.IdEspecialidadDataGridViewTextBoxColumn.Name = "IdEspecialidadDataGridViewTextBoxColumn"
-        Me.IdEspecialidadDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'MEDICOSTableAdapter
-        '
-        Me.MEDICOSTableAdapter.ClearBeforeFill = True
-        '
         'btnCerrarSesion
         '
         Me.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -353,14 +288,61 @@ Partial Class VerMedicos
         Me.txtColegiado.TabIndex = 72
         Me.txtColegiado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'ESPECIALIDADESBindingSource
+        'ConsultaMedicaDataSet1
         '
-        Me.ESPECIALIDADESBindingSource.DataMember = "ESPECIALIDADES"
-        Me.ESPECIALIDADESBindingSource.DataSource = Me.ConsultaMedicaDataSet
+        Me.ConsultaMedicaDataSet1.DataSetName = "ConsultaMedicaDataSet1"
+        Me.ConsultaMedicaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'ESPECIALIDADESTableAdapter
+        'MEDICOSBindingSource
         '
-        Me.ESPECIALIDADESTableAdapter.ClearBeforeFill = True
+        Me.MEDICOSBindingSource.DataMember = "MEDICOS"
+        Me.MEDICOSBindingSource.DataSource = Me.ConsultaMedicaDataSet1
+        '
+        'MEDICOSTableAdapter
+        '
+        Me.MEDICOSTableAdapter.ClearBeforeFill = True
+        '
+        'IdMedicoDataGridViewTextBoxColumn
+        '
+        Me.IdMedicoDataGridViewTextBoxColumn.DataPropertyName = "idMedico"
+        Me.IdMedicoDataGridViewTextBoxColumn.HeaderText = "Médico"
+        Me.IdMedicoDataGridViewTextBoxColumn.Name = "IdMedicoDataGridViewTextBoxColumn"
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        '
+        'FechaNacimientoDataGridViewTextBoxColumn
+        '
+        Me.FechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "fechaNacimiento"
+        Me.FechaNacimientoDataGridViewTextBoxColumn.HeaderText = "Fecha de nacimiento"
+        Me.FechaNacimientoDataGridViewTextBoxColumn.Name = "FechaNacimientoDataGridViewTextBoxColumn"
+        '
+        'NumColegiadoDataGridViewTextBoxColumn
+        '
+        Me.NumColegiadoDataGridViewTextBoxColumn.DataPropertyName = "numColegiado"
+        Me.NumColegiadoDataGridViewTextBoxColumn.HeaderText = "Num colegiado"
+        Me.NumColegiadoDataGridViewTextBoxColumn.Name = "NumColegiadoDataGridViewTextBoxColumn"
+        '
+        'SexoDataGridViewTextBoxColumn
+        '
+        Me.SexoDataGridViewTextBoxColumn.DataPropertyName = "sexo"
+        Me.SexoDataGridViewTextBoxColumn.HeaderText = "Sexo"
+        Me.SexoDataGridViewTextBoxColumn.Name = "SexoDataGridViewTextBoxColumn"
+        '
+        'TelefonoDataGridViewTextBoxColumn
+        '
+        Me.TelefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono"
+        Me.TelefonoDataGridViewTextBoxColumn.HeaderText = "Teléfono"
+        Me.TelefonoDataGridViewTextBoxColumn.Name = "TelefonoDataGridViewTextBoxColumn"
+        '
+        'IdEspecialidadDataGridViewTextBoxColumn
+        '
+        Me.IdEspecialidadDataGridViewTextBoxColumn.DataPropertyName = "idEspecialidad"
+        Me.IdEspecialidadDataGridViewTextBoxColumn.HeaderText = "Especialidad"
+        Me.IdEspecialidadDataGridViewTextBoxColumn.Name = "IdEspecialidadDataGridViewTextBoxColumn"
         '
         'VerMedicos
         '
@@ -385,11 +367,10 @@ Partial Class VerMedicos
         Me.Text = "Lista de médicos"
         Me.GBDatosPersonales.ResumeLayout(False)
         Me.GBDatosPersonales.PerformLayout()
-        CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataMedicos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ESPECIALIDADESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ConsultaMedicaDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -413,9 +394,12 @@ Partial Class VerMedicos
     Friend WithEvents lblNumColegiado As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents DataMedicos As DataGridView
-    Friend WithEvents ConsultaMedicaDataSet As ConsultaMedicaDataSet
+    Friend WithEvents btnCerrarSesion As Button
+    Friend WithEvents txtColegiado As TextBox
+    Friend WithEvents txtEspecialidad As TextBox
+    Friend WithEvents ConsultaMedicaDataSet1 As ConsultaMedicaDataSet1
     Friend WithEvents MEDICOSBindingSource As BindingSource
-    Friend WithEvents MEDICOSTableAdapter As ConsultaMedicaDataSetTableAdapters.MEDICOSTableAdapter
+    Friend WithEvents MEDICOSTableAdapter As ConsultaMedicaDataSet1TableAdapters.MEDICOSTableAdapter
     Friend WithEvents IdMedicoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FechaNacimientoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -423,9 +407,4 @@ Partial Class VerMedicos
     Friend WithEvents SexoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TelefonoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdEspecialidadDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents btnCerrarSesion As Button
-    Friend WithEvents txtColegiado As TextBox
-    Friend WithEvents ESPECIALIDADESBindingSource As BindingSource
-    Friend WithEvents ESPECIALIDADESTableAdapter As ConsultaMedicaDataSetTableAdapters.ESPECIALIDADESTableAdapter
-    Friend WithEvents txtEspecialidad As TextBox
 End Class

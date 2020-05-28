@@ -34,4 +34,9 @@ Public Class NuevoMedico
 
     End Sub
 
+    Private Sub NuevoMedico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'ConsultaMedicaDataSet1.MEDICOS' Puede moverla o quitarla según sea necesario.
+        Me.MEDICOSTableAdapter.Fill(Me.ConsultaMedicaDataSet1.MEDICOS)
+
+    End Sub
 End Class

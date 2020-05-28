@@ -3,7 +3,7 @@ Imports System.Data.OleDb
 
 Public Class Login
 
-    ReadOnly conn As New OleDbConnection(My.Settings.ConsultaMedicaConnectionString)
+    ReadOnly conn As New OleDbConnection(My.Settings.ConsultaMedicaConnectionString1)
 
     'Añadir nueva cuenta de usuario
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click

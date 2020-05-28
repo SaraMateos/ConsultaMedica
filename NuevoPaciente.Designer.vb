@@ -25,8 +25,8 @@ Partial Class NuevoPaciente
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NuevoPaciente))
         Me.txtHistorial = New System.Windows.Forms.TextBox()
-        Me.PACIENTESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ConsultaMedicaDataSet = New WindowsApp1.ConsultaMedicaDataSet()
+        Me.PACIENTESBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ConsultaMedicaDataSet1 = New WindowsApp1.ConsultaMedicaDataSet1()
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.GBDatosPersonales = New System.Windows.Forms.GroupBox()
@@ -46,7 +46,6 @@ Partial Class NuevoPaciente
         Me.lblNIF = New System.Windows.Forms.Label()
         Me.lblNumHistorial = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PACIENTESTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.PACIENTESTableAdapter()
         Me.GBDatosMedicos = New System.Windows.Forms.GroupBox()
         Me.txtAlergias = New System.Windows.Forms.TextBox()
         Me.lblAlergias = New System.Windows.Forms.Label()
@@ -58,8 +57,9 @@ Partial Class NuevoPaciente
         Me.lblAltura = New System.Windows.Forms.Label()
         Me.txtPeso = New System.Windows.Forms.TextBox()
         Me.lblPeso = New System.Windows.Forms.Label()
-        CType(Me.PACIENTESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PACIENTESTableAdapter1 = New WindowsApp1.ConsultaMedicaDataSet1TableAdapters.PACIENTESTableAdapter()
+        CType(Me.PACIENTESBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ConsultaMedicaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBDatosPersonales.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBDatosMedicos.SuspendLayout()
@@ -67,7 +67,7 @@ Partial Class NuevoPaciente
         '
         'txtHistorial
         '
-        Me.txtHistorial.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "idPaciente", True))
+        Me.txtHistorial.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource1, "idPaciente", True))
         Me.txtHistorial.Location = New System.Drawing.Point(106, 22)
         Me.txtHistorial.Name = "txtHistorial"
         Me.txtHistorial.ReadOnly = True
@@ -75,15 +75,15 @@ Partial Class NuevoPaciente
         Me.txtHistorial.TabIndex = 72
         Me.txtHistorial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'PACIENTESBindingSource
+        'PACIENTESBindingSource1
         '
-        Me.PACIENTESBindingSource.DataMember = "PACIENTES"
-        Me.PACIENTESBindingSource.DataSource = Me.ConsultaMedicaDataSet
+        Me.PACIENTESBindingSource1.DataMember = "PACIENTES"
+        Me.PACIENTESBindingSource1.DataSource = Me.ConsultaMedicaDataSet1
         '
-        'ConsultaMedicaDataSet
+        'ConsultaMedicaDataSet1
         '
-        Me.ConsultaMedicaDataSet.DataSetName = "ConsultaMedicaDataSet"
-        Me.ConsultaMedicaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.ConsultaMedicaDataSet1.DataSetName = "ConsultaMedicaDataSet1"
+        Me.ConsultaMedicaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btnVolver
         '
@@ -131,7 +131,7 @@ Partial Class NuevoPaciente
         '
         'txtSexo
         '
-        Me.txtSexo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "sexo", True))
+        Me.txtSexo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource1, "sexo", True))
         Me.txtSexo.Location = New System.Drawing.Point(136, 162)
         Me.txtSexo.Multiline = True
         Me.txtSexo.Name = "txtSexo"
@@ -149,7 +149,8 @@ Partial Class NuevoPaciente
         '
         'DTPFNacimiento
         '
-        Me.DTPFNacimiento.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "fechaNacimiento", True))
+        Me.DTPFNacimiento.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource1, "fechaNacimiento", True))
+        Me.DTPFNacimiento.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.PACIENTESBindingSource1, "fechaNacimiento", True))
         Me.DTPFNacimiento.Location = New System.Drawing.Point(136, 124)
         Me.DTPFNacimiento.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
         Me.DTPFNacimiento.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
@@ -159,8 +160,7 @@ Partial Class NuevoPaciente
         '
         'txtNombre
         '
-        Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "Nombre", True))
-        Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Tag", Me.PACIENTESBindingSource, "Nombre", True))
+        Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource1, "Nombre", True))
         Me.txtNombre.Location = New System.Drawing.Point(136, 89)
         Me.txtNombre.Multiline = True
         Me.txtNombre.Name = "txtNombre"
@@ -178,7 +178,7 @@ Partial Class NuevoPaciente
         '
         'txtTelefono
         '
-        Me.txtTelefono.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "teléfono", True))
+        Me.txtTelefono.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource1, "teléfono", True))
         Me.txtTelefono.Location = New System.Drawing.Point(483, 162)
         Me.txtTelefono.Multiline = True
         Me.txtTelefono.Name = "txtTelefono"
@@ -196,7 +196,7 @@ Partial Class NuevoPaciente
         '
         'txtDireccion
         '
-        Me.txtDireccion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "dirección", True))
+        Me.txtDireccion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource1, "dirección", True))
         Me.txtDireccion.Location = New System.Drawing.Point(483, 124)
         Me.txtDireccion.Multiline = True
         Me.txtDireccion.Name = "txtDireccion"
@@ -214,7 +214,7 @@ Partial Class NuevoPaciente
         '
         'txtPoblacion
         '
-        Me.txtPoblacion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "Poblacion", True))
+        Me.txtPoblacion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource1, "Poblacion", True))
         Me.txtPoblacion.Location = New System.Drawing.Point(483, 89)
         Me.txtPoblacion.Multiline = True
         Me.txtPoblacion.Name = "txtPoblacion"
@@ -241,7 +241,7 @@ Partial Class NuevoPaciente
         '
         'txtNIF
         '
-        Me.txtNIF.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "NIF", True))
+        Me.txtNIF.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource1, "NIF", True))
         Me.txtNIF.Location = New System.Drawing.Point(315, 32)
         Me.txtNIF.Multiline = True
         Me.txtNIF.Name = "txtNIF"
@@ -277,10 +277,6 @@ Partial Class NuevoPaciente
         Me.PictureBox1.TabIndex = 61
         Me.PictureBox1.TabStop = False
         '
-        'PACIENTESTableAdapter
-        '
-        Me.PACIENTESTableAdapter.ClearBeforeFill = True
-        '
         'GBDatosMedicos
         '
         Me.GBDatosMedicos.Controls.Add(Me.txtAlergias)
@@ -303,7 +299,7 @@ Partial Class NuevoPaciente
         '
         'txtAlergias
         '
-        Me.txtAlergias.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "alergias", True))
+        Me.txtAlergias.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource1, "alergias", True))
         Me.txtAlergias.Location = New System.Drawing.Point(141, 149)
         Me.txtAlergias.Multiline = True
         Me.txtAlergias.Name = "txtAlergias"
@@ -322,7 +318,7 @@ Partial Class NuevoPaciente
         '
         'txtObservaciones
         '
-        Me.txtObservaciones.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "observaciones", True))
+        Me.txtObservaciones.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource1, "observaciones", True))
         Me.txtObservaciones.Location = New System.Drawing.Point(395, 51)
         Me.txtObservaciones.Multiline = True
         Me.txtObservaciones.Name = "txtObservaciones"
@@ -340,7 +336,7 @@ Partial Class NuevoPaciente
         '
         'txtSangre
         '
-        Me.txtSangre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "TipoGrupoSanguineo", True))
+        Me.txtSangre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource1, "TipoGrupoSanguineo", True))
         Me.txtSangre.Location = New System.Drawing.Point(141, 108)
         Me.txtSangre.Multiline = True
         Me.txtSangre.Name = "txtSangre"
@@ -359,7 +355,7 @@ Partial Class NuevoPaciente
         '
         'txtAltura
         '
-        Me.txtAltura.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "altura", True))
+        Me.txtAltura.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource1, "altura", True))
         Me.txtAltura.Location = New System.Drawing.Point(141, 70)
         Me.txtAltura.Multiline = True
         Me.txtAltura.Name = "txtAltura"
@@ -377,7 +373,7 @@ Partial Class NuevoPaciente
         '
         'txtPeso
         '
-        Me.txtPeso.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "peso", True))
+        Me.txtPeso.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource1, "peso", True))
         Me.txtPeso.Location = New System.Drawing.Point(141, 34)
         Me.txtPeso.Multiline = True
         Me.txtPeso.Name = "txtPeso"
@@ -392,6 +388,10 @@ Partial Class NuevoPaciente
         Me.lblPeso.Size = New System.Drawing.Size(33, 16)
         Me.lblPeso.TabIndex = 0
         Me.lblPeso.Text = "Peso"
+        '
+        'PACIENTESTableAdapter1
+        '
+        Me.PACIENTESTableAdapter1.ClearBeforeFill = True
         '
         'NuevoPaciente
         '
@@ -411,8 +411,8 @@ Partial Class NuevoPaciente
         Me.Name = "NuevoPaciente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Agregar nuevo paciente"
-        CType(Me.PACIENTESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PACIENTESBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ConsultaMedicaDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GBDatosPersonales.ResumeLayout(False)
         Me.GBDatosPersonales.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -431,9 +431,6 @@ Partial Class NuevoPaciente
     Friend WithEvents lblNIF As Label
     Friend WithEvents lblNumHistorial As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents ConsultaMedicaDataSet As ConsultaMedicaDataSet
-    Friend WithEvents PACIENTESBindingSource As BindingSource
-    Friend WithEvents PACIENTESTableAdapter As ConsultaMedicaDataSetTableAdapters.PACIENTESTableAdapter
     Friend WithEvents txtSexo As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents DTPFNacimiento As DateTimePicker
@@ -457,4 +454,7 @@ Partial Class NuevoPaciente
     Friend WithEvents lblAltura As Label
     Friend WithEvents txtPeso As TextBox
     Friend WithEvents lblPeso As Label
+    Friend WithEvents ConsultaMedicaDataSet1 As ConsultaMedicaDataSet1
+    Friend WithEvents PACIENTESBindingSource1 As BindingSource
+    Friend WithEvents PACIENTESTableAdapter1 As ConsultaMedicaDataSet1TableAdapters.PACIENTESTableAdapter
 End Class

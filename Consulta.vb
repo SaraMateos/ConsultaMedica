@@ -21,6 +21,8 @@ Public Class Consulta
     End Sub
 
     Private Sub Consulta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'ConsultaMedicaDataSet1.CONSULTA' Puede moverla o quitarla según sea necesario.
+        Me.CONSULTATableAdapter.Fill(Me.ConsultaMedicaDataSet1.CONSULTA)
 
         'Abre la conexión
         abrir()

@@ -24,8 +24,6 @@ Partial Class VerPacientes
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VerPacientes))
-        Me.PACIENTESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ConsultaMedicaDataSet = New WindowsApp1.ConsultaMedicaDataSet()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnVolver = New System.Windows.Forms.Button()
@@ -58,8 +56,12 @@ Partial Class VerPacientes
         Me.lblNIF = New System.Windows.Forms.Label()
         Me.lblNumHistorial = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PACIENTESTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.PACIENTESTableAdapter()
         Me.DataPacientes = New System.Windows.Forms.DataGridView()
+        Me.txtHistorial = New System.Windows.Forms.TextBox()
+        Me.btnCerrarSesion = New System.Windows.Forms.Button()
+        Me.ConsultaMedicaDataSet1 = New WindowsApp1.ConsultaMedicaDataSet1()
+        Me.PACIENTESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PACIENTESTableAdapter = New WindowsApp1.ConsultaMedicaDataSet1TableAdapters.PACIENTESTableAdapter()
         Me.IdPacienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NIFDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -73,25 +75,13 @@ Partial Class VerPacientes
         Me.PesoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AlergiasDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ObservacionesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txtHistorial = New System.Windows.Forms.TextBox()
-        Me.btnCerrarSesion = New System.Windows.Forms.Button()
-        CType(Me.PACIENTESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBDatosMedicos.SuspendLayout()
         Me.GBDatosPersonales.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataPacientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ConsultaMedicaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PACIENTESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PACIENTESBindingSource
-        '
-        Me.PACIENTESBindingSource.DataMember = "PACIENTES"
-        Me.PACIENTESBindingSource.DataSource = Me.ConsultaMedicaDataSet
-        '
-        'ConsultaMedicaDataSet
-        '
-        Me.ConsultaMedicaDataSet.DataSetName = "ConsultaMedicaDataSet"
-        Me.ConsultaMedicaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btnNuevo
         '
@@ -290,6 +280,7 @@ Partial Class VerPacientes
         'DTPFNacimiento
         '
         Me.DTPFNacimiento.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "fechaNacimiento", True))
+        Me.DTPFNacimiento.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.PACIENTESBindingSource, "fechaNacimiento", True))
         Me.DTPFNacimiento.Location = New System.Drawing.Point(133, 115)
         Me.DTPFNacimiento.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
         Me.DTPFNacimiento.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
@@ -300,7 +291,6 @@ Partial Class VerPacientes
         'txtNombre
         '
         Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "Nombre", True))
-        Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Tag", Me.PACIENTESBindingSource, "Nombre", True))
         Me.txtNombre.Location = New System.Drawing.Point(133, 80)
         Me.txtNombre.Multiline = True
         Me.txtNombre.Name = "txtNombre"
@@ -418,10 +408,6 @@ Partial Class VerPacientes
         Me.PictureBox1.TabIndex = 48
         Me.PictureBox1.TabStop = False
         '
-        'PACIENTESTableAdapter
-        '
-        Me.PACIENTESTableAdapter.ClearBeforeFill = True
-        '
         'DataPacientes
         '
         Me.DataPacientes.AllowUserToOrderColumns = True
@@ -436,10 +422,45 @@ Partial Class VerPacientes
         Me.DataPacientes.Size = New System.Drawing.Size(978, 232)
         Me.DataPacientes.TabIndex = 59
         '
+        'txtHistorial
+        '
+        Me.txtHistorial.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "idPaciente", True))
+        Me.txtHistorial.Location = New System.Drawing.Point(109, 27)
+        Me.txtHistorial.Name = "txtHistorial"
+        Me.txtHistorial.ReadOnly = True
+        Me.txtHistorial.Size = New System.Drawing.Size(134, 21)
+        Me.txtHistorial.TabIndex = 60
+        Me.txtHistorial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnCerrarSesion
+        '
+        Me.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.btnCerrarSesion.Image = CType(resources.GetObject("btnCerrarSesion.Image"), System.Drawing.Image)
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(986, 23)
+        Me.btnCerrarSesion.Name = "btnCerrarSesion"
+        Me.btnCerrarSesion.Size = New System.Drawing.Size(27, 32)
+        Me.btnCerrarSesion.TabIndex = 61
+        Me.btnCerrarSesion.UseVisualStyleBackColor = True
+        '
+        'ConsultaMedicaDataSet1
+        '
+        Me.ConsultaMedicaDataSet1.DataSetName = "ConsultaMedicaDataSet1"
+        Me.ConsultaMedicaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PACIENTESBindingSource
+        '
+        Me.PACIENTESBindingSource.DataMember = "PACIENTES"
+        Me.PACIENTESBindingSource.DataSource = Me.ConsultaMedicaDataSet1
+        '
+        'PACIENTESTableAdapter
+        '
+        Me.PACIENTESTableAdapter.ClearBeforeFill = True
+        '
         'IdPacienteDataGridViewTextBoxColumn
         '
         Me.IdPacienteDataGridViewTextBoxColumn.DataPropertyName = "idPaciente"
-        Me.IdPacienteDataGridViewTextBoxColumn.HeaderText = "idPaciente"
+        Me.IdPacienteDataGridViewTextBoxColumn.HeaderText = "Num. Historial"
         Me.IdPacienteDataGridViewTextBoxColumn.Name = "IdPacienteDataGridViewTextBoxColumn"
         '
         'NIFDataGridViewTextBoxColumn
@@ -457,7 +478,7 @@ Partial Class VerPacientes
         'FechaNacimientoDataGridViewTextBoxColumn
         '
         Me.FechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "fechaNacimiento"
-        Me.FechaNacimientoDataGridViewTextBoxColumn.HeaderText = "fechaNacimiento"
+        Me.FechaNacimientoDataGridViewTextBoxColumn.HeaderText = "Fecha de nacimiento"
         Me.FechaNacimientoDataGridViewTextBoxColumn.Name = "FechaNacimientoDataGridViewTextBoxColumn"
         '
         'SexoDataGridViewTextBoxColumn
@@ -487,7 +508,7 @@ Partial Class VerPacientes
         'TipoGrupoSanguineoDataGridViewTextBoxColumn
         '
         Me.TipoGrupoSanguineoDataGridViewTextBoxColumn.DataPropertyName = "TipoGrupoSanguineo"
-        Me.TipoGrupoSanguineoDataGridViewTextBoxColumn.HeaderText = "TipoGrupoSanguineo"
+        Me.TipoGrupoSanguineoDataGridViewTextBoxColumn.HeaderText = "Grupo sanguíneo"
         Me.TipoGrupoSanguineoDataGridViewTextBoxColumn.Name = "TipoGrupoSanguineoDataGridViewTextBoxColumn"
         '
         'AlturaDataGridViewTextBoxColumn
@@ -514,27 +535,6 @@ Partial Class VerPacientes
         Me.ObservacionesDataGridViewTextBoxColumn.HeaderText = "observaciones"
         Me.ObservacionesDataGridViewTextBoxColumn.Name = "ObservacionesDataGridViewTextBoxColumn"
         '
-        'txtHistorial
-        '
-        Me.txtHistorial.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PACIENTESBindingSource, "idPaciente", True))
-        Me.txtHistorial.Location = New System.Drawing.Point(109, 27)
-        Me.txtHistorial.Name = "txtHistorial"
-        Me.txtHistorial.ReadOnly = True
-        Me.txtHistorial.Size = New System.Drawing.Size(134, 21)
-        Me.txtHistorial.TabIndex = 60
-        Me.txtHistorial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'btnCerrarSesion
-        '
-        Me.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.btnCerrarSesion.Image = CType(resources.GetObject("btnCerrarSesion.Image"), System.Drawing.Image)
-        Me.btnCerrarSesion.Location = New System.Drawing.Point(986, 23)
-        Me.btnCerrarSesion.Name = "btnCerrarSesion"
-        Me.btnCerrarSesion.Size = New System.Drawing.Size(27, 32)
-        Me.btnCerrarSesion.TabIndex = 61
-        Me.btnCerrarSesion.UseVisualStyleBackColor = True
-        '
         'VerPacientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
@@ -557,14 +557,14 @@ Partial Class VerPacientes
         Me.Name = "VerPacientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Lista de pacientes"
-        CType(Me.PACIENTESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GBDatosMedicos.ResumeLayout(False)
         Me.GBDatosMedicos.PerformLayout()
         Me.GBDatosPersonales.ResumeLayout(False)
         Me.GBDatosPersonales.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataPacientes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ConsultaMedicaDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PACIENTESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -601,11 +601,12 @@ Partial Class VerPacientes
     Friend WithEvents lblNIF As Label
     Friend WithEvents lblNumHistorial As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents ConsultaMedicaDataSet As ConsultaMedicaDataSet
-    Friend WithEvents PACIENTESBindingSource As BindingSource
-    Friend WithEvents PACIENTESTableAdapter As ConsultaMedicaDataSetTableAdapters.PACIENTESTableAdapter
     Friend WithEvents DataPacientes As DataGridView
     Friend WithEvents txtHistorial As TextBox
+    Friend WithEvents btnCerrarSesion As Button
+    Friend WithEvents ConsultaMedicaDataSet1 As ConsultaMedicaDataSet1
+    Friend WithEvents PACIENTESBindingSource As BindingSource
+    Friend WithEvents PACIENTESTableAdapter As ConsultaMedicaDataSet1TableAdapters.PACIENTESTableAdapter
     Friend WithEvents IdPacienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NIFDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -619,5 +620,4 @@ Partial Class VerPacientes
     Friend WithEvents PesoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents AlergiasDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ObservacionesDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents btnCerrarSesion As Button
 End Class

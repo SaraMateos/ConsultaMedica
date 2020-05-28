@@ -28,8 +28,6 @@ Partial Class NuevoMedico
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.GBDatosPersonales = New System.Windows.Forms.GroupBox()
         Me.txtEspecialidad = New System.Windows.Forms.TextBox()
-        Me.MEDICOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ConsultaMedicaDataSet = New WindowsApp1.ConsultaMedicaDataSet()
         Me.txtSexo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DTPFNacimiento = New System.Windows.Forms.DateTimePicker()
@@ -44,14 +42,13 @@ Partial Class NuevoMedico
         Me.lblNumColegiado = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txtColegiado = New System.Windows.Forms.TextBox()
-        Me.MEDICOSTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.MEDICOSTableAdapter()
-        Me.ESPECIALIDADESBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ESPECIALIDADESTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.ESPECIALIDADESTableAdapter()
+        Me.ConsultaMedicaDataSet1 = New WindowsApp1.ConsultaMedicaDataSet1()
+        Me.MEDICOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MEDICOSTableAdapter = New WindowsApp1.ConsultaMedicaDataSet1TableAdapters.MEDICOSTableAdapter()
         Me.GBDatosPersonales.SuspendLayout()
-        CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ESPECIALIDADESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ConsultaMedicaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnVolver
@@ -105,16 +102,6 @@ Partial Class NuevoMedico
         Me.txtEspecialidad.Size = New System.Drawing.Size(196, 21)
         Me.txtEspecialidad.TabIndex = 5
         '
-        'MEDICOSBindingSource
-        '
-        Me.MEDICOSBindingSource.DataMember = "MEDICOS"
-        Me.MEDICOSBindingSource.DataSource = Me.ConsultaMedicaDataSet
-        '
-        'ConsultaMedicaDataSet
-        '
-        Me.ConsultaMedicaDataSet.DataSetName = "ConsultaMedicaDataSet"
-        Me.ConsultaMedicaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'txtSexo
         '
         Me.txtSexo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MEDICOSBindingSource, "sexo", True))
@@ -136,6 +123,7 @@ Partial Class NuevoMedico
         'DTPFNacimiento
         '
         Me.DTPFNacimiento.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MEDICOSBindingSource, "fechaNacimiento", True))
+        Me.DTPFNacimiento.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.MEDICOSBindingSource, "fechaNacimiento", True))
         Me.DTPFNacimiento.Location = New System.Drawing.Point(132, 119)
         Me.DTPFNacimiento.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
         Me.DTPFNacimiento.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
@@ -199,7 +187,7 @@ Partial Class NuevoMedico
         '
         'txtAbreviatura
         '
-        Me.txtAbreviatura.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MEDICOSBindingSource, "Nombre", True))
+        Me.txtAbreviatura.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MEDICOSBindingSource, "idMedico", True))
         Me.txtAbreviatura.Location = New System.Drawing.Point(315, 32)
         Me.txtAbreviatura.Multiline = True
         Me.txtAbreviatura.Name = "txtAbreviatura"
@@ -244,18 +232,19 @@ Partial Class NuevoMedico
         Me.txtColegiado.TabIndex = 70
         Me.txtColegiado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'ConsultaMedicaDataSet1
+        '
+        Me.ConsultaMedicaDataSet1.DataSetName = "ConsultaMedicaDataSet1"
+        Me.ConsultaMedicaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'MEDICOSBindingSource
+        '
+        Me.MEDICOSBindingSource.DataMember = "MEDICOS"
+        Me.MEDICOSBindingSource.DataSource = Me.ConsultaMedicaDataSet1
+        '
         'MEDICOSTableAdapter
         '
         Me.MEDICOSTableAdapter.ClearBeforeFill = True
-        '
-        'ESPECIALIDADESBindingSource
-        '
-        Me.ESPECIALIDADESBindingSource.DataMember = "ESPECIALIDADES"
-        Me.ESPECIALIDADESBindingSource.DataSource = Me.ConsultaMedicaDataSet
-        '
-        'ESPECIALIDADESTableAdapter
-        '
-        Me.ESPECIALIDADESTableAdapter.ClearBeforeFill = True
         '
         'NuevoMedico
         '
@@ -276,10 +265,9 @@ Partial Class NuevoMedico
         Me.Text = "Añadir nuevo médico"
         Me.GBDatosPersonales.ResumeLayout(False)
         Me.GBDatosPersonales.PerformLayout()
-        CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ESPECIALIDADESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ConsultaMedicaDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MEDICOSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -302,10 +290,8 @@ Partial Class NuevoMedico
     Friend WithEvents lblNumColegiado As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents txtColegiado As TextBox
-    Friend WithEvents ConsultaMedicaDataSet As ConsultaMedicaDataSet
-    Friend WithEvents MEDICOSBindingSource As BindingSource
-    Friend WithEvents MEDICOSTableAdapter As ConsultaMedicaDataSetTableAdapters.MEDICOSTableAdapter
-    Friend WithEvents ESPECIALIDADESBindingSource As BindingSource
-    Friend WithEvents ESPECIALIDADESTableAdapter As ConsultaMedicaDataSetTableAdapters.ESPECIALIDADESTableAdapter
     Friend WithEvents txtEspecialidad As TextBox
+    Friend WithEvents ConsultaMedicaDataSet1 As ConsultaMedicaDataSet1
+    Friend WithEvents MEDICOSBindingSource As BindingSource
+    Friend WithEvents MEDICOSTableAdapter As ConsultaMedicaDataSet1TableAdapters.MEDICOSTableAdapter
 End Class

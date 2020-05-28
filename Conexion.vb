@@ -12,7 +12,7 @@ Module Conexion
     Sub abrir()
 
         Try
-            cadenaconexion = ("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\BASES\ConsultaMedica.accdb")
+            cadenaconexion = ("Provider = Microsoft.ACE.OLEDB.12.0;Data Source=C:\BASES\WindowsApp1\ConsultaMedica.accdb")
             conexion1.Close()
 
             conexion1.ConnectionString = cadenaconexion

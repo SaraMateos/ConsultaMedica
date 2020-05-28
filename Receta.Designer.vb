@@ -37,7 +37,7 @@ Partial Class Receta
         Me.IdMedicamentoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DosisDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RECETASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ConsultaMedicaDataSet = New WindowsApp1.ConsultaMedicaDataSet()
+        Me.ConsultaMedicaDataSet1 = New WindowsApp1.ConsultaMedicaDataSet1()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblIdReceta = New System.Windows.Forms.Label()
         Me.txtIdReceta = New System.Windows.Forms.TextBox()
@@ -53,10 +53,10 @@ Partial Class Receta
         Me.txtDosis = New System.Windows.Forms.TextBox()
         Me.txtEnfermedad = New System.Windows.Forms.TextBox()
         Me.lblEnfermedad = New System.Windows.Forms.Label()
-        Me.RECETASTableAdapter = New WindowsApp1.ConsultaMedicaDataSetTableAdapters.RECETASTableAdapter()
+        Me.RECETASTableAdapter = New WindowsApp1.ConsultaMedicaDataSet1TableAdapters.RECETASTableAdapter()
         CType(Me.DataRecetas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RECETASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ConsultaMedicaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -160,12 +160,12 @@ Partial Class Receta
         'RECETASBindingSource
         '
         Me.RECETASBindingSource.DataMember = "RECETAS"
-        Me.RECETASBindingSource.DataSource = Me.ConsultaMedicaDataSet
+        Me.RECETASBindingSource.DataSource = Me.ConsultaMedicaDataSet1
         '
         'ConsultaMedicaDataSet
         '
-        Me.ConsultaMedicaDataSet.DataSetName = "ConsultaMedicaDataSet"
-        Me.ConsultaMedicaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.ConsultaMedicaDataSet1.DataSetName = "ConsultaMedicaDataSet"
+        Me.ConsultaMedicaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'PictureBox1
         '
@@ -353,7 +353,7 @@ Partial Class Receta
         Me.Text = "Receta"
         CType(Me.DataRecetas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RECETASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ConsultaMedicaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ConsultaMedicaDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -361,9 +361,9 @@ Partial Class Receta
     End Sub
 
     Friend WithEvents btnVolver As Button
-    Friend WithEvents ConsultaMedicaDataSet As ConsultaMedicaDataSet
+    Friend WithEvents ConsultaMedicaDataSet1 As ConsultaMedicaDataSet1
     Friend WithEvents RECETASBindingSource As BindingSource
-    Friend WithEvents RECETASTableAdapter As ConsultaMedicaDataSetTableAdapters.RECETASTableAdapter
+    Friend WithEvents RECETASTableAdapter As ConsultaMedicaDataSet1TableAdapters.RECETASTableAdapter
     Friend WithEvents btnActualizar As Button
     Friend WithEvents btnNuevo As Button
     Friend WithEvents Label1 As Label

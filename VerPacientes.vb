@@ -18,6 +18,8 @@ Public Class VerPacientes
     End Sub
 
     Private Sub VerPacientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'ConsultaMedicaDataSet1.PACIENTES' Puede moverla o quitarla según sea necesario.
+        Me.PACIENTESTableAdapter.Fill(Me.ConsultaMedicaDataSet1.PACIENTES)
 
         'abrir conexión
         abrir()
